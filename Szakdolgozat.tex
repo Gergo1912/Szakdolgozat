@@ -1,0 +1,51 @@
+\documentclass[12pt]{report}
+
+\usepackage[magyar]{babel}
+\usepackage{pdfpages}
+\usepackage{cite}
+\usepackage{graphicx}
+\graphicspath{ {./Abrak/} }
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{
+ left=30mm,
+ top=25.4mm,
+ right=25.4mm,
+ bottom=25.4mm
+ }
+ \linespread{1.5}
+
+\lstset{	
+    frame=single,
+    language=c++,
+    tabsize=4,
+    showstringspaces=false,    
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+\begin{document}
+
+\includepdf[pages = {1-4}]{kezdo_oldalak.pdf}
+\pagenumbering{gobble}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\include{Bevezetes}
+\include{Irodalmi_attekintes}
+\include{Problema_definicio}
+\include{Az_uj_modszer}
+\include{Implementalas}
+\include{Teszteles}
+\include{Osszefoglalas}
+\bibliographystyle{ieeetr}
+\bibliography{Szakdolgozat}
+
+
+\end{document}
