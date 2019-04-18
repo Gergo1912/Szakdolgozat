@@ -10,5 +10,8 @@ The style file: ieeetr.bst
 Database file #1: Szakdolgozat.bib
 Warning--entry type for "Hegyhati" isn't style-file defined
 --line 1 of file Szakdolgozat.bib
+Warning--empty journal in susarla
+Warning--empty journal in cassandras
+Warning--empty journal in ghaeli
 Warning--empty journal in holczinger
-(There were 2 warnings)
+(There were 5 warnings)

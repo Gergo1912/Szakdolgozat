@@ -1992,10 +1992,19 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex">Szakdolgozat.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">combtech</bcf:citekey>
+    <bcf:citekey order="1">Hegyhati</bcf:citekey>
+    <bcf:citekey order="2">kondili</bcf:citekey>
+    <bcf:citekey order="3">susarla</bcf:citekey>
+    <bcf:citekey order="4">cassandras</bcf:citekey>
+    <bcf:citekey order="5">combtech</bcf:citekey>
+    <bcf:citekey order="6">combframe</bcf:citekey>
+    <bcf:citekey order="7">Hegyhati</bcf:citekey>
+    <bcf:citekey order="8">ganttwwf</bcf:citekey>
+    <bcf:citekey order="9">ganttofw</bcf:citekey>
+    <bcf:citekey order="10">majozifriedler</bcf:citekey>
+    <bcf:citekey order="11">holczinger</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
@@ -2027,13 +2036,4 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
-  <bcf:datalist section="0"
-                name="nty/global//global/global"
-                type="entry"
-                sortingtemplatename="nty"
-                sortingnamekeytemplatename="global"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global">
-  </bcf:datalist>
 </bcf:controlfile>

@@ -1,8 +1,27 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Hegyhati}
 M.~Hegyháti, ``Batch process scheduling: Extensions of the s-graph
   framework,'' 2015.
+
+\bibitem{kondili}
+E.~Kondili, C.~Pantelides, and R.~Sargent, ``A general algorithm for short-term
+  scheduling of batch operations—i. milp formulation,'' {\em Computers \&
+  Chemical Engineering}, vol.~17, no.~2, pp.~211 -- 227, 1993.
+\newblock An International Journal of Computer Applications in Chemical
+  Enginnering.
+
+\bibitem{susarla}
+J.~L. N.~Susarla and I.~A. Karimi, ``A novel approach to scheduling
+  multipurpose batch plants using unit-slots,'' pp.~1859--1879, 2010.
+
+\bibitem{cassandras}
+C.~Cassandras and S.~Lafortune, ``Introduction to discrete event systems,''
+  2008.
+
+\bibitem{ghaeli}
+P.~L. M.~Ghaeli, P. A.~Bahri and T.~Gu, ``Petri-net based formulation and
+  algorithm for short-term scheduling of batch plants,'' pp.~249--259., 2005.
 
 \bibitem{combtech}
 E.~Sanmarti, F.~Friedler, and L.~Puigjaner, ``Combinatorial technique for short

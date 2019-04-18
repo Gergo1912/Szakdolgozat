@@ -45,11 +45,26 @@ Második fajta csoportosítási lehetősége, amikor az idő ad korlátot.
 	\item \textbf{ZW - Zero Wait}	
 \end{itemize}
 ZW esetben nincs lehetőség a köztes anyag tárolására, azaz ha a berendezés befejezte a munkát, akkor azonnal folytatni kell a gyártást. AZ LW esetben van egy idő, amíg a köztes termék várakozhat. Azonban, ha ez a rendelkezésre álló idő elfogy, akkor muszáj folytatni a gyártás folyamatát. Az UW eset a legegyszerűbb mind közül. Ha a köztes anyag tulajdonságai lehetőséget biztosítanak, akkor a tárolási idő nincs korlátozva, bármennyi ideig lehetőség van a tárolásra, raktározásra.
-
+\newpage
 \section{Megoldó módszerek}
+Az ütemezési feladatok megoldására számos megoldó módszer létezik. Ezek közül a legismertebbek, és legszélesebb körben elterjedt módszerek kerülnek bemutatásra a dolgozatom következő pontjaiban.
 \subsection{MILP modellek}
-\subsection{Időzített automaták}
-\subsection{Petri háló}
+A legtöbb ütemezési probléma modelljében vegyesen fordulnak elő folytonos és egész változók. Ilyen esetekben beszélünk vegyes egészértékű lineáris programozásról, azaz \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming. Több altípus létezik:
+\begin{itemize}
+  \item[] \textbf{Időfelosztásos modellek - Time discretization based:} A módszer időpontokat és időréseket határoz meg. Ezek jelentek meg legkorábban kronológiailag \cite{kondili}. Az időrésen és az időponton alapuló megközelítések \cite{susarla} sok hasonlóságot mutatnak, mivel egy időintervallumtól egy másikig terjedő időintervallumot tekinthetünk időrésnek. Ellenkező irányból nézve pedig egy időrés kezdő időpontját tekinthetjük egy időpontnak.  
+  
+  Minden időpontban bináris változók vannak hozzárendelve aszerint, hogy az adott időpillanatban kezdődik a feladat végrehajtása vagy nem. A bináris változók száma arányos lesz az időpontok számával. A szándék mindig megvolt olyan módszer kifejlesztésére, amelyben a szükséges időpontok száma minél kisebb legyen amellett, hogy megtalálja az optimális megoldást. 
+  
+  \item[] \textbf{Precedencia alapú modellek - Precedence based:} Ezeknél a módszereknél, szemben az időfelosztásos módszerekkel, nincs szükség az időhorizont diszkretizációjára, nem használnak ismeretlen paramétert a modellben. Általánosságban jobb számítási eredményeket nyújtanak az általuk kezelt problémákra, azonban ez a készlet sokkal kisebb, mint az időfelosztásos modellekhez tartozó kollekció. Alapvetően a multiproduct és multipurpose receptek esetében használható megfelelően, de kibővíthető, hogy a sokkal általánosabb precedential receptek is megoldhatók legyenek. 
+  
+  Ez a módszer kettő darab bináris változó használ. Az első $Y_{i,j}$, aminek az értéke abban az esetben lesz 1, ha $i$ feladatot $j$ berendezés végzi el. A második változó: $X_{i,j,i'}$. Értéke akkor lesz 1, ha ugyan az a berendezés végzi el az $i$ és $i'$ taszkot, méghozzá úgy, hogy előbb az $i$-t teljesíti. 
+\end{itemize}
+\subsection{Analízis alapú eszközök}
+Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét eseményrendszerek modellezésére \cite{cassandras}. Számos kísérletet tettek ezen eszközök modellezési teljesítményének kiterjesztésére annak érdekében, hogy batch folyamatok ütemezésére is alkalmassá tegyék. A meglévő modelleket időzítéssel egészítették ki, így jöttek létre, a Timed Place Petri Nets (TPPN) and Timed Priced Automata (TPA) módszerek, amelyek Branch and Bound algoritmus használnak azért, hogy a legelőnyösebb megoldást megtalálják. Ezen módszereknek a hatékonysága elmarad a MILP és az S-gráf modell hatékonyságától is.
+\begin{itemize}
+	\item[] \textbf{Időzített automaták:} Ezekben a megközelítésekben a recepteket és a berendezéseket külön modellezik, és a rendszer modellje ezeknek a párhuzamos összetételével jön létre. A bonyolultságos az jelenti, hogy az órák állapota végtelen lehet, és emiatt a rendszer állapotterülete is az lehet.
+	\item[] \textbf{Időzített Petri háló:} Az alap ilyen módszereknél, hogy az átvitel jele késleltetés alapján jön létre. Többen is foglalkoztak a témával, például Ghaeli \cite{ghaeli}, aki batch folyamatok ütemezésével foglalkozott.
+\end{itemize}
 
 \subsection{S-gráf módszertan}
 Az S-gráf keretrendszer volt az első olyan módszer, amely publikált gráf elméleten alapult, valamint szakaszos gyártórendszerek ütemezési problémák megoldására szolgált.\cite{combtech} Ez a keretrendszer egy irányított gráf modellből, az S-gráfból, és a hozzá tartozó algoritmusokból áll. \cite{combframe} Az S-gráf egy speciális irányított gráf, ami ütemezési problémák számára. Nemcsak a recept vizualizációja, hanem egyben matematikai modell is. A keretrendszerben az S-gráf reprezentálja a recepteket, a részleges és a teljes ütemterveket is. Ezekben a gráfokban a termékeket és a feladatokat csúcsok jelölik, amelyeket csomópontoknak (node) nevezünk. Ha két feladat között összeköttetés van, akkor ezt a gráfon lévő, feladatokat reprezentáló csomópontok között lévő nyíl mutatja. Ütemezési döntés nélküli S-gráfot \textbf{Recept gráfnak} nevezzük. Erre példa a~\ref{receptGraf} ábrán\cite{Hegyhati} látható. 

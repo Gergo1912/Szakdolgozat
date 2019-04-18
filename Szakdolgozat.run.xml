@@ -78,8 +78,5 @@
     <requires type="dynamic">
       <file>Szakdolgozat.bcf</file>
     </requires>
-    <requires type="editable">
-      <file>Szakdolgozat.bib</file>
-    </requires>
   </external>
 </requests>
