@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  18 APR 2019 19:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  24 APR 2019 18:51
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -738,19 +738,19 @@ t, vagy be-ren-dezeseket kell hozzarendelni.
  []
 
 [20] [21]
-Overfull \hbox (8.49785pt too wide) in paragraph at lines 47--48
+Overfull \hbox (8.49785pt too wide) in paragraph at lines 48--49
 \OT1/cmr/m/n/12 lizaciora lett ter-vez-ve, a Sol-ver ke-ret-rend-szer-ben meg
 -talalhato tovabbi meg-oldomodszerekkel
  []
 
 [22]
-Overfull \hbox (10.86542pt too wide) in paragraph at lines 54--55
+Overfull \hbox (10.86542pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/12 hozzarendelest meg-en-ged}o fel-ada-tok elvegzesere. Ket 
 tel-je-sen uj fuggveny kerult hozzaadasra
  []
 
 
-Overfull \hbox (4.2811pt too wide) in paragraph at lines 54--55
+Overfull \hbox (4.2811pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/12 az \OT1/cmr/bx/n/12 Up-datePro-fit-Bo-und \OT1/cmr/m/n/12 es a
 z \OT1/cmr/bx/n/12 Up-datePro-fit-Bo-und-From-Task\OT1/cmr/m/n/12 . Ezenkvul
  egy fuggveny
@@ -760,93 +760,167 @@ z \OT1/cmr/bx/n/12 Up-datePro-fit-Bo-und-From-Task\OT1/cmr/m/n/12 . Ezenkvul
 <./Abrak/MakeBatchFeltetelek.jpg, id=320, 600.44325pt x 242.1045pt>
 File: ./Abrak/MakeBatchFeltetelek.jpg Graphic file (type jpg)
 <use ./Abrak/MakeBatchFeltetelek.jpg>
-Package pdftex.def Info: ./Abrak/MakeBatchFeltetelek.jpg  used on input line 61
+Package pdftex.def Info: ./Abrak/MakeBatchFeltetelek.jpg  used on input line 62
 .
 (pdftex.def)             Requested size: 450.33133pt x 181.57793pt.
  [24]
 <./Abrak/MakeBatchPelda.pdf, id=324, 483.6684pt x 201.98611pt>
 File: ./Abrak/MakeBatchPelda.pdf Graphic file (type pdf)
 <use ./Abrak/MakeBatchPelda.pdf>
-Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 69.
+Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 70.
 (pdftex.def)             Requested size: 338.56557pt x 141.3893pt.
  [25 <./Abrak/MakeBatchFeltetelek.jpg> <./Abrak/MakeBatchPelda.pdf>]
-Overfull \hbox (13.78113pt too wide) in paragraph at lines 95--96
+Overfull \hbox (13.78113pt too wide) in paragraph at lines 96--97
 []\OT1/cmr/m/n/12 Mindezeket kovet}oen elerkezik az a resz, ahol a ka-pa-cit
 asok meg-hatarozasa, felulvizsgalata
  []
 
 [26]
-Overfull \hbox (14.2424pt too wide) detected at line 101
+Overfull \hbox (14.2424pt too wide) detected at line 102
 []
  []
 
 
-Overfull \hbox (14.2424pt too wide) detected at line 101
+Overfull \hbox (14.2424pt too wide) detected at line 102
 []
  []
 
 
-Overfull \hbox (2.87856pt too wide) in paragraph at lines 104--105
+Overfull \hbox (2.87856pt too wide) in paragraph at lines 105--106
 []\OT1/cmr/m/n/12 A fuggveny utolso sza-kaszaban tortenik meg a pro-fit k
 orlat meg-hatarozasa, kiszamolasa.
  []
 
 
-Overfull \hbox (0.20766pt too wide) in paragraph at lines 107--108
+Overfull \hbox (0.20766pt too wide) in paragraph at lines 108--109
 \OT1/cmr/m/n/12 meg-adott tasz-kok-hoz, es az ezt kovet}o tasz-kok-hoz tar-to
 zo ka-pa-citasokat kell ujraszamolnia.
  []
 
 
-Overfull \hbox (17.30609pt too wide) in paragraph at lines 109--110
+Overfull \hbox (17.30609pt too wide) in paragraph at lines 110--111
 []\OT1/cmr/m/n/12 Az az el}oz}o pont-ban be-mu-ta-tott fuggvenyt}ol elter}oe
 n nem a S-graf be-me-ne-ti csomopontjait
  []
 
-[27]
-Overfull \hbox (3.061pt too wide) in paragraph at lines 114--115
+[27] [28]
+Overfull \hbox (3.061pt too wide) in paragraph at lines 120--121
 \OT1/cmr/m/n/12 melle. Az ar-gu-men-tu-mo-kat az \OT1/cmr/bx/n/12 ar-gu-ments.
 cpp \OT1/cmr/m/n/12 fajlban le-het elerni. Ez a fajl az \OT1/cmr/bx/n/12 src
 \OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 solver
  []
 
-[28]) [29]
+[29]) [30]
 \openout2 = `Teszteles.aux'.
 
  (Teszteles.tex
 6. fejezet.
-) [30
+[31
 
 
 
 ]
+<./Abrak/tesztfeladat.pdf, id=362, 514.96645pt x 341.4046pt>
+File: ./Abrak/tesztfeladat.pdf Graphic file (type pdf)
+<use ./Abrak/tesztfeladat.pdf>
+Package pdftex.def Info: ./Abrak/tesztfeladat.pdf  used on input line 31.
+(pdftex.def)             Requested size: 360.47406pt x 238.98157pt.
+ [32]
+Overfull \hbox (11.425pt too wide) in paragraph at lines 37--37
+[]\OT1/cmr/bx/n/17.28 Taszkok kozotti ka-pa-citasok valtoztatasanak hata
+sa 
+ []
+
+
+Overfull \hbox (2.12527pt too wide) in paragraph at lines 40--41
+\OT1/cmr/m/it/12 pre-cend-ce \OT1/cmr/m/n/12 tablaban lathato, hogy a tasz-
+kok altal elerhet}o mennyisegek nem 100 szazalekban
+ []
+
+<./Abrak/bemenet1.png, id=366, 693.792pt x 311.36325pt>
+File: ./Abrak/bemenet1.png Graphic file (type png)
+<use ./Abrak/bemenet1.png>
+Package pdftex.def Info: ./Abrak/bemenet1.png  used on input line 44.
+(pdftex.def)             Requested size: 485.65108pt x 217.95279pt.
+
+Overfull \hbox (28.98431pt too wide) in paragraph at lines 44--45
+ [] 
+ []
+
+[33 <./Abrak/tesztfeladat.pdf>]
+<./Abrak/eredmeny1.png, id=382, 156.585pt x 228.25275pt>
+File: ./Abrak/eredmeny1.png Graphic file (type png)
+<use ./Abrak/eredmeny1.png>
+Package pdftex.def Info: ./Abrak/eredmeny1.png  used on input line 53.
+(pdftex.def)             Requested size: 125.26816pt x 182.60243pt.
+ [34 <./Abrak/bemenet1.png>]
+<./Abrak/eredmeny2.png, id=387, 131.2905pt x 165.61874pt>
+File: ./Abrak/eredmeny2.png Graphic file (type png)
+<use ./Abrak/eredmeny2.png>
+Package pdftex.def Info: ./Abrak/eredmeny2.png  used on input line 61.
+(pdftex.def)             Requested size: 111.59743pt x 140.77658pt.
+
+Overfull \hbox (0.2022pt too wide) in paragraph at lines 58--65
+[]\OT1/cmr/m/n/12 A masodik reszben a tasz-kok es a hozzajuk tar-tozo ka-p
+a-citasok, va-la-mint a termekekhez
+ []
+
+<./Abrak/eredmeny3.png, id=388, 218.0145pt x 139.722pt>
+File: ./Abrak/eredmeny3.png Graphic file (type png)
+<use ./Abrak/eredmeny3.png>
+Package pdftex.def Info: ./Abrak/eredmeny3.png  used on input line 69.
+(pdftex.def)             Requested size: 185.31317pt x 118.76425pt.
+[35 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
+<./Abrak/output2.png, id=394, 722.7pt x 385.44pt>
+File: ./Abrak/output2.png Graphic file (type png)
+<use ./Abrak/output2.png>
+Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
+(pdftex.def)             Requested size: 361.3491pt x 192.71953pt.
+ [36 <./Abrak/eredmeny3.png>]
+Overfull \hbox (6.83914pt too wide) in paragraph at lines 94--101
+ [] 
+ []
+
+)
+Overfull \hbox (19.47504pt too wide) in paragraph at lines 105--46
+[]\OT1/cmr/m/n/12 IDE TER-VE-ZEK EGY T[]ABL[]AZATOT AMI-BEN N[]OVE-LEM A TERM[]
+EKEK SZ[]AM[]AT,
+ []
+
+
+Overfull \hbox (25.92891pt too wide) in paragraph at lines 105--46
+[]\OT1/cmr/m/n/12 ES A FON-TO-SABB ADA-TO-KAT T[]AROLNI BENN, EZ[]ALTAL []OSSZE
+-HA-SONL[]ITHAT[]OV[]A
+ []
+
+[37 <./Abrak/output2.png (PNG copy)>]
 \openout2 = `Osszefoglalas.aux'.
 
  (Osszefoglalas.tex
 7. fejezet.
-) [31
+) [38
 
 
 
-] (Szakdolgozat.bbl [32
+] (Szakdolgozat.bbl [39
 
 
 ])
 
-Package caption Warning: Unused \captionsetup[table] on input line 78.
+Package caption Warning: Unused \captionsetup[table] on input line 79.
 See the caption package documentation for explanation.
 
-[33] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
+[40] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux)) ) 
 Here is how much of TeX's memory you used:
- 8787 strings out of 492946
- 135952 string characters out of 3126711
+ 8825 strings out of 492946
+ 136757 string characters out of 3126711
  417442 words of memory out of 3000000
- 12493 multiletter control sequences out of 15000+200000
+ 12525 multiletter control sequences out of 15000+200000
  10135 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,22n,58p,2303b,1706s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,22n,58p,2303b,1173s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USER/AppData/Local/P
@@ -859,9 +933,9 @@ public/amsfonts/cm/cmsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Szakdolgozat.pdf (39 pages, 728433 bytes).
+Output written on Szakdolgozat.pdf (46 pages, 805294 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
+ 446 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
