@@ -34,7 +34,7 @@ A ~\ref{teszFeladat} ábrán látható mintafeladat alapján kerül bemutatásra
 \end{center}
 \end{figure}
 
-\section{Taszkok közötti kapacitások változtatásának hatása}
+\section{Taszkok közti kapacitások változtatásának hatása}
 A módszer sajátossága, hogy a receptélekkel az egyes taszkok kapacitásának meghatározott százaléka hasznosítható. Ezeket a százalékokat a bemeneti fájlban lehet megadni. A példafeladat a~\ref{bemenet1} ábrán megtekinthető bemeneti adatokkal rendelkezik. Az időhorizont a bemutatott mintafeladat során 20. Látható, hogy az egyes részfeladat által lehetséges kapacitásoknak nem a teljes mennyisége kerül tovább a következő köztes feladathoz. Ez, hogy kisebb mennyiség kerül felhasználásra nagy mértékben befolyásolja a korlátot. Emellett az ütemezés megoldását is befolyásolja, mert emiatt lehetséges, hogy bizonyos berendezések nem végezhetik el az adott taszkot.
 
 Az egyszerűség kedvéért a példában csak 2 darab A terméket és 1 darab B terméket gyártunk le. Mindkét termék legyártásából származó jövedelem mindössze egy egység. A \textit{precendce} táblában látható, hogy a taszkok által elérhető mennyiségek nem 100 százalékban kerülnek további felhasználása. Például az A1 és A2 taszkok esetében, az A1-es taszk mennyiségének 80 százaléka kerül továbbítása, illetve ennek a már kisebb mennyiségnek a 70 százalékát veszi fel az A2-es részfeladat. A \textit{proctime} táblán megtalálhatjuk, hogy melyik taszkot, melyik berendezés tudja elvégezni, valamint ezt mennyi idő alatt.
@@ -84,7 +84,9 @@ Ahogy várható volt az újbóli futtatás során eltérések vannak az előzőh
 \end{figure}
 
 \section{Idő horizont változtatás}
-A parancssori paraméterben megadott idő horizont is fontos szerepet tölt be az ütemezés során. Az eddig bemutatott példáknál nem változott meg. Ebben a részben viszont ennek a változtatására bekövetkező változások bemutatása a cél.
+A parancssori paraméterben megadott idő horizont is fontos szerepet tölt be az ütemezés során. Az eddig bemutatott példáknál nem változott meg. Ebben a részben viszont ennek a változtatására bekövetkező változások bemutatása a cél. Az idő horizont azt az időt adja meg, amelyen belül meg kell oldani a feladatot.
+
+Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető. Ha ennél kisebbet adunk meg, akkor a feladat megoldhatatlan, elvégezhetetlen lesz. A \ref{teszFeladat} ábrán látható feladat esetében, amelyet a~\ref{bemenet1} táblákban szereplő adatokkal futtatunk, ez a mindenképpen szükséges idő 12 egység lesz. Szóval ha 11 vagy annál kisebb idő horizontot adunk meg, akkor nem kapunk megoldást a feladatra. A Minden egyes gyártási munkafolyamat során találunk egy felső határt, amelynél hiába biztosunk több időt a munkafolyamat befejezésére, nem lehet nagyobb bevételre szert tenni. A mintafeladatnál ez 17 időegységnél következik be. Ebben az esetben minden berendezés elvégzi azokat a taszkokat, amelyeket el is tud végezni. A példából láthatjuk, hogy minél több idő van a feladat megoldására, annál nagyobb bevételre tehetünk szert. Ennek oka az, hogy több berendezést tudunk beállítani adott feladat elvégzésére, mert már belefér abba az időtartamba, amelyet korlátként megadtunk. Láthatjuk a 15 és 16 időegység esetében, hogy hiába biztosítunk nagyobb idő horizontot nem tudunk nagyobb bevételt elérni. Ilyen eset akkor fordulhat elő, mikor egy részfeladat elvégzéséhez szükséges idő nagyobb, mint amekkora szabadon fennmaradó idővel rendelkezünk még a határ alatt.  
 
 \begin{table}[H]
 	\begin{center}
@@ -93,13 +95,10 @@ A parancssori paraméterben megadott idő horizont is fontos szerepet tölt be a
     	\label{tab:table2}
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 		\hline
-		Idő horizont & \textless =11 & 12 & 13 & 14 & 15 & 16 & \textgreater =17\\
+		Idő horizont & \textless =11 & 12 & 13 & 14 & 15,16 & \textgreater =17\\
 		\hline
-		Max bevétel & nem megoldható & 139,048 & 153,333 & 155.714 & 159,56 & 159,56 & 173,846\\
+		Max bevétel & nem megoldható & 139,048 & 153,333 & 155,714 & 159,56 & 173,846\\
 		\hline
 		\end{tabular}	
-	\end{center}
-	
+	\end{center}	
 \end{table}
-
-IDE TERVEZEK EGY TÁBLÁZATOT AMIBEN NÖVELEM A TERMÉKEK SZÁMÁT, ÉS A FONTOSABB ADATOKAT TÁROLNI BENN, EZÁLTAL ÖSSZEHASONLÍTHATÓVÁ VÁL

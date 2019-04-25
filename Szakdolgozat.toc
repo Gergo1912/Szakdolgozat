@@ -25,6 +25,6 @@
 \select@language {magyar} \contentsline {section}{\numberline {5.5}Argumentum hozz\IeC {\'a}ad\IeC {\'a}s}{29}% 
 \select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{29}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{31}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}z\IeC {\"o}tti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{33}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{33}% 
 \select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o} horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{37}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{38}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{39}% 

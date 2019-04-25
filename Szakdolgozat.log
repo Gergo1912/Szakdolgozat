@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  24 APR 2019 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  25 APR 2019 16:20
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -826,12 +826,6 @@ File: ./Abrak/tesztfeladat.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Abrak/tesztfeladat.pdf  used on input line 31.
 (pdftex.def)             Requested size: 360.47406pt x 238.98157pt.
  [32]
-Overfull \hbox (11.425pt too wide) in paragraph at lines 37--37
-[]\OT1/cmr/bx/n/17.28 Taszkok kozotti ka-pa-citasok valtoztatasanak hata
-sa 
- []
-
-
 Overfull \hbox (2.12527pt too wide) in paragraph at lines 40--41
 \OT1/cmr/m/it/12 pre-cend-ce \OT1/cmr/m/n/12 tablaban lathato, hogy a tasz-
 kok altal elerhet}o mennyisegek nem 100 szazalekban
@@ -876,33 +870,16 @@ File: ./Abrak/output2.png Graphic file (type png)
 <use ./Abrak/output2.png>
 Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
 (pdftex.def)             Requested size: 361.3491pt x 192.71953pt.
- [36 <./Abrak/eredmeny3.png>]
-Overfull \hbox (6.83914pt too wide) in paragraph at lines 94--101
- [] 
- []
-
-)
-Overfull \hbox (19.47504pt too wide) in paragraph at lines 105--46
-[]\OT1/cmr/m/n/12 IDE TER-VE-ZEK EGY T[]ABL[]AZATOT AMI-BEN N[]OVE-LEM A TERM[]
-EKEK SZ[]AM[]AT,
- []
-
-
-Overfull \hbox (25.92891pt too wide) in paragraph at lines 105--46
-[]\OT1/cmr/m/n/12 ES A FON-TO-SABB ADA-TO-KAT T[]AROLNI BENN, EZ[]ALTAL []OSSZE
--HA-SONL[]ITHAT[]OV[]A
- []
-
-[37 <./Abrak/output2.png (PNG copy)>]
+ [36 <./Abrak/eredmeny3.png>] [37 <./Abrak/output2.png (PNG copy)>]) [38]
 \openout2 = `Osszefoglalas.aux'.
 
  (Osszefoglalas.tex
 7. fejezet.
-) [38
+) [39
 
 
 
-] (Szakdolgozat.bbl [39
+] (Szakdolgozat.bbl [40
 
 
 ])
@@ -910,14 +887,14 @@ Overfull \hbox (25.92891pt too wide) in paragraph at lines 105--46
 Package caption Warning: Unused \captionsetup[table] on input line 79.
 See the caption package documentation for explanation.
 
-[40] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
+[41] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux)) ) 
 Here is how much of TeX's memory you used:
- 8825 strings out of 492946
- 136757 string characters out of 3126711
+ 8824 strings out of 492946
+ 136749 string characters out of 3126711
  417442 words of memory out of 3000000
- 12525 multiletter control sequences out of 15000+200000
+ 12524 multiletter control sequences out of 15000+200000
  10135 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,22n,58p,2303b,1173s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -933,9 +910,9 @@ public/amsfonts/cm/cmsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Szakdolgozat.pdf (46 pages, 805294 bytes).
+Output written on Szakdolgozat.pdf (47 pages, 808311 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
+ 449 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
