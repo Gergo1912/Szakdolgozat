@@ -7,24 +7,24 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.3}S-gr\IeC {\'a}f m\IeC {\'o}dszertan}{8}% 
 \select@language {magyar} \contentsline {section}{\numberline {2.3}Throughput vagy profitmaximaliz\IeC {\'a}l\IeC {\'a}s}{12}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {3}Probl\IeC {\'e}ma defin\IeC {\'\i }ci\IeC {\'o}}{14}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Az \IeC {\'u}j m\IeC {\'o}dszer}{17}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Implement\IeC {\'a}l\IeC {\'a}s}{19}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.1}S-gr\IeC {\'a}f solver}{19}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Adatok beolvas\IeC {\'a}sa}{20}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Bemeneti f\IeC {\'a}jl}{20}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Beolvas\IeC {\'o} f\IeC {\"u}ggv\IeC {\'e}ny}{21}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.3}FlexBatchSchProblem oszt\IeC {\'a}ly}{22}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}MakeDecisions f\IeC {\"u}ggv\IeC {\'e}ny}{23}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Branching f\IeC {\"u}ggv\IeC {\'e}ny}{23}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Tov\IeC {\'a}bbi met\IeC {\'o}dusok}{24}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.4}SGraph oszt\IeC {\'a}ly}{25}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}MakeMultipleBatches f\IeC {\"u}ggv\IeC {\'e}ny}{26}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}UpdateProfitBound f\IeC {\"u}ggv\IeC {\'e}ny}{28}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}UpdateProfitBoundFromTask f\IeC {\"u}ggv\IeC {\'e}ny}{29}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Egy\IeC {\'e}b \IeC {\'u}j met\IeC {\'o}dusok}{31}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.5}Argumentum hozz\IeC {\'a}ad\IeC {\'a}s}{31}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{31}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{33}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{35}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o} horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{39}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{41}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Az \IeC {\'u}j m\IeC {\'o}dszer}{19}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Implement\IeC {\'a}l\IeC {\'a}s}{21}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.1}S-gr\IeC {\'a}f solver}{21}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Adatok beolvas\IeC {\'a}sa}{22}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Bemeneti f\IeC {\'a}jl}{22}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Beolvas\IeC {\'o} f\IeC {\"u}ggv\IeC {\'e}ny}{23}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.3}FlexBatchSchProblem oszt\IeC {\'a}ly}{24}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}MakeDecisions f\IeC {\"u}ggv\IeC {\'e}ny}{25}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Branching f\IeC {\"u}ggv\IeC {\'e}ny}{25}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Tov\IeC {\'a}bbi met\IeC {\'o}dusok}{26}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.4}SGraph oszt\IeC {\'a}ly}{27}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}MakeMultipleBatches f\IeC {\"u}ggv\IeC {\'e}ny}{28}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}UpdateProfitBound f\IeC {\"u}ggv\IeC {\'e}ny}{30}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}UpdateProfitBoundFromTask f\IeC {\"u}ggv\IeC {\'e}ny}{31}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Egy\IeC {\'e}b \IeC {\'u}j met\IeC {\'o}dusok}{33}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.5}Argumentum hozz\IeC {\'a}ad\IeC {\'a}s}{33}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{33}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{35}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{37}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o} horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{41}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{43}% 
