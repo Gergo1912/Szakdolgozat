@@ -31,7 +31,7 @@ Következő változtatás az, hogy a fájlban megtalálható precedence tábla k
 \section{FlexBatchSchProblem osztály}
 Ezen osztály feladata a branching, vagyis a szétválasztás elvégzése az ütemezés során. Megállapítja, hogy melyik taszkokhoz melyik berendezést, vagy berendezéseket kell hozzárendelni. Másképpen fogalmazva azt kell meghatároznia, hogy melyik berendezésnek, melyik taszkokat kell elvégezni a lehető legnagyobb profit elérésének érdekében. Az osztály forráskódja megtalálható az \textbf{src\textbackslash solver} mappában a \textbf{flexbatchschproblem.cpp} és a \textbf{flexbatchschproblem.cpp} fájlokban. Ez az osztály egy származtatott osztály. A szülőosztálya az \textbf{EqBasedSchProblem} osztály, aminek szintén van egy ősosztálya az \textbf{SchProblem} osztály. Az új módszer lényege abban áll, hogy egy adott taszkhoz több berendezést is hozzá lehet rendelni, ezért az EqBasedSchProblem osztályban megtalálható Branching függvény az ott szereplő formában ehhez a megoldó módszerhez nem megfelelő. Az eddigi adattagok mellet, az átdolgozott kiválasztás módszer miatt, szükséges új adattagok bevezetése. Az első új adattag egy vectoron belüli vector segítéségvel megvalósított mátrix, amely azt reprezentálja, hogy melyik berendezéshez melyik taszk lett már hozzárendelve. A másik új adattag pedig egy \textbf{IndexSet} típusú változó, amelyben azok a berendezések szerepelnek, amelyek még nincsenek ütemezve, azaz még képes elvégezni taszkokat.
 \newpage
-\begin{lstlisting}[language=C++, caption={FlexBatchSchProblem osztály adattagjai}, frame={single}]
+\begin{lstlisting}[caption={FlexBatchSchProblem osztály adattagjai}]
 class FlexBatchSchProblem: public EqBasedSchProblem{
 protected:
 	vector<vector<bool>> eqAssignedToTask;
@@ -56,14 +56,69 @@ Az \textbf{SGraph} osztály egy olyan osztály, amely támogatja különböző m
 \subsection{MakeMultipleBatches függvény}
 A függvény abban az esetben játszik fontos szerepet, amikor legalább egy termékből egynél több darabot szeretnénk gyártani, vagyis a batch szám nagyobb lesz mint egy. Ilyenkor az adott termékhez tartozó minden taszk számát a program futása során annyira kell módosítani, amennyi terméket kell legyártani. Tekinthetünk úgy rá, hogy minden darab termékhez saját recept készül. A beolvasás eredetileg egy receptet készít el, vagyis minden taszkból csak egy szerepel. Ezen taszkok új száma alapján módosul már az 5.2.2-es pontban említett \textbf{Recipe} osztályban lévő $N\times N$-es mátrixok mérete. A függvény a korábban meglévő módszerekhez szükséges adatok átdolgozásáról gondoskodik, csak az új adattagok módosításával kell foglalkozni, így a taszkok száma már megfelelő lesz, mikor a százalékokat tartalmazó mátrixot módosítani kell. Ezek a százalékok azt jelentik, hogy az él mekkora mennyiségekkel foglalkozik. A bemeneti fájlban megtalálható \textbf{s\textunderscore percent} oszlopban lévő adat azt mutatja meg, hogy az él, abból a taszkból, amelyből indul, onnan azt ott gyártott mennyiség ekkora részét képes átvenni. A \textbf{d\textunderscore percent} oszlopban lévő adatok pedig, hogy az a taszk, amelybe az él befut, ekkora százalékát képes felvenni a mennyiségnek. 
 
-Az eredetileg szereplő taszkok azonosítója megváltozik, mivel az új taszkokat nem csak hozzá adjuk őket a következő azonosítóval. Az ugyanolyan taszkok egymást követő azonosítót kapnak, így a százalékokat tároló mátrixot is módosítani kell. Fontos dolog az, hogy csak az adott recepthez tartozó taszkok között lehet élt behúzni. Nem lehet másik receptben szereplő taszkhoz hozzárendelni. Ezeket különböző feltételek bevonásával lehet megvalósítani. A megvalósítás úgy jött létre, hogy a mátrix  első sorának ellenőrzése kis mértékben eltér a további sorok átvizsgálásától. Ez az eltérése az over változóban mutatkozik meg, mégpedig úgy, hogy ez a változó az ugyanazokat a taszkokat reprezentáló, különböző azonosítókat vizsgálja a feljebb lévő sorokban. A feltételek az ~\ref{MakeBatchFeltetelek} ábrán láthatóak.
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.75]{MakeBatchFeltetelek}
-\caption{Éleken lévő százalékok beállításának feltételei}
-\label{MakeBatchFeltetelek}
-\end{center}
-\end{figure}
+Az eredetileg szereplő taszkok azonosítója megváltozik, mivel az új taszkokat nem csak hozzá adjuk őket a következő azonosítóval. Az ugyanolyan taszkok egymást követő azonosítót kapnak, így a százalékokat tároló mátrixot is módosítani kell. Fontos dolog az, hogy csak az adott recepthez tartozó taszkok között lehet élt behúzni. Nem lehet másik receptben szereplő taszkhoz hozzárendelni. Ezeket különböző feltételek bevonásával lehet megvalósítani. A megvalósítás úgy jött létre, hogy a mátrix  első sorának ellenőrzése kis mértékben eltér a további sorok átvizsgálásától. Ez az eltérése az over változóban mutatkozik meg, mégpedig úgy, hogy ez a változó az ugyanazokat a taszkokat reprezentáló, különböző azonosítókat vizsgálja a feljebb lévő sorokban. A feltételek forráskódjai a következő részben tekinthető meg.
+%A feltételek az ~\ref{MakeBatchFeltetelek} ábrán láthatóak.
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[scale=0.75]{MakeBatchFeltetelek}
+%\caption{Éleken lévő százalékok beállításának feltételei}
+%\label{MakeBatchFeltetelek}
+%\end{center}
+%\end{figure}
+
+\begin{lstlisting}[language=C++, caption={FlexBatchSchProblem osztály adattagjai}, frame={single}]
+if(return_graph->IsProfitMaximization()){
+   vector<vector<double>> newSourcePercents(return_graph->GetRecipe()->GetTaskCount(), vector<double>(return_graph->GetRecipe()->GetTaskCount(),0));
+   vector<vector<double>> newDemandPercents(return_graph->GetRecipe()->GetTaskCount(), vector<double>(return_graph->GetRecipe()->GetTaskCount(),0));
+   bool wasAlreadyP = false;
+   bool over = false;
+   for(uint i = 0; i<return_graph->GetRecipe()->GetTaskCount(); i++){
+      for(uint j = 0; j<return_graph->GetRecipe()->GetTaskCount(); j++){
+         if(i==0){
+            if(j>0 && tasksOldIds[j]!=tasksOldIds[j-1]){
+               wasAlreadyP = false;
+            }
+            if(j>0 && tasksOldIds[j]==tasksOldIds[j-1] && GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j])!=-1 && !wasAlreadyP){
+               wasAlreadyP = true;
+            }
+            if(!wasAlreadyP){
+               newSourcePercents[i][j] = GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j]);
+               newDemandPercents[j][i] = GetRecipe()->getDemandPercent(tasksOldIds[j],tasksOldIds[i]);
+            }
+            else{
+               newSourcePercents[i][j] = -1;
+               newDemandPercents[j][i] = -1;
+            }
+         }
+         else{
+            over = false;
+            if(j>0 && tasksOldIds[j]!=tasksOldIds[j-1]){
+               wasAlreadyP = false;
+            }
+            if(j>0 && tasksOldIds[j]==tasksOldIds[j-1] && GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j])!=-1 && !wasAlreadyP &&newSourcePercents[i][j-1]!=-1){
+               wasAlreadyP = true;
+            }
+            for(uint k = 1; k<=i;k++){
+               if(tasksOldIds[i]==tasksOldIds[i-k] && newSourcePercents[i-k][j]!=-1 ){
+                  over =true;
+               }
+            }
+            if(!wasAlreadyP && !over){
+               newSourcePercents[i][j] = GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j]);
+               newDemandPercents[j][i] = GetRecipe()->getDemandPercent(tasksOldIds[j],tasksOldIds[i]);
+            }
+            else {
+               newSourcePercents[i][j] = -1;
+               newDemandPercents[j][i] = -1;
+            }
+         }
+      }
+   }
+   return_graph->GetRecipe()->SetSourcePercents(newSourcePercents);
+   return_graph->GetRecipe()->SetDemandPercents(newDemandPercents);
+}
+\end{lstlisting}
+
 A könnyebb átláthatóság érdekében az ~\ref{MakeBatchPelda} ábrán látható egy példa. Két darab A terméket akarunk legyártani. Az adatok fájlból való beolvasása során az A1-es taszk megkapja a 0. azonosítót, az A2 pedig az 1. sorszámot. Mivel kettőt gyártunk le, ezért meghívódik a \textbf{MakeMultipleBatches} függvény, és újra kiosztja az azonosítókat, miközben létrehozta kellő számban az eredetiről lemásolt taszkokat. 
 \begin{figure}[H]
 \begin{center}

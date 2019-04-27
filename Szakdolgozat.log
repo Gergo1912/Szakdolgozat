@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  27 APR 2019 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  27 APR 2019 19:15
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -355,23 +355,219 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.s
 ty"
 Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/inconsolata\inconso
+lata.sty"
+Package: inconsolata 2017/01/04 v1.112
+
+`inconsolata-zi4' v1.112, 2017/01/04 Text macros for Inconsolata (msharpe)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+) ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.s
+ty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.t
+ex"
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.
+tex"
+\XKV@toks=\toks28
+\XKV@tempa@toks=\toks29
+)
+\XKV@depth=\count133
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\zifour@ocount=\count134
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
+y"
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 ) (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux))
 \openout1 = `Szakdolgozat.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 58.
 
 
 LaTeX Warning: Please use \usepackage{t1enc} with
@@ -386,17 +582,17 @@ Package magyar.ldf Warning: No effect on fancyhdr.sty,
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count133
+\scratchcounter=\count135
 \scratchdimen=\dimen139
 \scratchbox=\box37
-\nofMPsegments=\count134
-\nofMParguments=\count135
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count136
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count138
 \MPscratchDim=\dimen140
-\MPnumerator=\count137
-\makeMPintoPDFobject=\count138
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks31
 )
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-b
 ase.sty"
@@ -453,7 +649,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-\c@lstlisting=\count139
+\c@lstlisting=\count141
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -491,87 +687,89 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/upquote\upquote.sty
+"
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
 LaTeX Info: Redefining \cal on input line 576.
 LaTeX Info: Redefining \mit on input line 577.
 )
 <kezdo_oldalak.pdf, id=1, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 60.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 60.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 <kezdo_oldalak.pdf, id=4, page=1, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 60.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-
-[1
+ [1
 
 
  <./kezdo_oldalak.pdf>]
 <kezdo_oldalak.pdf, id=33, page=2, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
  [2 <./kezdo_oldalak.pdf>]
 <kezdo_oldalak.pdf, id=46, page=3, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
  [3 <./kezdo_oldalak.pdf>]
 <kezdo_oldalak.pdf, id=51, page=4, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 60.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-
 [4 <./kezdo_oldalak.pdf>] (Szakdolgozat.toc [1
 
 {C:/Users/USER/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
@@ -608,14 +806,7 @@ n az elkesztend}o termek letrehozasa,
 
 
 
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
- ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
- [4]
+] [4]
 <./Abrak/receptek.pdf, id=79, 569.0267pt x 483.6684pt>
 File: ./Abrak/receptek.pdf Graphic file (type pdf)
 <use ./Abrak/receptek.pdf>
@@ -724,7 +915,7 @@ Package pdftex.def Info: ./Abrak/kondiliPelda.png  used on input line 9.
 4. fejezet.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 11.
+               Default added (so using `htbp') on input line 4.
 
 ) [18
 
@@ -763,8 +954,13 @@ Overfull \hbox (14.2891pt too wide) in paragraph at lines 21--22
 altozatlanul kerult fel-hasznalasra. 
  []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 25.
+
 [22]
 Overfull \hbox (36.23645pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 Megallaptja, hogy me-lyik tasz-kok-hoz me-lyik be-ren-dezes
@@ -772,18 +968,15 @@ t, vagy be-ren-dezeseket kell hozzarendelni.
  []
 
 [23]
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
-ty"
-File: lstlang1.sty 2019/02/27 1.8b listings language file
+LaTeX Font Info:    Try loading font information for OT1+zi4 on input line 34.
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/inconsolata\ot1zi4.
+fd"
+File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
 )
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
-ty"
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
-y"
-File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-) [24]
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 34.
+ [24]
 Overfull \hbox (8.49785pt too wide) in paragraph at lines 48--49
 \OT1/cmr/m/n/12 lizaciora lett ter-vez-ve, a Sol-ver ke-ret-rend-szer-ben meg
 -talalhato tovabbi meg-oldomodszerekkel
@@ -802,82 +995,75 @@ z \OT1/cmr/bx/n/12 Up-datePro-fit-Bo-und-From-Task\OT1/cmr/m/n/12 . Ezenkvul
  egy fuggveny
  []
 
-[26]
-<./Abrak/MakeBatchFeltetelek.jpg, id=326, 600.44325pt x 242.1045pt>
-File: ./Abrak/MakeBatchFeltetelek.jpg Graphic file (type jpg)
-<use ./Abrak/MakeBatchFeltetelek.jpg>
-Package pdftex.def Info: ./Abrak/MakeBatchFeltetelek.jpg  used on input line 62
-.
-(pdftex.def)             Requested size: 450.33133pt x 181.57793pt.
- [27]
-<./Abrak/MakeBatchPelda.pdf, id=330, 483.6684pt x 201.98611pt>
+[26] [27] [28]
+<./Abrak/MakeBatchPelda.pdf, id=335, 483.6684pt x 201.98611pt>
 File: ./Abrak/MakeBatchPelda.pdf Graphic file (type pdf)
 <use ./Abrak/MakeBatchPelda.pdf>
-Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 70.
+Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 125.
 (pdftex.def)             Requested size: 338.56557pt x 141.3893pt.
- [28 <./Abrak/MakeBatchFeltetelek.jpg> <./Abrak/MakeBatchPelda.pdf>]
-Overfull \hbox (13.78113pt too wide) in paragraph at lines 96--97
+ [29] [30 <./Abrak/MakeBatchPelda.pdf>]
+Overfull \hbox (13.78113pt too wide) in paragraph at lines 151--152
 []\OT1/cmr/m/n/12 Mindezeket kovet}oen elerkezik az a resz, ahol a ka-pa-cit
 asok meg-hatarozasa, felulvizsgalata
  []
 
-[29]
-Overfull \hbox (14.2424pt too wide) detected at line 102
+
+Overfull \hbox (14.2424pt too wide) detected at line 157
 []
  []
 
 
-Overfull \hbox (14.2424pt too wide) detected at line 102
+Overfull \hbox (14.2424pt too wide) detected at line 157
 []
  []
 
 
-Overfull \hbox (2.87856pt too wide) in paragraph at lines 105--106
+Overfull \hbox (2.87856pt too wide) in paragraph at lines 160--161
 []\OT1/cmr/m/n/12 A fuggveny utolso sza-kaszaban tortenik meg a pro-fit k
 orlat meg-hatarozasa, kiszamolasa.
  []
 
-
-Overfull \hbox (0.20766pt too wide) in paragraph at lines 108--109
+[31]
+Overfull \hbox (0.20766pt too wide) in paragraph at lines 163--164
 \OT1/cmr/m/n/12 meg-adott tasz-kok-hoz, es az ezt kovet}o tasz-kok-hoz tar-to
 zo ka-pa-citasokat kell ujraszamolnia.
  []
 
 
-Overfull \hbox (17.30609pt too wide) in paragraph at lines 110--111
+Overfull \hbox (17.30609pt too wide) in paragraph at lines 165--166
 []\OT1/cmr/m/n/12 Az az el}oz}o pont-ban be-mu-ta-tott fuggvenyt}ol elter}oe
 n nem a S-graf be-me-ne-ti csomopontjait
  []
 
-[30] [31]
-Overfull \hbox (3.061pt too wide) in paragraph at lines 120--121
+[32]
+Overfull \hbox (3.061pt too wide) in paragraph at lines 175--176
 \OT1/cmr/m/n/12 melle. Az ar-gu-men-tu-mo-kat az \OT1/cmr/bx/n/12 ar-gu-ments.
 cpp \OT1/cmr/m/n/12 fajlban le-het elerni. Ez a fajl az \OT1/cmr/bx/n/12 src
 \OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 solver
  []
 
-[32]) [33]
+[33]) [34]
 \openout2 = `Teszteles.aux'.
 
  (Teszteles.tex
 6. fejezet.
-[34
+[35
 
 
 
 ]
-<./Abrak/tesztfeladat.pdf, id=366, 514.96645pt x 341.4046pt>
+<./Abrak/tesztfeladat.pdf, id=371, 514.96645pt x 341.4046pt>
 File: ./Abrak/tesztfeladat.pdf Graphic file (type pdf)
 <use ./Abrak/tesztfeladat.pdf>
 Package pdftex.def Info: ./Abrak/tesztfeladat.pdf  used on input line 31.
 (pdftex.def)             Requested size: 360.47406pt x 238.98157pt.
- [35]
+ [36]
 Overfull \hbox (2.12527pt too wide) in paragraph at lines 40--41
 \OT1/cmr/m/it/12 pre-cend-ce \OT1/cmr/m/n/12 tablaban lathato, hogy a tasz-
 kok altal elerhet}o mennyisegek nem 100 szazalekban
  []
 
-<./Abrak/bemenet1.png, id=370, 693.792pt x 311.36325pt>
+<./Abrak/bemenet1.png, id=375, 693.792pt x 311.36325pt>
 File: ./Abrak/bemenet1.png Graphic file (type png)
 <use ./Abrak/bemenet1.png>
 Package pdftex.def Info: ./Abrak/bemenet1.png  used on input line 44.
@@ -887,14 +1073,14 @@ Overfull \hbox (28.98431pt too wide) in paragraph at lines 44--45
  [] 
  []
 
-[36 <./Abrak/tesztfeladat.pdf>]
-<./Abrak/eredmeny1.png, id=386, 156.585pt x 228.25275pt>
+[37 <./Abrak/tesztfeladat.pdf>]
+<./Abrak/eredmeny1.png, id=392, 156.585pt x 228.25275pt>
 File: ./Abrak/eredmeny1.png Graphic file (type png)
 <use ./Abrak/eredmeny1.png>
 Package pdftex.def Info: ./Abrak/eredmeny1.png  used on input line 53.
 (pdftex.def)             Requested size: 125.26816pt x 182.60243pt.
- [37 <./Abrak/bemenet1.png>]
-<./Abrak/eredmeny2.png, id=391, 131.2905pt x 165.61874pt>
+ [38 <./Abrak/bemenet1.png>]
+<./Abrak/eredmeny2.png, id=396, 131.2905pt x 165.61874pt>
 File: ./Abrak/eredmeny2.png Graphic file (type png)
 <use ./Abrak/eredmeny2.png>
 Package pdftex.def Info: ./Abrak/eredmeny2.png  used on input line 61.
@@ -905,27 +1091,27 @@ Overfull \hbox (0.2022pt too wide) in paragraph at lines 58--65
 a-citasok, va-la-mint a termekekhez
  []
 
-<./Abrak/eredmeny3.png, id=392, 218.0145pt x 139.722pt>
+<./Abrak/eredmeny3.png, id=397, 218.0145pt x 139.722pt>
 File: ./Abrak/eredmeny3.png Graphic file (type png)
 <use ./Abrak/eredmeny3.png>
 Package pdftex.def Info: ./Abrak/eredmeny3.png  used on input line 69.
 (pdftex.def)             Requested size: 185.31317pt x 118.76425pt.
-[38 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
-<./Abrak/output2.png, id=398, 722.7pt x 385.44pt>
+[39 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
+<./Abrak/output2.png, id=403, 722.7pt x 385.44pt>
 File: ./Abrak/output2.png Graphic file (type png)
 <use ./Abrak/output2.png>
 Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
 (pdftex.def)             Requested size: 361.3491pt x 192.71953pt.
- [39 <./Abrak/eredmeny3.png>] [40 <./Abrak/output2.png (PNG copy)>]) [41]
+ [40 <./Abrak/eredmeny3.png>] [41 <./Abrak/output2.png (PNG copy)>]) [42]
 \openout2 = `Osszefoglalas.aux'.
 
  (Osszefoglalas.tex
 7. fejezet.
-) [42
+) [43
 
 
 
-] (Szakdolgozat.bbl [43
+] (Szakdolgozat.bbl [44
 
 
 ])
@@ -933,38 +1119,43 @@ Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
 Package caption Warning: Unused \captionsetup[table] on input line 19.
 See the caption package documentation for explanation.
 
-[44] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
+[45] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux)) ) 
 Here is how much of TeX's memory you used:
- 9526 strings out of 492946
- 147102 string characters out of 3126711
- 425462 words of memory out of 3000000
- 13206 multiletter control sequences out of 15000+200000
- 10436 words of font info for 37 fonts, out of 3000000 for 9000
+ 10390 strings out of 492946
+ 160612 string characters out of 3126711
+ 558838 words of memory out of 3000000
+ 14036 multiletter control sequences out of 15000+200000
+ 11274 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,22n,62p,2303b,1183s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USER/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/USER/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
-/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ex10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi6.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/USER/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/USER/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USER
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
-Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Szakdolgozat.pdf (50 pages, 943476 bytes).
+ 51i,22n,97p,2303b,1850s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/
+enc/dvips/inconsolata/i4-ot1-0.enc} <C:\Users\USER\AppData\Local\MiKTeX\2.9\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/USER/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/USE
+R/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb>
+<C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbxti10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/USER/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/USER/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/USER/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/U
+sers/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/USER/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/USER/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USER/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/User
+s/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmti12.pfb>
+Output written on Szakdolgozat.pdf (51 pages, 918051 bytes).
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
+ 484 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -16,7 +16,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{setspace}
-
+\usepackage{inconsolata}
 
 \geometry{
  left=30mm,
@@ -39,16 +39,21 @@
 \let\Algorithm\algorithm
 \renewcommand\algorithm[1][]{\Algorithm[#1]\setstretch{1.2}}
 
-
-%\lstset{	
-%    frame=single,
-%    language=c++,
-%    tabsize=4,
-%    showstringspaces=false,    
-%    commentstyle=\color{green},
-%    keywordstyle=\color{blue},
-%    stringstyle=\color{red}
-%}
+\lstset{
+	basicstyle=\fontsize{9}{11}\ttfamily,	
+    frame=tb,
+    language=C++,
+    tabsize=2	,
+    numbers=left,,
+    belowcaptionskip=10pt,
+    showstringspaces=false,   
+    breakatwhitespace=true, 
+    breaklines=true,
+    keepspaces=true,
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
 
 \begin{document}
 
