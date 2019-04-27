@@ -12,6 +12,11 @@
 \usepackage{amsmath}
 \usepackage{geometry}
 \usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{setspace}
+
 
 \geometry{
  left=30mm,
@@ -20,16 +25,30 @@
  bottom=25.4mm
 }
 \linespread{1.5}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\footnotesize Throughput maximalizálás szakaszos üzemű rendszerekben}
+\fancyhead[RO]{\footnotesize Molnár Gergő} 
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyfoot[C]{\thepage}
 
-\lstset{	
-    frame=single,
-    language=c++,
-    tabsize=4,
-    showstringspaces=false,    
-    commentstyle=\color{green},
-    keywordstyle=\color{blue},
-    stringstyle=\color{red}
-}
+\renewcommand{\lstlistingname}{Kódrészlet}
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmus}
+\makeatother
+\let\Algorithm\algorithm
+\renewcommand\algorithm[1][]{\Algorithm[#1]\setstretch{1.2}}
+
+
+%\lstset{	
+%    frame=single,
+%    language=c++,
+%    tabsize=4,
+%    showstringspaces=false,    
+%    commentstyle=\color{green},
+%    keywordstyle=\color{blue},
+%    stringstyle=\color{red}
+%}
 
 \begin{document}
 

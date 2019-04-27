@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  26 APR 2019 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  27 APR 2019 17:37
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -309,55 +309,94 @@ Package: enumitem 2019/02/04 v3.8 Customized lists
 \enit@count@id=\count123
 \enitdp@description=\count124
 )
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.s
 ty"
-File: lstlang1.sty 2019/02/27 1.8b listings language file
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip50
+\f@nch@O@elh=\skip51
+\f@nch@O@erh=\skip52
+\f@nch@O@olh=\skip53
+\f@nch@O@orh=\skip54
+\f@nch@O@elf=\skip55
+\f@nch@O@erf=\skip56
+\f@nch@O@olf=\skip57
+\f@nch@O@orf=\skip58
 )
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithms\algorith
+m.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks27
+\c@algorithm=\count125
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithmicx\algpse
+udocode.sty"
+Package: algpseudocode 
+
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithmicx\algori
+thmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count126
+\c@ALG@rem=\count127
+\c@ALG@nested=\count128
+\ALG@tlm=\skip59
+\ALG@thistlm=\skip60
+\c@ALG@Lnr=\count129
+\c@ALG@blocknr=\count130
+\c@ALG@storecount=\count131
+\c@ALG@tmpcounter=\count132
+\ALG@tmplength=\skip61
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.s
 ty"
-File: lstlang1.sty 2019/02/27 1.8b listings language file
-)
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
-y"
-File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+Package: setspace 2011/12/19 v6.7a set line spacing
 ) (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux))
 \openout1 = `Szakdolgozat.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 
 LaTeX Warning: Please use \usepackage{t1enc} with
                \usepackage[magyar]{babel}, to get accented chars hyphenated.
+
+
+Package magyar.ldf Warning: No effect on fancyhdr.sty,
+(magyar.ldf)                please load it before \usepackage[magyar]{babel}.
 
 \AtBeginShipoutBox=\box36
 
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
+\scratchcounter=\count133
 \scratchdimen=\dimen139
 \scratchbox=\box37
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count128
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count136
 \MPscratchDim=\dimen140
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
-\everyMPtoPDFconversion=\toks28
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks29
 )
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-b
 ase.sty"
@@ -414,7 +453,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-\c@lstlisting=\count131
+\c@lstlisting=\count139
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -459,32 +498,32 @@ LaTeX Info: Redefining \mit on input line 577.
 <kezdo_oldalak.pdf, id=1, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 55.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 55.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 <kezdo_oldalak.pdf, id=4, page=1, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 
 [1
@@ -494,43 +533,43 @@ Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 36.
 <kezdo_oldalak.pdf, id=33, page=2, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
  [2 <./kezdo_oldalak.pdf>]
 <kezdo_oldalak.pdf, id=46, page=3, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
  [3 <./kezdo_oldalak.pdf>]
 <kezdo_oldalak.pdf, id=51, page=4, 597.432pt x 845.07718pt>
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 File: kezdo_oldalak.pdf Graphic file (type pdf)
 <use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 36.
+Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 55.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 
 [4 <./kezdo_oldalak.pdf>] (Szakdolgozat.toc [1
@@ -577,7 +616,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
  [4]
-<./Abrak/receptek.pdf, id=78, 569.0267pt x 483.6684pt>
+<./Abrak/receptek.pdf, id=79, 569.0267pt x 483.6684pt>
 File: ./Abrak/receptek.pdf Graphic file (type pdf)
 <use ./Abrak/receptek.pdf>
 Package pdftex.def Info: ./Abrak/receptek.pdf  used on input line 27.
@@ -618,12 +657,12 @@ Overfull \hbox (13.00055pt too wide) in paragraph at lines 72--74
 /m/n/12 ne-vezzuk. Ketfajta fugg}oseget tu-dunk megkulonboztet-
  []
 
-<./Abrak/receptGraf.pdf, id=103, 526.34753pt x 295.88022pt>
+<./Abrak/receptGraf.pdf, id=104, 526.34753pt x 295.88022pt>
 File: ./Abrak/receptGraf.pdf Graphic file (type pdf)
 <use ./Abrak/receptGraf.pdf>
 Package pdftex.def Info: ./Abrak/receptGraf.pdf  used on input line 80.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
-<./Abrak/utemezesiGraf.pdf, id=104, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf.pdf, id=105, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf.pdf  used on input line 88.
@@ -636,19 +675,19 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 93.
-<./Abrak/utemezesiGraf2.pdf, id=120, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf2.pdf, id=121, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf2.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf2.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf2.pdf  used on input line 96.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
 
 [10 <./Abrak/utemezesiGraf.pdf>]
-<./Abrak/GanttDiagram.pdf, id=136, 540.5739pt x 284.4991pt>
+<./Abrak/GanttDiagram.pdf, id=137, 540.5739pt x 284.4991pt>
 File: ./Abrak/GanttDiagram.pdf Graphic file (type pdf)
 <use ./Abrak/GanttDiagram.pdf>
 Package pdftex.def Info: ./Abrak/GanttDiagram.pdf  used on input line 104.
 (pdftex.def)             Requested size: 270.28629pt x 142.24919pt.
-<./Abrak/throughput_alg.jpg, id=137, 215.6055pt x 246.9225pt>
+<./Abrak/throughput_alg.jpg, id=138, 215.6055pt x 246.9225pt>
 File: ./Abrak/throughput_alg.jpg Graphic file (type jpg)
 <use ./Abrak/throughput_alg.jpg>
 Package pdftex.def Info: ./Abrak/throughput_alg.jpg  used on input line 113.
@@ -658,7 +697,7 @@ Package pdftex.def Info: ./Abrak/throughput_alg.jpg  used on input line 113.
 pdfTeX warning: pdflatex (file ./Abrak/GanttDiagram.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 >]
-<./Abrak/throughput_szemleltetes.jpg, id=267, 598.6365pt x 372.1905pt>
+<./Abrak/throughput_szemleltetes.jpg, id=268, 598.6365pt x 372.1905pt>
 File: ./Abrak/throughput_szemleltetes.jpg Graphic file (type jpg)
 <use ./Abrak/throughput_szemleltetes.jpg>
 Package pdftex.def Info: ./Abrak/throughput_szemleltetes.jpg  used on input lin
@@ -669,7 +708,7 @@ e 123.
 
  (Problema_definicio.tex
 3. fejezet.
-<./Abrak/kondiliPelda.png, id=275, 633.567pt x 409.53pt>
+<./Abrak/kondiliPelda.png, id=276, 633.567pt x 409.53pt>
 File: ./Abrak/kondiliPelda.png Graphic file (type png)
 <use ./Abrak/kondiliPelda.png>
 Package pdftex.def Info: ./Abrak/kondiliPelda.png  used on input line 9.
@@ -678,39 +717,25 @@ Package pdftex.def Info: ./Abrak/kondiliPelda.png  used on input line 9.
 
 
 
-] [15 <./Abrak/kondiliPelda.png>]
-Overfull \vbox (3.71951pt too high) has occurred while \output is active []
-
-
-[16] [17]) [18]
+] [15 <./Abrak/kondiliPelda.png>] [16]) [17]
 \openout2 = `Az_uj_modszer.aux'.
 
  (Az_uj_modszer.tex
 4. fejezet.
-<./Abrak/uj_pszeudo.pdf, id=295, 597.50786pt x 845.01837pt>
-File: ./Abrak/uj_pszeudo.pdf Graphic file (type pdf)
-<use ./Abrak/uj_pszeudo.pdf>
-Package pdftex.def Info: ./Abrak/uj_pszeudo.pdf  used on input line 4.
-(pdftex.def)             Requested size: 478.00693pt x 676.01563pt.
 
-Overfull \hbox (21.34016pt too wide) in paragraph at lines 4--5
- [] 
- []
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `htbp') on input line 11.
 
-) [19
+) [18
 
 
 
-]
-Overfull \vbox (144.45108pt too high) has occurred while \output is active []
-
-
-[20 <./Abrak/uj_pszeudo.pdf>]
+] [19]
 \openout2 = `Implementalas.aux'.
 
  (Implementalas.tex
 5. fejezet.
-[21
+[20
 
 
 
@@ -726,7 +751,7 @@ Overfull \hbox (4.36827pt too wide) in paragraph at lines 15--16
 solodo in-formaciok. []Ujonnan
  []
 
-[22]
+[21]
 Overfull \hbox (25.04352pt too wide) in paragraph at lines 16--18
 []\OT1/cmr/m/n/12 Precendence tabla, amely a grafban sze-repl}o eleket szeml
 elteti az el kezd}o csomopontjanak
@@ -740,19 +765,31 @@ Overfull \hbox (14.2891pt too wide) in paragraph at lines 21--22
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 25.
-[23]
+[22]
 Overfull \hbox (36.23645pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 Megallaptja, hogy me-lyik tasz-kok-hoz me-lyik be-ren-dezes
 t, vagy be-ren-dezeseket kell hozzarendelni.
  []
 
-[24] [25]
+[23]
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
+("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
+y"
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+) [24]
 Overfull \hbox (8.49785pt too wide) in paragraph at lines 48--49
 \OT1/cmr/m/n/12 lizaciora lett ter-vez-ve, a Sol-ver ke-ret-rend-szer-ben meg
 -talalhato tovabbi meg-oldomodszerekkel
  []
 
-[26]
+[25]
 Overfull \hbox (10.86542pt too wide) in paragraph at lines 55--56
 \OT1/cmr/m/n/12 hozzarendelest meg-en-ged}o fel-ada-tok elvegzesere. Ket 
 tel-je-sen uj fuggveny kerult hozzaadasra
@@ -765,26 +802,26 @@ z \OT1/cmr/bx/n/12 Up-datePro-fit-Bo-und-From-Task\OT1/cmr/m/n/12 . Ezenkvul
  egy fuggveny
  []
 
-[27]
-<./Abrak/MakeBatchFeltetelek.jpg, id=338, 600.44325pt x 242.1045pt>
+[26]
+<./Abrak/MakeBatchFeltetelek.jpg, id=326, 600.44325pt x 242.1045pt>
 File: ./Abrak/MakeBatchFeltetelek.jpg Graphic file (type jpg)
 <use ./Abrak/MakeBatchFeltetelek.jpg>
 Package pdftex.def Info: ./Abrak/MakeBatchFeltetelek.jpg  used on input line 62
 .
 (pdftex.def)             Requested size: 450.33133pt x 181.57793pt.
- [28]
-<./Abrak/MakeBatchPelda.pdf, id=342, 483.6684pt x 201.98611pt>
+ [27]
+<./Abrak/MakeBatchPelda.pdf, id=330, 483.6684pt x 201.98611pt>
 File: ./Abrak/MakeBatchPelda.pdf Graphic file (type pdf)
 <use ./Abrak/MakeBatchPelda.pdf>
 Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 70.
 (pdftex.def)             Requested size: 338.56557pt x 141.3893pt.
- [29 <./Abrak/MakeBatchFeltetelek.jpg> <./Abrak/MakeBatchPelda.pdf>]
+ [28 <./Abrak/MakeBatchFeltetelek.jpg> <./Abrak/MakeBatchPelda.pdf>]
 Overfull \hbox (13.78113pt too wide) in paragraph at lines 96--97
 []\OT1/cmr/m/n/12 Mindezeket kovet}oen elerkezik az a resz, ahol a ka-pa-cit
 asok meg-hatarozasa, felulvizsgalata
  []
 
-[30]
+[29]
 Overfull \hbox (14.2424pt too wide) detected at line 102
 []
  []
@@ -812,35 +849,35 @@ Overfull \hbox (17.30609pt too wide) in paragraph at lines 110--111
 n nem a S-graf be-me-ne-ti csomopontjait
  []
 
-[31] [32]
+[30] [31]
 Overfull \hbox (3.061pt too wide) in paragraph at lines 120--121
 \OT1/cmr/m/n/12 melle. Az ar-gu-men-tu-mo-kat az \OT1/cmr/bx/n/12 ar-gu-ments.
 cpp \OT1/cmr/m/n/12 fajlban le-het elerni. Ez a fajl az \OT1/cmr/bx/n/12 src
 \OMS/cmsy/b/n/12 n\OT1/cmr/bx/n/12 solver
  []
 
-[33]) [34]
+[32]) [33]
 \openout2 = `Teszteles.aux'.
 
  (Teszteles.tex
 6. fejezet.
-[35
+[34
 
 
 
 ]
-<./Abrak/tesztfeladat.pdf, id=378, 514.96645pt x 341.4046pt>
+<./Abrak/tesztfeladat.pdf, id=366, 514.96645pt x 341.4046pt>
 File: ./Abrak/tesztfeladat.pdf Graphic file (type pdf)
 <use ./Abrak/tesztfeladat.pdf>
 Package pdftex.def Info: ./Abrak/tesztfeladat.pdf  used on input line 31.
 (pdftex.def)             Requested size: 360.47406pt x 238.98157pt.
- [36]
+ [35]
 Overfull \hbox (2.12527pt too wide) in paragraph at lines 40--41
 \OT1/cmr/m/it/12 pre-cend-ce \OT1/cmr/m/n/12 tablaban lathato, hogy a tasz-
 kok altal elerhet}o mennyisegek nem 100 szazalekban
  []
 
-<./Abrak/bemenet1.png, id=382, 693.792pt x 311.36325pt>
+<./Abrak/bemenet1.png, id=370, 693.792pt x 311.36325pt>
 File: ./Abrak/bemenet1.png Graphic file (type png)
 <use ./Abrak/bemenet1.png>
 Package pdftex.def Info: ./Abrak/bemenet1.png  used on input line 44.
@@ -850,14 +887,14 @@ Overfull \hbox (28.98431pt too wide) in paragraph at lines 44--45
  [] 
  []
 
-[37 <./Abrak/tesztfeladat.pdf>]
-<./Abrak/eredmeny1.png, id=399, 156.585pt x 228.25275pt>
+[36 <./Abrak/tesztfeladat.pdf>]
+<./Abrak/eredmeny1.png, id=386, 156.585pt x 228.25275pt>
 File: ./Abrak/eredmeny1.png Graphic file (type png)
 <use ./Abrak/eredmeny1.png>
 Package pdftex.def Info: ./Abrak/eredmeny1.png  used on input line 53.
 (pdftex.def)             Requested size: 125.26816pt x 182.60243pt.
- [38 <./Abrak/bemenet1.png>]
-<./Abrak/eredmeny2.png, id=403, 131.2905pt x 165.61874pt>
+ [37 <./Abrak/bemenet1.png>]
+<./Abrak/eredmeny2.png, id=391, 131.2905pt x 165.61874pt>
 File: ./Abrak/eredmeny2.png Graphic file (type png)
 <use ./Abrak/eredmeny2.png>
 Package pdftex.def Info: ./Abrak/eredmeny2.png  used on input line 61.
@@ -868,27 +905,27 @@ Overfull \hbox (0.2022pt too wide) in paragraph at lines 58--65
 a-citasok, va-la-mint a termekekhez
  []
 
-<./Abrak/eredmeny3.png, id=404, 218.0145pt x 139.722pt>
+<./Abrak/eredmeny3.png, id=392, 218.0145pt x 139.722pt>
 File: ./Abrak/eredmeny3.png Graphic file (type png)
 <use ./Abrak/eredmeny3.png>
 Package pdftex.def Info: ./Abrak/eredmeny3.png  used on input line 69.
 (pdftex.def)             Requested size: 185.31317pt x 118.76425pt.
-[39 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
-<./Abrak/output2.png, id=410, 722.7pt x 385.44pt>
+[38 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
+<./Abrak/output2.png, id=398, 722.7pt x 385.44pt>
 File: ./Abrak/output2.png Graphic file (type png)
 <use ./Abrak/output2.png>
 Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
 (pdftex.def)             Requested size: 361.3491pt x 192.71953pt.
- [40 <./Abrak/eredmeny3.png>] [41 <./Abrak/output2.png (PNG copy)>]) [42]
+ [39 <./Abrak/eredmeny3.png>] [40 <./Abrak/output2.png (PNG copy)>]) [41]
 \openout2 = `Osszefoglalas.aux'.
 
  (Osszefoglalas.tex
 7. fejezet.
-) [43
+) [42
 
 
 
-] (Szakdolgozat.bbl [44
+] (Szakdolgozat.bbl [43
 
 
 ])
@@ -896,33 +933,38 @@ Package pdftex.def Info: ./Abrak/output2.png  used on input line 80.
 Package caption Warning: Unused \captionsetup[table] on input line 19.
 See the caption package documentation for explanation.
 
-[45] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
+[44] (Szakdolgozat.aux (Bevezetes.aux) (Irodalmi_attekintes.aux)
 (Problema_definicio.aux) (Az_uj_modszer.aux) (Implementalas.aux) (Teszteles.aux
 ) (Osszefoglalas.aux)) ) 
 Here is how much of TeX's memory you used:
- 8830 strings out of 492946
- 136894 string characters out of 3126711
- 417442 words of memory out of 3000000
- 12529 multiletter control sequences out of 15000+200000
- 10135 words of font info for 36 fonts, out of 3000000 for 9000
+ 9526 strings out of 492946
+ 147102 string characters out of 3126711
+ 425462 words of memory out of 3000000
+ 13206 multiletter control sequences out of 15000+200000
+ 10436 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,22n,58p,2303b,1173s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,22n,62p,2303b,1183s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USER/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/USER/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
-Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USER/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Szakdolgozat.pdf (51 pages, 904946 bytes).
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi12.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/USER/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/USER/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USER
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
+Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Szakdolgozat.pdf (50 pages, 943476 bytes).
 PDF statistics:
  468 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
