@@ -101,17 +101,41 @@ Ugyanahhoz a berendezéshez rendelt részfeladatok végrehajtási sorrendje kön
 Gyakran használt mód az ütemezési feladatok ábrázolására a Gantt-diagram\cite{ganttwwf}\cite{ganttofw}. Ezeken a diagramokon a függőleges tengelyen a berendezések, míg a vízszintes tengelyen a pedig az idő szerepel. Az ábrán látható erőforrások szemléltetik az erőforrások elfoglaltságát. Egy Gantt diagram látható a~\ref{GanttDiagram} ábrán.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.5]{GanttDiagram}
+\includegraphics[scale=0.7]{GanttDiagram}
 \caption{Egy ütemezés Gantt diagramon való megjelenítése}
 \label{GanttDiagram}
 \end{center}
 \end{figure}
+
+\subsection{A makespan minimalizálás algoritmusa}
+Az algoritmus \ref{makespanKod} első lépésben inicializálja a $makespan^{cb}$ értékét végtelennel, majd beállítja a $S$ halmazt, amelyben az ütemezés során a nyitott részproblémák szerepelnek. Kezdetben csak a gyökér probléma szerepel benne, vagyis egy recept gráf bármilyen hozzárendelés nélkül. A \textbf{recipe} függvény visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma recept gráfját, ahol
+\begin{itemize}
+  \item[] $N$: taszkokat és termékeket reprezentáló csomópontok halmaza	
+  \item[] $A_1$: a recept élek halmaza
+  \item[] $A_2$: ütemezési élek halmaza, ebben a pillanatban még üres
+  \item[] $w_{i,i'}$: recept élek súlya, ami az $i$ taszk minimális feldolgozási ideje .
+\end{itemize}
+
+Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy tetszőleges részprobléma kerül kiválasztásra, majd az $s$-ből eltávolításra. Ennek a függvénynek a viselkedése a különböző megvalósításokban más és más lehet, ami más keresési stratégiát eredményez.
+
+Az iteráció elején kiértékelődik, hogy a részprobléma képes-e optimális megoldást nyújtani, vagy sem. Ez a \textbf{bound} függvénnyel történik. A leggyakrabban a leghosszabb út keresésével vizsgálja meg a részproblémát \textbf{bound} függvény, de lehetséges LP alapú modellek használata is. Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és a következő részprobléma kerül kiválasztásra, amennyiben létezik.
+
+Ha viszont kisebb a korlát, akkor ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, azaz a részprobléma teljesen ütemezett. Ha így van a legjobb megoldás frissítésre kerül. Ha még szükséges további ütemezés, akkor a  \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J'$ halmazból. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot. Ezek kapnak egy másolatot az aktuális S-gráfról. Ezt kibővíti az új hozzárendelés alapján az ütemezési élekkel. Végezetül pedig az új részproblémát hozzáadja az $S$ halmazhoz. Ha ez az $S$ halmaz üres lesz, akkor a $G^{cb}$ és a hozzárendelések leírják az optimális megoldást, és ha legalább egy megvalósítható akkor az algoritmus visszatér ezzel az értékkel. Ellenkező esetben nem ad vissza semmit.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.8]{makespanKod}
+\caption{A makespan minimalizáló algoritmus pszeudó kódja\cite{Hegyhati}}
+\label{makespanKod}
+\end{center}
+\end{figure}
+
 \section{Throughput vagy profitmaximalizálás}
 Eredetileg az S-gráf keretrendszer makespan minimalizációs problémák megoldására lett létrehozva. Azonban a későbbiekben bővítésre került, így ezután throughput, profitmaximalizációs problémák megoldására is lehet alkalmazni. Az alapötlet Majozi and Friedler \cite{majozifriedler}, valamint Holczinger \cite{holczinger} nevéhez fűződik.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.8]{throughput_alg}
-\caption{A jövedelem maximalizáló algoritmus pszeudó kódja}
+\caption{A jövedelem maximalizáló algoritmus pszeudó kódja \cite{Hegyhati}}
 \label{throughput_alg}
 \end{center}
 \end{figure}

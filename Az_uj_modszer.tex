@@ -1,6 +1,19 @@
 \chapter{Az új módszer}
+Az új algoritmus alapját a\ref{makespanKod} ábrán látható makespan minimalizáló algoritmus adja. 
 
-\begin{algorithm}
+Az algoritmus változóinak elnevezése a következő:
+\begin{itemize}
+	\item $profit^{cb}$: a megtalált legjobb megoldás
+	\item $SOAA$ (Set Of Already Assigned): azon berendezések halmaza
+	\item $S$: a nyitott részproblémák halmaza
+	\item $PP$: az aktuális részprobléma
+	\item $I$: a taszkok halmaza
+	\item $J$: a berendezések halmaza
+	\item $TH$: az időhorizont
+	\item $w$: a recept él súlya
+\end{itemize}
+
+\begin{algorithm}[H]
 \caption{Párhuzamos taszkvégrehajtást megvalósító algoritmus}
 \begin{algorithmic}[1]
 \Procedure{Maxprofit}{TH,batchsize}
