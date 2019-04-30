@@ -1,23 +1,59 @@
 \chapter{Az új módszer}
-Az új algoritmus alapját a\ref{makespanKod} ábrán látható makespan minimalizáló algoritmus adja. 
+Az új algoritmus alapját a \ref{makespanKod} ábrán látható makespan minimalizáló algoritmus adja. Az újonnan létrehozott algoritmus korlátját már nem a makespan adja, hanem a jövedelmek. További változtatás, hogy egy taszkot nem csak egy berendezés tud végrehajtani, hanem képesek különböző kapacitású berendezések adott taszkokat párhuzamosan is végezni. A függvényt \aref{parhuzamos}. algoritmus mutatja be.
 
-Az algoritmus változóinak elnevezése a következő:
+Az algoritmus bemenetét az időhorizont ($TH$), valamint a batch méret adja. Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén. A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések lesznek benne, amelyek már hozzá vannak rendelve egy adott taszkhoz. A \textbf{recipe} függvény ugyanúgy, ahogy a makespan minimalizáló algoritmus esetében van, visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma recept gráfját, ahol
+\begin{itemize}
+  \item[] $N$: taszkokat és termékeket reprezentáló csomópontok halmaza	
+  \item[] $A_1$: a recept élek halmaza
+  \item[] $A_2$: ütemezési élek halmaza, ebben a pillanatban még üres
+  \item[] $w_{i,i'}$: recept élek súlya, ami az $i$ taszk minimális feldolgozási ideje.
+\end{itemize} 
+
+A \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát. Ezzel egyidejűleg a $S$-ből kikerül a kiválasztott részprobléma. A kiválasztott részprobléma a $PP$ változóba kerül a következő formában  $(G(N,A_1,A_2,w),I',J',\alpha)$, ahol 
+\begin{itemize}
+  \item[] $(G(N,A_1,A_2,w)$: az ütemezési gráf	
+  \item[] $I'$: a nem ütemezett taszkok halmaza
+  \item[] $J'$: azon berendezések halmaza, amelyeket lehet még taszkokhoz rendelni
+  \item[] $\alpha$: taszk-berendezés hozzárendelések $(i,j)$ párok formájában.
+\end{itemize}
+
+Ezek után az algoritmus megvizsgálja a kiválasztott részprobléma feasible-itását, azaz azt, hogy a megadott időhorizonton belül megvalósítható-e. Ha igen, akkor újabb vizsgálat következik arra vonatkozóan, hogy az eddigi legjobb megoldás, a legnagyobb profitnál nagyobb jövedelemre lehet szert tenni a vizsgált részproblémával. Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik kerül részprobléma kerül kiválasztásra, amennyiben még van ilyen.
+
+Ha mindkét feltételnek megfelel a részprobléma akkor megnézi az algoritmus, hogy levél-e. Ez azt jelenti, hogy található-e még olyan berendezés, amelyet lehet taszkhoz rendelni. Abban ez esetben ($J'== \emptyset$) ha nincs ilyen berendezés, azaz a probléma levélnek minősül, akkor a jelenlegi legjobb megoldás $profit^{cb}$ értéke felülíródik a vizsgált részprobléma által nyújtott megoldással. Ha viszont nem levél, akkor egy berendezés kerül kiválasztásra a még elérhető berendezések halmazából. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes olyan lehetséges taszkot, ami még nem volt korábban hozzárendelve. Minden ilyen taszkhoz készül egy másolat a jelenlegi S-gráfról, ami kiegészül az új hozzárendelésekkel.
+
+Olyan taszkok esetében, amiket még egy berendezés sem végez, viszont a kiválasztott $j$ berendezésen kívül más berendezés is meg tud oldani, olyan döntés is születhet, hogy az adott berendezés nem is fogja azt elvégezni. Ilyenkor az $S$ halmaz kibővül egy olyan részproblémával, ahol a $j$ berendezés már nem végez több taszkot. 
+
+Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megoldással, vagyis az elérhető legnagyobb bevétel értékével.
+
+\newpage
+\underline{Az algoritmus változóinak elnevezése a következő:}
 \begin{itemize}
 	\item $profit^{cb}$: a megtalált legjobb megoldás
-	\item $SOAA$ (Set Of Already Assigned): azon berendezések halmaza
+	\item $SOAA$ (Set Of Already Assigned): azon taszkok halmaza, amelyek már hozzá vannak rendelve az adott berendezéshez
 	\item $S$: a nyitott részproblémák halmaza
 	\item $PP$: az aktuális részprobléma
 	\item $I$: a taszkok halmaza
 	\item $J$: a berendezések halmaza
 	\item $TH$: az időhorizont
+	\item $A$: élek halmaz
 	\item $w$: a recept él súlya
+	\item $profit\_bound$: a kiválasztott részprobléma profit korlátja
+\end{itemize}
+
+\underline{Az algoritmusban meghívott függvények:}
+\begin{itemize}
+	\item \textit{recipe}: egy recept gráfot ad vissza
+	\item \textit{select\_remove}: kiválaszt egy részproblémát valamilyen módszer alapján
+	\item \textit{Feasible}: megmutatja, hogy a részprobléma a megadott idő horizonton belül megoldható-e
+	\item \textit{IsLeaf}: megmutatja, hogy a részprobléma levélnek minősül-e ($J'==\emptyset$)
 \end{itemize}
 
 \begin{algorithm}[H]
 \caption{Párhuzamos taszkvégrehajtást megvalósító algoritmus}
+\label{parhuzamos}
 \begin{algorithmic}[1]
 \Procedure{Maxprofit}{TH,batchsize}
-	\State $profit^{cb} = -\infty$
+	\State $profit^{cb}:= -\infty$
 	\State $SOAA:= \emptyset$
 	\State $S:= {(recipe(),I,J,\emptyset)}$
 	\While{$S \neq \emptyset$}
@@ -25,11 +61,11 @@ Az algoritmus változóinak elnevezése a következő:
 		\If {$PP.Feasible(TH)$}
 			\If{$PP.proift\_bound > profit^{cb}$}
 				\If{$PP.IsLeaf()$}
-					\State $profit^{cb}.Update(PP.proift\_bound)$
+					\State $profit^{cb}:=PP.profit\_bound$
 				\Else
 					\State $j:=select(J')$
 					\ForAll	{$i \in I_j \setminus SOAA$}
-						\State $SOAA^i: = SOAA^i\cup j$
+						\State $SOAA^i: = SOAA^i\cup i$
 						\State $G^i(N,A_1^i,A_2^i,w^i):= G(N,A_1,A_2,w)$
 						\ForAll	{$i' \in \bigcup_{(i',j) \in \alpha} I_{i^i}^+  \setminus \{i\} $}
 							\State $A_2^i:= A_2^i \cup \{(i',i)\}$				
@@ -37,10 +73,10 @@ Az algoritmus változóinak elnevezése a következő:
 						\ForAll {$ i' \in I_i^+$}
 							\State $w_{i,i'}^i:= t_{i,j}^{pr}$
 						\EndFor
-						\State $S:= S \cup (G^i(N,A_1,A_2^i,w^i),J',\alpha \cup \{(i,j)\})$
+						\State $S:= S \cup (G^i(N,A_1,A_2^i,w^i),I,J',\alpha \cup \{(i,j)\})$
 					\EndFor
-					\If{$I \subseteq \bigcup_{SOAA^i = \emptyset, j = j'}I_j' $}
-						\State $S:= S \cup (G(N,A_1,A_2),J'\setminus\{j\},\alpha)$
+					\If{$I \subseteq \bigcup_{SOAA^i = \emptyset, j = j'}I_j $}
+						\State $S:= S \cup (G(N,A_1,A_2),I,J'\setminus\{j\},\alpha)$
 					\EndIf
 				\EndIf
 			\EndIf

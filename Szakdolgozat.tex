@@ -17,6 +17,7 @@
 \usepackage{algpseudocode}
 \usepackage{setspace}
 \usepackage{inconsolata}
+\usepackage[hidelinks]{hyperref}
 
 \geometry{
  left=30mm,
@@ -60,6 +61,8 @@
 \includepdf[pages = {1-4}]{kezdo_oldalak.pdf}
 \pagenumbering{gobble}
 \tableofcontents
+\listoffigures 
+\listoftables
 \clearpage
 \pagenumbering{arabic}
 \include{Bevezetes}
@@ -71,6 +74,5 @@
 \include{Osszefoglalas}
 \bibliographystyle{ieeetr}
 \bibliography{Szakdolgozat}
-
 
 \end{document}

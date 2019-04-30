@@ -1,0 +1,31 @@
+\BOOKMARK [0][-]{chapter.1}{Bevezet\351s}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Irodalmi \341ttekint\351s}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Ipari \374temez\351si feladatok}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Megold\363 m\363dszerek}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{MILP modellek}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Anal\355zis alap\372 eszk\366z\366k}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.3}{S-gr\341f m\363dszertan}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.4}{A makespan minimaliz\341l\341s algoritmusa}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Throughput vagy profitmaximaliz\341l\341s}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Probl\351ma defin\355ci\363}{}% 10
+\BOOKMARK [0][-]{chapter.4}{Az \372j m\363dszer}{}% 11
+\BOOKMARK [0][-]{chapter.5}{Implement\341l\341s}{}% 12
+\BOOKMARK [1][-]{section.5.1}{S-gr\341f solver}{chapter.5}% 13
+\BOOKMARK [1][-]{section.5.2}{Adatok beolvas\341sa}{chapter.5}% 14
+\BOOKMARK [2][-]{subsection.5.2.1}{Bemeneti f\341jl}{section.5.2}% 15
+\BOOKMARK [2][-]{subsection.5.2.2}{Beolvas\363 f\374ggv\351ny}{section.5.2}% 16
+\BOOKMARK [1][-]{section.5.3}{FlexBatchSchProblem oszt\341ly}{chapter.5}% 17
+\BOOKMARK [2][-]{subsection.5.3.1}{MakeDecisions f\374ggv\351ny}{section.5.3}% 18
+\BOOKMARK [2][-]{subsection.5.3.2}{Branching f\374ggv\351ny}{section.5.3}% 19
+\BOOKMARK [2][-]{subsection.5.3.3}{Tov\341bbi met\363dusok}{section.5.3}% 20
+\BOOKMARK [1][-]{section.5.4}{SGraph oszt\341ly}{chapter.5}% 21
+\BOOKMARK [2][-]{subsection.5.4.1}{MakeMultipleBatches f\374ggv\351ny}{section.5.4}% 22
+\BOOKMARK [2][-]{subsection.5.4.2}{UpdateProfitBound f\374ggv\351ny}{section.5.4}% 23
+\BOOKMARK [2][-]{subsection.5.4.3}{UpdateProfitBoundFromTask f\374ggv\351ny}{section.5.4}% 24
+\BOOKMARK [2][-]{subsection.5.4.4}{Egy\351b \372j met\363dusok}{section.5.4}% 25
+\BOOKMARK [1][-]{section.5.5}{Argumentum hozz\341ad\341s}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.6}{Megold\341s f\341jlba \355r\341sa}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Tesztel\351s}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Taszkok k\366zti kapacit\341sok v\341ltoztat\341s\341nak hat\341sa}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{Ido horizont v\341ltoztat\341s}{chapter.6}% 30
+\BOOKMARK [0][-]{chapter.7}{\326sszefoglal\341s}{}% 31
