@@ -25,12 +25,12 @@ Az S-gráf megoldó szoftvert parancssori paraméterek segítségével lehet mű
 	\item \textbf{--nopresolvers:} Hasonlóan az előzőhöz a presolver is az ütemezést gyorsítja, de nem egyeztethető össze az új megoldó módszerrel, emiatt kell mindenképpen inaktívvá tenni.
 \end{itemize}
 
-A ~\ref{teszFeladat} ábrán látható mintafeladat alapján kerül bemutatásra a megoldó módszer. Két termékhez tartozó receptet látunk, illetve a részfeladatokat, valamint az ezeket megvalósítani képes berendezéseket. Az éleken megfigyelhetőek még a taszkok befejezéséhez szükséges idő.
+A ~\ref{tesztFeladat} ábrán látható mintafeladat alapján kerül bemutatásra a megoldó módszer. Két termékhez tartozó receptet látunk, illetve a részfeladatokat, valamint az ezeket megvalósítani képes berendezéseket. Az éleken megfigyelhetőek még a taszkok befejezéséhez szükséges idő.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.7]{tesztfeladat}
+\includegraphics[scale=0.7]{tesztFeladat}
 \caption{Tesztfeladat}
-\label{teszFeladat}
+\label{tesztFeladat}
 \end{center}
 \end{figure}
 
@@ -86,7 +86,7 @@ Ahogy várható volt az újbóli futtatás során eltérések vannak az előzőh
 \section{Idő horizont változtatás}
 A parancssori paraméterben megadott idő horizont is fontos szerepet tölt be az ütemezés során. Az eddig bemutatott példáknál nem változott meg. Ebben a részben viszont ennek a változtatására bekövetkező változások bemutatása a cél. Az idő horizont azt az időt adja meg, amelyen belül meg kell oldani a feladatot.
 
-Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető. Ha ennél kisebbet adunk meg, akkor a feladat megoldhatatlan, elvégezhetetlen lesz. A \ref{teszFeladat} ábrán látható feladat esetében, amelyet a~\ref{bemenet1} táblákban szereplő adatokkal futtatunk, ez a mindenképpen szükséges idő 12 egység lesz. Szóval ha 11 vagy annál kisebb idő horizontot adunk meg, akkor nem kapunk megoldást a feladatra. A Minden egyes gyártási munkafolyamat során találunk egy felső határt, amelynél hiába biztosunk több időt a munkafolyamat befejezésére, nem lehet nagyobb bevételre szert tenni. A mintafeladatnál ez 17 időegységnél következik be. Ebben az esetben minden berendezés elvégzi azokat a taszkokat, amelyeket el is tud végezni. A példából láthatjuk, hogy minél több idő van a feladat megoldására, annál nagyobb bevételre tehetünk szert. Ennek oka az, hogy több berendezést tudunk beállítani adott feladat elvégzésére, mert már belefér abba az időtartamba, amelyet korlátként megadtunk. Láthatjuk a 15 és 16 időegység esetében, hogy hiába biztosítunk nagyobb idő horizontot nem tudunk nagyobb bevételt elérni. Ilyen eset akkor fordulhat elő, mikor egy részfeladat elvégzéséhez szükséges idő nagyobb, mint amekkora szabadon fennmaradó idővel rendelkezünk még a határ alatt.  
+Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető. Ha ennél kisebbet adunk meg, akkor a feladat megoldhatatlan, elvégezhetetlen lesz. A \ref{tesztFeladat} ábrán látható feladat esetében, amelyet a~\ref{bemenet1} táblákban szereplő adatokkal futtatunk, ez a mindenképpen szükséges idő 12 egység lesz. Szóval ha 11 vagy annál kisebb idő horizontot adunk meg, akkor nem kapunk megoldást a feladatra. A Minden egyes gyártási munkafolyamat során találunk egy felső határt, amelynél hiába biztosunk több időt a munkafolyamat befejezésére, nem lehet nagyobb bevételre szert tenni. A mintafeladatnál ez 17 időegységnél következik be. Ebben az esetben minden berendezés elvégzi azokat a taszkokat, amelyeket el is tud végezni. A példából láthatjuk, hogy minél több idő van a feladat megoldására, annál nagyobb bevételre tehetünk szert. Ennek oka az, hogy több berendezést tudunk beállítani adott feladat elvégzésére, mert már belefér abba az időtartamba, amelyet korlátként megadtunk. Láthatjuk a 15 és 16 időegység esetében, hogy hiába biztosítunk nagyobb idő horizontot nem tudunk nagyobb bevételt elérni. Ilyen eset akkor fordulhat elő, mikor egy részfeladat elvégzéséhez szükséges idő nagyobb, mint amekkora szabadon fennmaradó idővel rendelkezünk még a határ alatt.  
 
 \begin{table}[H]
 	\begin{center}
@@ -102,3 +102,59 @@ Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető.
 		\end{tabular}	
 	\end{center}	
 \end{table}
+
+\section{Második tesztfeladat}
+A második tesztfeladat során két fajta terméket kell gyártani. Az A termék előállításához 2 részfeladatot kell elvégezni, a B termék esetében pedig 2 darabot. Ehhez 2 darab berendezés áll rendelkezésre, az E1 és E2 elnevezésű berendezés. A\ref{tesztFeladat2} ábráról leolvasható, hogy melyik taszkot melyik berendezés képes elvégezni. A1-es taszkot mindkét berendezés, A2-es taszkot csak az E1, A3-as taszkot pedig csak az E2-es berendezés tudja végrehajtani. A másik termék esetében mindkét taszkot mindkét berendezés képes megvalósítani.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.7]{tesztFeladat2}
+\caption{Második tesztfeladat}
+\label{tesztFeladat2}
+\end{center}
+\end{figure}
+
+A \ref{tab:table3} táblázatban láthatóak a mintafeladaton elvégzett tesztesetek kiemelt adatainak első része. Továbbiak megtalálhatóak a függelékben. A teszteléssel kapcsolatos fájlok a CD melléklet \textbf{Teszteles} mappában vannak. Ezen belül a bemeneti adatokat tartalmazó fájlok fellelhetőek a \textbf{Input\_fajlok} mappában. A megoldást megjelenítő Gantt diagramot pedig a \textbf{Megoldasok} mappában tekinthetőek meg.
+
+\begin{table}[H]
+	\begin{center}
+	\caption{Második példafeladat tesztesetei}
+  	\captionsetup[table]{skip=10pt}
+  	\label{tab:table3}
+  	\begin{sideways}
+  		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  		\hline
+		Fájl név & Idő horizont & A termék & B termék & Kapacitások & Hozzárendelések & Bevétel & Megoldás ideje & Gantt \\
+		\hline
+		teszt01 & 13 & 1 db & 1 db & \makecell{A1: 60\\A2: 40\\A3: 40\\B1: 60\\B2: 60} & \makecell{E1: A2\\ E2: A1, A3,\\ B1, B2} & 700 & 0,059 sec & er01 \\
+		\hline
+		teszt02 & 15 & 1 db & 1 db & \makecell{A1: 100\\A2: 40\\A3: 40\\B1: 100\\B2: 100} & \makecell{E1: A1, A2\\B1, B2\\ E2: A1, A3,\\ B1, B2} & 900 & 0,029 sec & er02 \\
+		\hline
+		teszt03 & 13 & 1 db & 1 db & \makecell{A1: 60\\A2: 40\\A3: 40\\B1: 60\\B2: 60} & \makecell{E1: A2\\ E2: A1, A3,\\ B1, B2} & 700 & 0,060 sec & er03 \\
+		\hline
+		teszt04 & 15 & 1 db & 1 db & \makecell{A1: 100\\A2: 40\\A3: 40\\B1: 100\\B2: 100} & \makecell{E1: A1, A2\\B1, B2\\ E2: A1, A3,\\ B1, B2} & 900 & 0,028 sec & er04 \\
+		\hline
+		teszt05 & 20 & 2 db & 1 db & \makecell{A1: 60\\A1\_2: 100\\A2: 40\\A2\_2: 40\\A3: 40\\A3\_2:40\\B1: 60\\B2: 60} & \makecell{E1: A1\_2, A2,\\A2\_2 \\ E2: A1, A1\_2,\\ A3, A3\_2, \\ B1, B2} & 1100 & 0,084 sec & er05 \\
+		\hline
+		\end{tabular}
+	\end{sideways}
+	\end{center}
+\end{table}
+
+Első oszlopban a bemeneti adatokat tartalmazó fájl neve szerepel. Ennek kiterjesztése minden esetben \textit{ods}. Másodikban az időhorizont szerepel, amelyet parancssori paraméterben kap meg a megoldó szoftver. Harmadik és negyedik oszlopban az egyik, illetve másik termékből legyártott mennyiség szerepel. Ötödik oszlopban az egyes taszkok kapacitása van. A hatodikban kapnak helyet a taszk és berendezések közötti hozzárendelések. Hetedik oszlopban a termelés során elért bevétel értéke látható. Utolsó előtti oszlopban az az idő szerepel, ameddig a szoftver végezte az ütemezést. Végezetül az utolsó oszlopban a Gantt diagramot tartalmazó fájl neve szerepel, aminek kiterjesztése \textit{png}.
+
+A teszteknél ugyanazon feladat különböző bemeneti adatokkal került tesztelésre. Minden esetben változatlan marad a termékek elkészítéséből származó jövedelem. Ez az A termék esetén 10 egység, B termék esetében pedig 5. A berendezések kapacitása, amely alapján a taszkok kapacitása alakul, szintén állandó marad a tesztesetekben. Az E1-es berendezés kapacitása 40, az E2-es berendezésé pedig 60. Ezeken kívül az sem változik, hogy az adott taszkokat mennyi ideig tart elvégezni. Ezek az adatok megtekinthetőek a tesztek bementi fájljaiban.
+
+Az első 4 teszt során mindegyik termékből 1 darabot gyártunk. Első esetben 13-nak adtam meg az időhorizontot, így a bevétel 700 lett. A második tesztnél ezt az értéket megnöveltem 15-re, így 900 egységre emelkedett a bevétel. Ez annak köszönhető, hogy az E1-es berendezés az első esetben csak 1 taszk elvégzésért felelős. A második esetben viszont még 3 darab taszkot elvégez a párhuzamosan végezhető munka engedélyezésre révén, így ezeknek a  taszkoknak a kapacitása megnövekedett és nagyobb mennyiséget áll elő. E két tesztnél a kapacitások 100 százaléka fel van használva. Ebben tér el a harmadik és negyedik teszt. Ott ugyan 50 százalékra van ez csökkentve, de az arány ugyan akkora lesz, így a végső kapacitások, melyekből a jövedelem származik, sem változnak, így maradnak az eddigi elérhető legjobb bevételek. Későbbi teszteseteknél majd előjön, hogy miként változik az ütemezés ennek hatására.
+
+Az ötödik, hatodik, hetedik és nyolcadik tesztesetben 2 darab A termék és 1 darab B termék kerül legyártásra. Az ötödik tesztnél az időhorizont 20 és a kapacitások teljes mennyiségben felhasználásra kerülnek. Így a bevétel 1100 egység lesz. Miután az idő horizontot megemeltem a bevétel megnőtt 200 egységgel, így 1300 lett. Ez abból következik, hogy az E1-es berendezés az E2-es berendezéssel egyetemben már az A1, B1, B2-es taszkokat is elvégzi. A hetedik és nyolcadik tesztnél észrevehető, hogy lecsökken a bevétel. Ez a korábban említett kapacitások mennyiségének továbbvitelének megváltozásából következik. Az A1-es és A2-es közötti élen lévő arány 2 az 1-hez, míg az A2 és A3 között 1 a 2-höz. Az előző fejezetekben említett képlet, ahol a kapacitást szorozzuk ezzel az aránnyal, adja meg, hogy kevesebb lesz az A3as taszk kapacitása. Mivel 2 darab A termék kerül legyártásra, így duplán számolódik ez a bevételnél. 
+
+Ez számokban kifejezve:
+\begin{itemize}
+	\item[] A1 kapacitása 100
+	\item[] A2 kapacitása a következő számításból adódik: $100*(100/50)$ Ez 200 lesz, de mivel ez nagyobb, mint az berendezésből adódó kapacitás, ezért nem ez fog számítani. Mivel ezt a taszkot az E1-es berendezés végzi el, aminek 40 lesz a kapacitása, így a tényleges kapacitása az A2-es taszknak is 40 lesz.
+	\item[] Az előző számításhoz hasonlóan kapható meg az A3-as taszk kapacitása. A3-as berendezéséből adódó kapacitás szorozva az éleken szállított  kapacitás arányával. Számokban ez a következő: $40*(50/100)$ Ez 20 lesz, ami a legkisebb a korlátok közül, így ezt kapja meg a taszk.
+	\item[] A termékből származó jövedelem 10. 20 egység van 1 darab A termék esetén, ezt megszorozzuk az említett jövedelemmel kijön a 200. 2 darab A terméket gyártunk le, ezért összesen az A gyártásból származó jövedelem 400 lesz.
+	\item[] B termék esetében nem vezetem le, hogyan jön ki az 500as bevétel, mert megegyezik az A termék esetén bemutatott levezetéssel.
+	\item[] A két fajta termékből származó bevételt összeadva megkapjuk a 900 egységnyi összbevételt.
+\end{itemize}
