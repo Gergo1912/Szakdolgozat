@@ -31,3 +31,4 @@
 \select@language {magyar} \contentsline {section}{\numberline {6.3}M\IeC {\'a}sodik tesztfeladat}{46}{section.6.3}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{50}{chapter.7}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {A}Tesztesetek}{53}{appendix.A}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {B}CD Mell\IeC {\'e}klet tartalma}{55}{appendix.B}% 
