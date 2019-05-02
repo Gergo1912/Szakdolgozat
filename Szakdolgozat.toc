@@ -27,7 +27,7 @@
 \select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{38}{section.5.6}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{39}{chapter.6}% 
 \select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{41}{section.6.1}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o} horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{45}{section.6.2}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o}horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{45}{section.6.2}% 
 \select@language {magyar} \contentsline {section}{\numberline {6.3}M\IeC {\'a}sodik tesztfeladat}{46}{section.6.3}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{50}{chapter.7}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {A}Tesztesetek}{53}{appendix.A}% 
