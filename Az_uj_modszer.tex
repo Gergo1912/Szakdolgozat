@@ -9,12 +9,12 @@ Az algoritmus bemenetét az időhorizont ($TH$), valamint a batch méret adja. E
   \item[] $w_{i,i'}$: recept élek súlya, ami az $i$ taszk minimális feldolgozási ideje.
 \end{itemize} 
 
-A \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát. Ezzel egyidejűleg a $S$-ből kikerül a kiválasztott részprobléma. A kiválasztott részprobléma a $PP$ változóba kerül a következő formában  $(G(N,A_1,A_2,w),I',J',\alpha)$, ahol 
+A \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát. Ezzel egyidejűleg a $S$-ből kikerül a kiválasztott részprobléma. A kiválasztott részprobléma a $PP$ változóba kerül a következő formában  $(G(N,A_1,A_2,w),I',J',{\cal A})$, ahol 
 \begin{itemize}
   \item[] $(G(N,A_1,A_2,w)$: az ütemezési gráf	
   \item[] $I'$: a nem ütemezett taszkok halmaza
   \item[] $J'$: azon berendezések halmaza, amelyeket lehet még taszkokhoz rendelni
-  \item[] $\alpha$: taszk-berendezés hozzárendelések $(i,j)$ párok formájában.
+  \item[] ${\cal A}$: taszk-berendezés hozzárendelések $(i,j)$ párok formájában.
 \end{itemize}
 
 Ezek után az algoritmus megvizsgálja a kiválasztott részprobléma feasible-itását, azaz azt, hogy a megadott időhorizonton belül megvalósítható-e. Ha igen, akkor újabb vizsgálat következik arra vonatkozóan, hogy az eddigi legjobb megoldás, a legnagyobb profitnál nagyobb jövedelemre lehet szert tenni a vizsgált részproblémával. Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik kerül részprobléma kerül kiválasztásra, amennyiben még van ilyen.
@@ -52,7 +52,7 @@ Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megol
 \caption{Párhuzamos taszkvégrehajtást megvalósító algoritmus}
 \label{parhuzamos}
 \begin{algorithmic}[1]
-\Procedure{Maxprofit}{TH,batchsize}
+\Procedure{Maxprofit}{TH,batch\_number}
 	\State $profit^{cb}:= -\infty$
 	\State $SOAA:= \emptyset$
 	\State $S:= {(recipe(),I,J,\emptyset)}$
@@ -65,19 +65,19 @@ Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megol
 				\Else
 					\State $j:=select(J')$
 					\ForAll	{$i \in I_j \setminus SOAA$}
-						\State $SOAA^i: = SOAA^i\cup i$
+						\State $SOAA_j: = SOAA_j\cup i$
 						\State $G^i(N,A_1^i,A_2^i,w^i):= G(N,A_1,A_2,w)$
-						\ForAll	{$i' \in \bigcup_{(i',j) \in \alpha} I_{i^i}^+  \setminus \{i\} $}
+						\ForAll	{$i' \in \bigcup_{(i',j) \in {\cal A}} I_{i^i}^+  \setminus \{i\} $}
 							\State $A_2^i:= A_2^i \cup \{(i',i)\}$				
 						\EndFor
 						\ForAll {$ i' \in I_i^+$}
 							\State $w_{i,i'}^i:= t_{i,j}^{pr}$
 						\EndFor
-						\State $S:= S \cup (G^i(N,A_1,A_2^i,w^i),I,J',\alpha \cup \{(i,j)\})$
+						\State $S:= S \cup (G^i(N,A_1,A_2^i,w^i),I,J',{\cal A} \cup \{(i,j)\})$
 					\EndFor
-					\If{$I \subseteq \bigcup_{SOAA^i = \emptyset, j = j'}I_j $}
-						\State $S:= S \cup (G(N,A_1,A_2),I,J'\setminus\{j\},\alpha)$
-					\EndIf
+					\If {$I_j \setminus \bigcup_{j \in J} SOAA_j \subseteq \bigcup_{j != j', j'\in J'} I_{j'}$}
+						\State $S:= S \cup (G(N,A_1,A_2),I,J'\setminus\{j\},{\cal A})$
+					\EndIf					
 				\EndIf
 			\EndIf
 		\EndIf
