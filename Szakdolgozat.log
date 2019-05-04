@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  4 MAY 2019 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  4 MAY 2019 11:46
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -1124,19 +1124,13 @@ solodo in-formaciok. []Ujonnan
  []
 
 [25]
-Overfull \hbox (25.04352pt too wide) in paragraph at lines 16--18
-[]\OT1/cmr/m/n/12 Precendence tabla, amely a grafban sze-repl}o eleket szeml
-elteti az el kezd}o csomopontjanak
- []
-
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
-("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
+ ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 25.
-
-[26]
+ [26]
 Overfull \hbox (0.4646pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 Megallaptja, hogy me-lyik tasz-kok-hoz me-lyik be-ren-dezes
  vagy be-ren-dezesek hozzarendelese
@@ -1183,12 +1177,6 @@ orlat meg-hatarozasa, kiszamolasa.
 Overfull \hbox (0.20766pt too wide) in paragraph at lines 162--163
 \OT1/cmr/m/n/12 meg-adott tasz-kok-hoz, es az ezt kovet}o tasz-kok-hoz tar-to
 zo ka-pa-citasokat kell ujraszamolnia.
- []
-
-
-Overfull \hbox (8.82007pt too wide) in paragraph at lines 164--165
-[]\OT1/cmr/m/n/12 Az el}oz}o pont-ban be-mu-ta-tott fuggvenyt}ol elter}oen n
-em az S-graf be-me-ne-ti csomopontjait
  []
 
 [36]
@@ -1342,7 +1330,7 @@ Here is how much of TeX's memory you used:
  17607 multiletter control sequences out of 15000+200000
  11274 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,22n,97p,2306b,1963s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,22n,97p,2317b,1963s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/inconsolata/
 i4-ot1-0.enc} <C:\Users\USER\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
 ec/dpi600\tcrm1200.pk><C:/Users/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
@@ -1365,7 +1353,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USER/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/P
 rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Szakdolgozat.pdf (63 pages, 1165385 bytes).
+Output written on Szakdolgozat.pdf (63 pages, 1165413 bytes).
 PDF statistics:
  985 PDF objects out of 1000 (max. 8388607)
  189 named destinations out of 1000 (max. 500000)
