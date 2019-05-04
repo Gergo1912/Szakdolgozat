@@ -1,12 +1,12 @@
 \chapter{Az új módszer}
-Az új algoritmus alapját a \ref{makespanKod} ábrán látható makespan minimalizáló algoritmus adja. Az újonnan létrehozott algoritmus korlátját már nem a makespan adja, hanem a jövedelmek. További változtatás, hogy egy taszkot nem csak egy berendezés tud végrehajtani, hanem képesek különböző kapacitású berendezések adott taszkokat párhuzamosan is végezni. A függvényt \aref{parhuzamos}. algoritmus mutatja be.
+Az új algoritmus alapját a \ref{makespanKod} ábrán látható makespan minimalizáló algoritmus adja. Az újonnan létrehozott algoritmus korlátját már nem a makespan adja, hanem a jövedelmek. További változtatás, hogy egy taszkot nem csak egy berendezés tud végrehajtani, hanem a különböző kapacitású berendezések képesek az adott taszkokat párhuzamosan is végezni. A függvényt \aref{parhuzamos}. algoritmus mutatja be.
 
-Az algoritmus bemenetét az időhorizont ($TH$), valamint a batch méret adja. Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén. A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések lesznek benne, amelyek már hozzá vannak rendelve egy adott taszkhoz. A \textbf{recipe} függvény ugyanúgy, ahogy a makespan minimalizáló algoritmus esetében van, visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma recept gráfját, ahol
+Az algoritmus bemenetét az időhorizont ($TH$), valamint a batch méret adja. Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén. A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések lesznek benne, amelyek már hozzá vannak rendelve egy adott taszkhoz. A \textbf{recipe} függvény ugyanúgy, ahogy a makespan minimalizáló algoritmus esetében van, visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma receptgráfját, ahol
 \begin{itemize}
   \item[] $N$: taszkokat és termékeket reprezentáló csomópontok halmaza	
-  \item[] $A_1$: a recept élek halmaza
+  \item[] $A_1$: a receptélek halmaza
   \item[] $A_2$: ütemezési élek halmaza, ebben a pillanatban még üres
-  \item[] $w_{i,i'}$: recept élek súlya, ami az $i$ taszk minimális feldolgozási ideje.
+  \item[] $w_{i,i'}$: receptélek súlya, ami az $i$ taszk minimális feldolgozási ideje.
 \end{itemize} 
 
 A \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát. Ezzel egyidejűleg a $S$-ből kikerül a kiválasztott részprobléma. A kiválasztott részprobléma a $PP$ változóba kerül a következő formában  $(G(N,A_1,A_2,w),I',J',{\cal A})$, ahol 
@@ -17,11 +17,11 @@ A \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémá
   \item[] ${\cal A}$: taszk-berendezés hozzárendelések $(i,j)$ párok formájában.
 \end{itemize}
 
-Ezek után az algoritmus megvizsgálja a kiválasztott részprobléma feasible-itását, azaz azt, hogy a megadott időhorizonton belül megvalósítható-e. Ha igen, akkor újabb vizsgálat következik arra vonatkozóan, hogy az eddigi legjobb megoldás, a legnagyobb profitnál nagyobb jövedelemre lehet szert tenni a vizsgált részproblémával. Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik kerül részprobléma kerül kiválasztásra, amennyiben még van ilyen.
+Ezek után az algoritmus megvizsgálja a kiválasztott részproblémt a \textit{Feasible} függvény segítségével. Ez megnézi, hogy a részprobléma a megadott időhorizonton belül megvalósítható-e? Ha igen, akkor megvizsgálja az algoritmus, hogy a részprobléma által nyújtott legnagyobb elérhető jövedelem nagyobb-e, mint az eddig megtalált legjobb megoldás. Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik részprobléma kerül kiválasztásra, amennyiben még van ilyen.
 
-Ha mindkét feltételnek megfelel a részprobléma akkor megnézi az algoritmus, hogy levél-e. Ez azt jelenti, hogy található-e még olyan berendezés, amelyet lehet taszkhoz rendelni. Abban ez esetben ($J'== \emptyset$) ha nincs ilyen berendezés, azaz a probléma levélnek minősül, akkor a jelenlegi legjobb megoldás $profit^{cb}$ értéke felülíródik a vizsgált részprobléma által nyújtott megoldással. Ha viszont nem levél, akkor egy berendezés kerül kiválasztásra a még elérhető berendezések halmazából. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes olyan lehetséges taszkot, ami még nem volt korábban hozzárendelve. Minden ilyen taszkhoz készül egy másolat a jelenlegi S-gráfról, ami kiegészül az új hozzárendelésekkel.
+Ha mindkét feltételnek megfelel a részprobléma, akkor megnézi az algoritmus, hogy levél-e. Ez azt jelenti, hogy található-e még olyan berendezés, amelyet lehet taszkhoz rendelni. Abban ez esetben ($J'== \emptyset$) ha nincs ilyen berendezés, azaz a probléma levélnek minősül, akkor a jelenlegi legjobb megoldás $profit^{cb}$ értéke felülíródik a vizsgált részprobléma által nyújtott megoldással. Ha viszont nem levél, akkor egy berendezés kerül kiválasztásra a még elérhető berendezések halmazából. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes olyan lehetséges taszkot, ami még nem volt korábban hozzárendelve. Minden ilyen taszkhoz készül egy másolat a jelenlegi S-gráfról, ami kiegészül az új hozzárendelésekkel.
 
-Olyan taszkok esetében, amiket még egy berendezés sem végez, viszont a kiválasztott $j$ berendezésen kívül más berendezés is meg tud oldani, olyan döntés is születhet, hogy az adott berendezés nem is fogja azt elvégezni. Ilyenkor az $S$ halmaz kibővül egy olyan részproblémával, ahol a $j$ berendezés már nem végez több taszkot. 
+Azon taszkok esetében, amelyeket még egy berendezés sem végez, viszont a kiválasztott $j$ berendezésen kívül más berendezés is meg tud oldani, olyan döntés is születhet, hogy az adott berendezés nem is fogja azt elvégezni. Ilyenkor az $S$ halmaz kibővül egy olyan részproblémával, ahol a $j$ berendezés már nem végez több taszkot. 
 
 Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megoldással, vagyis az elérhető legnagyobb bevétel értékével.
 
@@ -35,17 +35,17 @@ Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megol
 	\item $I$: a taszkok halmaza
 	\item $J$: a berendezések halmaza
 	\item $TH$: az időhorizont
-	\item $A$: élek halmaz
-	\item $w$: a recept él súlya
-	\item $profit\_bound$: a kiválasztott részprobléma profit korlátja
+	\item $A$: az élek halmaz
+	\item $w$: a receptél súlya
+	\item $profit\_bound$: a kiválasztott részprobléma profit korlátja.
 \end{itemize}
 
 \underline{Az algoritmusban meghívott függvények:}
 \begin{itemize}
-	\item \textit{recipe}: egy recept gráfot ad vissza
+	\item \textit{recipe}: egy receptgráfot ad vissza
 	\item \textit{select\_remove}: kiválaszt egy részproblémát valamilyen módszer alapján
 	\item \textit{Feasible}: megmutatja, hogy a részprobléma a megadott időhorizonton belül megoldható-e
-	\item \textit{IsLeaf}: megmutatja, hogy a részprobléma levélnek minősül-e ($J'==\emptyset$)
+	\item \textit{IsLeaf}: megmutatja, hogy a részprobléma levélnek minősül-e ($J'==\emptyset$).
 \end{itemize}
 
 \begin{algorithm}[H]
