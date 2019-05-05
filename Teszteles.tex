@@ -17,7 +17,7 @@ A tesztelés a következő konfigurációval rendelkező számítógéppel tört
 Az S-gráf megoldó szoftvert parancssori paraméterek segítségével lehet működtetni. A különböző megoldó módszereket, amelyek megtalálhatóak a szoftverbe implementálva, más és más kapcsolók segítéségével lehet elérni, meghívni. Ezeknek listája megtalálható a \textbf{solver} mappában lévő \textbf{README.md} fájlban. Az általam megvalósított módszerhez a következő kapcsolókat mindenképpen használni kell, hogy a program hiba nélkül fusson és elvégezze az ütemezést:
 \begin{itemize}
 	\item \textbf{-i extended\textunderscore precedential.ods:} A bemeneti fájl elérési útvonalát kell megadni ezzel.
-	\item \textbf{-o output.txt:} A kimeneti fájl elérési útvonala. Két fajta kiterjesztésű fájlt lehet megadni: \textbf{TXT} és \textbf{PNG}. Előbbi esetében a fájlba kerülnek az élek, mind a receptet, mind az ütemezési élek, valamint, hogy mennyi ideig tart a részfeladat befejezése, amelyből ezek kiindulnak. Ezenfelül a Gantt diagram karakteres formában is megjelenik. PNG kiterjesztésű fájl megadása esetén pedig kirajzolásra kerül egy Gantt diagram.
+	\item \textbf{-o output.txt:} A kimeneti fájl elérési útvonala. Két fajta kiterjesztésű fájlt lehet megadni: \textbf{TXT} és \textbf{PNG}. Előbbi esetében a fájlba kerülnek az élek, mind a receptek, mind az ütemezési élek, valamint, hogy mennyi ideig tart a részfeladat befejezése, amelyből ezek kiindulnak. Ezenfelül a Gantt diagram karakteres formában is megjelenik. PNG kiterjesztésű fájl megadása esetén pedig kirajzolásra kerül egy Gantt diagram.
 	\item \textbf{-m flexbatch:} Ezzel a kapcsolóval a megoldó módszert lehet kiválasztani. A \textit{felxbatch} határozza meg, hogy az általam megvalósított algoritmus kerüljön meghívásra.
 	\item \textbf{--timehor:} Időhorizont megadása történik ezzel a kapcsolóval.
 	\item \textbf{--obj profit\textunderscore max:} A célfüggvény kiválasztása, ebben az esetben az újonnan a megoldó szoftverhez hozzáadott profit maximalizálás kerül kiválasztásra.
@@ -55,7 +55,7 @@ A feladat megoldását tartalmazó TXT kiterjesztésű fájlt három darab elkü
 \label{eredmeny1}
 \end{center}
 \end{figure}
-A második részben a taszkok és a hozzájuk tartozó kapacitások, valamint a termékekhez tartozó kapacitások és a termékek előállításából származó jövedelem szorzata található. Ezeket követően szerepel a bound, a korlát, ami az adott feltételek és adatok mellett 173,846 lett. Ezt úgy kapjuk meg, hogy a termékekhez tartozó értékeket összeadjuk. Jelen példa esetében 3 érték kerül összeadásra, ezek a következők: A2, A2\textunderscore 2, és a B3. Az A2-es és a A2\textunderscore 2-es részfeladatok kapacitása 60, a B3-as taszk kapacitása pedig 53,846. Mivel a példában mindkét termék esetében a jövedelem egy, ezért az érték marad változatlanul a termékeknél. Ezeket összeadva kijön a 173,846, ami megegyezik a szoftver által kiszámolt megoldással. Ezek az értékek a~\ref{eredmeny2} ábrán megtekinthetőek.
+A második részben a taszkok és a hozzájuk tartozó kapacitások, valamint a termékekhez tartozó kapacitások és a termékek előállításából származó jövedelem szorzata található. Ezeket követően szerepel a bound, a korlát, ami az adott feltételek és adatok mellett 173,846 lett. Ezt úgy kapjuk meg, hogy a termékekhez tartozó értékeket összeadjuk. Jelen példa esetében 3 érték kerül összeadásra, ezek a következők: A2, A2\textunderscore 2, és a B3. Az A2-es és az A2\textunderscore 2-es részfeladatok kapacitása 60, a B3-as taszk kapacitása pedig 53,846. Mivel a példában mindkét termék esetében a jövedelem egy, ezért az érték marad változatlanul a termékeknél. Ezeket összeadva kijön a 173,846, ami megegyezik a szoftver által kiszámolt megoldással. Ezek az értékek a~\ref{eredmeny2} ábrán megtekinthetőek.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.85]{eredmeny2}
@@ -63,7 +63,7 @@ A második részben a taszkok és a hozzájuk tartozó kapacitások, valamint a 
 \label{eredmeny2}
 \end{center}
 \end{figure}
-Az utolsó szakaszban a Gantt diagram karakteres formában található meg. Látható, hogy a megadott bemeneti adatok alapján minden lehetséges taszk és berendezés kombináció elő áll. A\ref{eredmeny3} ábrán látható ez. 
+Az utolsó szakaszban a Gantt diagram karakteres formában található meg. Látható, hogy a megadott bemeneti adatok alapján minden lehetséges taszk és berendezés kombináció elő áll. A \ref{eredmeny3} ábrán látható ez. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.85]{eredmeny3}
@@ -84,7 +84,7 @@ Ahogy várható volt az újbóli futtatás során eltérések vannak az előzőh
 \end{figure}
 
 \section{Időhorizont változtatás}
-A parancssori paraméterben megadott időhorizont is fontos szerepet tölt be az ütemezés során. Az eddig bemutatott példáknál ez nem változott meg. Jelenlegi részben viszont az ezen korlátozás módosítására bekövetkező változások bemutatása a cél. Az időhorizont azt az időt adja meg, amelyen belül meg kell oldani a feladatot.
+A parancssori paraméterben megadott időhorizont is fontos szerepet tölt be az ütemezés során. Az eddig bemutatott példáknál ez nem változott meg. Jelenlegi részben viszont ezen korlátozás módosítására bekövetkező változások bemutatása a cél. Az időhorizont azt az időt adja meg, amelyen belül meg kell oldani a feladatot.
 
 Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető. Ha ennél kisebbet adunk meg, akkor a feladat megoldhatatlan, elvégezhetetlen lesz. A \ref{tesztFeladat} ábrán látható feladat esetében, amelyet a~\ref{bemenet1} táblákban szereplő adatokkal futtatunk, ez a mindenképpen szükséges idő 12 egység lesz. Szóval ha 11 vagy annál kisebb időhorizontot adunk meg, akkor nem kapunk megoldást a feladatra. Minden egyes gyártási munkafolyamat során találunk egy felső határt, amelynél hiába biztosunk több időt a munkafolyamat befejezésére, nem lehet nagyobb bevételre szert tenni. A mintafeladatnál ez 17 időegységnél következik be. Ebben az esetben minden berendezés elvégzi azokat a taszkokat, amelyeket el is tud végezni. A példából láthatjuk, hogy minél több idő van a feladat megoldására, annál nagyobb bevételre tehetünk szert. Ennek oka az, hogy több berendezést tudunk beállítani adott feladat elvégzésére, mert már belefér abba az időtartamba, amelyet korlátként megadtunk. Láthatjuk a 15 és 16 időegység esetében, hogy hiába biztosítunk nagyobb időhorizontot, nem tudunk nagyobb bevételt elérni. Ilyen eset akkor fordulhat elő, mikor egy részfeladat elvégzéséhez szükséges idő nagyobb, mint amekkora szabadon fennmaradó idővel rendelkezünk még a határ alatt.  
 
@@ -104,7 +104,7 @@ Minden receptnek van egy olyan minimális ideje, amely alatt nem teljesíthető.
 \end{table}
 
 \section{Második tesztfeladat}
-A második tesztfeladat során két fajta terméket kell gyártani. Az A termék előállításához 2 részfeladatot kell elvégezni, a B termék esetében pedig 2 darabot. Ehhez 2 darab berendezés áll rendelkezésre, az E1 és E2 elnevezésű berendezés. A \ref{tesztFeladat2} ábráról leolvasható, hogy melyik taszkot melyik berendezés képes elvégezni. A1-es taszkot mindkét berendezés, A2-es taszkot csak az E1, A3-as taszkot pedig csak az E2-es berendezés tudja végrehajtani. A másik termék esetében mindkét taszkot mindkét berendezés képes megvalósítani.
+A második tesztfeladat során két fajta terméket kell gyártani. Az A termék előállításához 3 részfeladatot kell elvégezni, a B termék esetében pedig 2 darabot. Ehhez 2 darab berendezés áll rendelkezésre, az E1 és E2 elnevezésű berendezés. A \ref{tesztFeladat2} ábráról leolvasható, hogy melyik taszkot melyik berendezés képes elvégezni. A1-es taszkot mindkét berendezés, A2-es taszkot csak az E1, A3-as taszkot pedig csak az E2-es berendezés tudja végrehajtani. A másik termék esetében mindkét taszkot mindkét berendezés képes megvalósítani.
 
 \begin{figure}[H]
 \begin{center}
