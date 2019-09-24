@@ -1,27 +1,28 @@
 \chapter{Irodalmi áttekintés}
 \section{Ipari ütemezési feladatok}
-Az ipari folyamatokat gyártásnak nevezzük, amely során az elkészítendő termék létrehozása, megvalósítása a feladat. Ehhez szükség van arra, hogy megfelelően vegyük igénybe a rendelkezésre álló erőforrásokat, amelyeket berendezéseknek, unitnak nevezünk a gyártási feladatok során. A folyamat során fellépő feladatokra a taszk elnevezés is használható. Minden ütemezési feladat rendelkezik végrehajtási idővel, ami megmutatja mekkora időtartam alatt valósítható meg. Ezenfelül lehet még a feladatoknak olyan időkorlátja, ami alatt kötelező elvégezni a feladatot, ezt időhorizontnak, time horizontnak hívjuk. A problémák kimenetelük szerint lehetnek megvalósíthatatlan (infeasible) és megvalósítható (feasible) feladatok. Ha egy korlátozásnak sem felel meg az adott probléma akkor infeasible, egyéb esetekben pedig már megvalósíthatóként kezeljük.
+Az ipari folyamatok közé tartozó tevékenységeknek egy jelentős halmazát gyártásnak nevezzük, amely során az elkészítendő termék létrehozása, megvalósítása a feladat. Ehhez szükség van arra, hogy megfelelően vegyük igénybe a rendelkezésre álló erőforrásokat, amelyeket berendezéseknek, unitnak nevezünk a gyártási feladatok során. A folyamat során fellépő feladatokra a taszk elnevezés is használható. Az ütemezés az a folyamat, amely során különböző események sorrendjét határozzuk meg. Az ütemezési feladat során kell egy feladatot, munkát vagy tevékenységet egy tervbe beilleszteni, vagyis meghatározni annak végrehajtási időpontját. Minden ütemezési feladat rendelkezik végrehajtási idővel, ami megmutatja mekkora időtartam alatt valósítható meg. Ezenfelül lehet még a feladatoknak olyan időkorlátja, ami alatt kötelező elvégezni a feladatot, ezt időhorizontnak, time horizontnak hívjuk. A problémák kimenetelük szerint lehetnek megvalósíthatatlan (infeasible) és megvalósítható (feasible) feladatok.
+Egy feladat csak abban az esetben minősül megvalósíthatónak, ha minden korlátozásnak megfelel. Ha már akár csak egy korlátozással szemben nem bizonyul elfogadhatónak, akkor infeasible feladatról beszélhetünk.
 
-Az ipari folyamatokat többféleképpen lehet csoportosítani. Az egyik felosztási módszer szerint folyamatos és szakaszos üzemű rendszerek csoportjára bontjuk őket. Az első típusban az anyag folyamatosan kerül a rendszerbe, a másodikban pedig ez a folyamat lépésekben valósul meg. A munkám az utóbbi típusba tartozó feladatokra koncentrál. Másik lehetséges felosztás az, amikor online, offline, és semi-offline kategóriákba vannak a feladatok besorolva. Az offline esetben minden szükséges bemeneti adat rendelkezésre áll az optimalizálás idejében. Az online ezzel szemben úgy működik, hogy előbb kell döntéseket meghozni, minthogy adott paraméterekhez tartozó értékekre fény derülne. A semi-offline a kettő közé sorolható, azaz bizonyos információk, adatok már rendelkezésre állnak, mások viszont nem. Egy harmadik besorolási lehetőség, hogy megkülönböztetünk sztochaikus és determinisztikus feladatokat. Sztochaikus esetekben a paraméterek már futás közben kapnak értéket. Ezzel szemben a determinisztikus feladatok értékei előre meg vannak határozva és beállítva.
+Az ipari folyamatokat többféleképpen lehet csoportosítani. Az egyik felosztási módszer szerint folyamatos és szakaszos üzemű rendszerek csoportjára bontjuk őket. Az első típusban az anyag folyamatosan kerül a rendszerbe, a másodikban pedig ez a folyamat lépésekben valósul meg. A munkám az utóbbi típusba tartozó feladatokra koncentrál. Másik lehetséges felosztás az, amikor online, offline, és semi-offline kategóriákba vannak a feladatok besorolva. Az offline esetben minden szükséges bemeneti adat rendelkezésre áll az optimalizálás idejében. Ezzel szemben az online esetben előbb kell a döntéseket meghozni, minthogy az adott paraméterekhez tartozó értékekre fény derülne. A semi-offline a kettő közé sorolható, azaz bizonyos információk, adatok már rendelkezésre állnak, mások viszont nem. 
 
 Az ütemezési feladatok modelljét receptnek nevezzük. Egy termék receptje tartalmazza az adott recept által előállítható termék elkészítéséhez szükséges információkat\cite{Hegyhati}. Egy receptet a következő elemek közösen alkotják:
 \begin{itemize}
   \item termékek listája,
-  \item taszkok listája, amelyek adott sorrendben történő elvégzése szükséges a termékek előállításához,
-  \item taszkok egymás közötti sorrendisége, amely megmutatja a taszkok sorrendjét,
+  \item taszkok listája, amelyek adott sorrendben történő elvégzése szükséges a termék előállításához,
+  \item termeléshez kapcsolódó taszkok sorrendje,
   \item rendelkezésre álló berendezések,
-  \item a lehetséges taszk-berendezés párok feldolgozási ideje.
+  \item a lehetséges taszk-berendezés párokhoz tartozó feldolgozási idő.
 \end{itemize}
-A recepteket a feladatok precedenciája szerint az alábbi csoportokba lehet besorolni. A felsorolás a legegyszerűbbtől halad az általánosabb felé. Ezen kívül minden osztály a következőnek egy speciális esete.
+A recepteket a feladatok precedenciája szerint az alábbi csoportokba lehet besorolni. A felsorolás a legegyszerűbbtől halad az általánosabb felé. Minden osztály a következőnek egy speciális esete.
 \begin{itemize}
 	\item \textbf{Single Stage:} Egy lépésben állítható elő minden egyes termék.
-	\item \textbf{Simple Multiproduct:} Minden terméket meghatározott számú fázison, szakaszon keresztül lehet elkészíteni. Előzővel szemben itt már nem csak egy lépésben lehetséges.
+	\item \textbf{Simple Multiproduct:} Minden terméket meghatározott számú fázison, szakaszon keresztül lehet elkészíteni. Előzővel szemben itt már nem csak egy lépésben lehetséges. Különösen fontos, hogy nem lehet elágazás benne, azaz csak szekvenciális lehet.
 	\item \textbf{General Multiproduct:} Előzővel összehasonlítva az a különbség, hogy ennél lehetséges lépések kihagyása.
-	\item \textbf{Multipurpose:} A termékek gyártásának lépéseit nem lehet egy balról jobbra tartó vonal mentén véghez vinni. A szakaszok száma és iránya tetszőleges, sőt egy szakasz többször is ismétlődhet ugyanabban a gyártásban.
-	\item \textbf{Precedential:} A gyártásban résztvevő taszkok nincsenek hozzárendelve a szakaszokhoz. Egy termék gyártása nem szükségszerűen lineáris, lehetnek elágazások, kör azonban nem megengedett. Minden taszk előfeltételét be kell fejezni mielőtt az adott lépés megkezdődik. 
+	\item \textbf{Multipurpose:} Megegyezik a Multiproduct esettel, azzal a különbséggel, hogy a berendezéset nem azonos sorrendben kerülnek igénybe vételre.
+	\item \textbf{Precedential:} Egy termék gyártása nem szükségszerűen lineáris, lehetnek elágazások, kör azonban nem megengedett. Minden taszk előfeltételét be kell fejezni mielőtt az adott lépés megkezdődik. 
 	\item \textbf{General Network:} A legáltalánosabb recept, ahol a taszkok a bemenetük és a kimenetük által adottak. Ilyen esetben kör is lehetséges.
 \end{itemize}
-Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek} ábrán. A receptek jobb oldalán lévő kör jelenti a terméket, a többi pedig a taszkokat.
+Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek} ábrán. A receptek jobb oldalán lévő, T-vel jelölt kör reprezentálja a terméket, a többi pedig a taszkokat.
 \begin{figure}[H]	
 \begin{center}
 \includegraphics[scale=0.7]{receptek}
@@ -30,30 +31,30 @@ Néhány előbb említett feladattípus szemléltetése látható a~\ref{recepte
 \end{center}
 \end{figure}
 \newpage
-A vegyipari, gyártási ütemezési feladatoknál nagy szerepet játszik a tárolási irányelv, amely azt mutatja meg, hogy két egymást követő feladatok között az elkészített köztes termékeket, hogyan kell raktározni, tárolni, illetve ez mennyi ideig lehetséges. A tárolási stratégiák csoportosítására többféle lehetőség van. Egyik ezek közül, amikor az adott létesítmény infrastrukturális képességei korlátozzák az anyag mennyiségét és minőségét.
+A vegyipari, gyártási ütemezési feladatoknál nagy szerepet játszik a tárolási irányelv, amely azt mutatja meg, hogy két egymást követő feladatok között az elkészített köztes termékeket, hogyan kell raktározni, tárolni, illetve ez mennyi ideig lehetséges. A tárolási irányelvek csoportosítására többféle lehetőség van. Egyik ezek közül, amikor az adott létesítmény infrastrukturális képességei korlátozzák az anyag mennyiségét és tárolásának módját.
 \begin{itemize}
 	\item \textbf{UIS - Unlimited Intermediate Storage}
 	\item \textbf{FIS - Finite Intermediate Storage}
 	\item \textbf{NIS - No Intermediate Storage}
 \end{itemize}
-Az UIS eset a legegyszerűbb. Ebben az esetben van lehetőség a köztes anyagok bármely mértékű tárolására. FIS esetben van lehetőség a tárolásra, de csak korlátozott mennyiségben. A NIS esetében nincs külön tárolásra alkalmas egység, de az megoldható, hogy amíg a következő feldolgozó egységhez kerül, addig az előző helyen várakozzon.
+Az UIS eset a legmegengedőbb. Ebben az esetben van lehetőség a köztes anyagok bármely mértékű tárolására. FIS esetben van lehetőség a tárolásra, de csak korlátozott mennyiségben. A NIS esetében nincs külön tárolásra alkalmas egység, de az megoldható, hogy amíg a következő feldolgozó egységhez kerül, addig az előző taszk feldolgozó egységében várakozzon.	
 
-A tárolás második fajta csoportosítási lehetősége az, amikor az idő ad korlátot.
+A tárolás második fajta csoportosításának alapját az idő adja, amely a köztes termék kémiai és fizikai tulajdonságait befolyásolhatja. Például a termék szavatossága, hőmérséklete megfelelő maradjon a következő részfeladat elkezdéséig.	
 \begin{itemize}
 	\item \textbf{UW - Unlimited Wait}
 	\item \textbf{LW - Limited Wait}
 	\item \textbf{ZW - Zero Wait}	
 \end{itemize}
-ZW esetben nincs lehetőség a köztes anyag tárolására, azaz ha a berendezés befejezte a munkát, akkor azonnal folytatni kell a gyártást. Az LW esetben van egy idő, amíg a köztes termék várakozhat. Azonban, ha ez a rendelkezésre álló idő elfogy, akkor muszáj folytatni a gyártás folyamatát. Az UW eset a legegyszerűbb mind közül, ugyanis ha a köztes anyag tulajdonságai lehetőséget biztosítanak, akkor a tárolási idő nincs korlátozva, bármennyi ideig lehetőség van a tárolásra, raktározásra.
+ZW esetben nincs lehetőség a köztes anyag tárolására, azaz ha a berendezés befejezte a munkát, akkor azonnal folytatni kell a gyártást. Az LW esetben van egy idő, amíg a köztes termék várakozhat. Azonban, ha ez a rendelkezésre álló idő elfogy, akkor muszáj folytatni a gyártás folyamatát. Az UW eset a legmegengedőbb mind közül, ugyanis ha a köztes anyag tulajdonságai lehetőséget biztosítanak, akkor a tárolási idő nincs korlátozva, bármennyi ideig lehetőség van a tárolásra, raktározásra.
 \newpage
 \section{Megoldó módszerek}
 Az ütemezési feladatok megoldására számos megoldó módszer létezik. Ezek közül a legismertebbek, és legszélesebb körben elterjedt módszerek kerülnek bemutatásra a dolgozatom következő pontjaiban.
 \subsection{MILP modellek}
-A legtöbb ütemezési probléma modelljében vegyesen fordulnak elő folytonos és egész változók. Ilyen esetekben beszélünk vegyes egészértékű lineáris programozásról, azaz \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming-ról, amelynek több altípusa létezik:
+Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming, azaz a vegyes egészértékű lineáris programozás. Az ilyen modellekben vegyesen fordulnak elő folytonos és egész változók. Több altípus létezik:
 \begin{itemize}
   \item[] \textbf{Időfelosztásos modellek - Time discretization based:} A módszer időpontokat és időréseket határoz meg. Ezek a modellek jelentek meg legkorábban kronológiailag \cite{kondili}. Az időrésen és az időponton alapuló megközelítések sok hasonlóságot mutatnak, mivel egy időintervallumtól egy másikig terjedő időintervallumot tekinthetünk időrésnek \cite{susarla}. Ellenkező irányból nézve pedig egy időrés kezdő időpontját tekinthetjük egy időpontnak.  
   
-  Minden időpontban bináris változók vannak hozzárendelve aszerint, hogy az adott időpillanatban kezdődik a feladat végrehajtása vagy nem. A bináris változók száma arányos lesz az időpontok számával. Mindig megvolt a szándék olyan módszer kifejlesztésére, amelyben a szükséges időpontok száma minél kisebb legyen amellett, hogy megtalálja az optimális megoldást. 
+Minden időpontban bináris változók vannak hozzárendelve a feladatokhoz aszerint, hogy az adott időpillanatban elkezdődik a feladat végrehajtása vagy sem. A bináris változók száma arányos lesz a kiválasztott időpontok számával, ezért a megoldáshoz szükséges idő nagy mértékben függ az időpontok számától. Mindig megvolt a szándék olyan módszer kifejlesztésére, amelyben a szükséges időpontok száma minél kisebb legyen amellett, hogy megtalálja az optimális megoldást. Létrejöttek jobb modellek, azonban készültek olyanok is, amelyek kevésbé voltak átláthatóak, a korlátozások még bonyolultabbá váltak, és modellezési hibák is előfordultak.
   
   \item[] \textbf{Precedencia alapú modellek - Precedence based:} Ezeknél a módszereknél, szemben az időfelosztásos módszerekkel, nincs szükség az időhorizont diszkretizáció- jára, azaz nem használnak ismeretlen paramétert a modellben. Általánosságban jobb számítási eredményeket nyújtanak az általuk kezelt problémákra, azonban ez a készlet sokkal kisebb, mint az időfelosztásos modellekhez tartozó kollekció. Alapvetően a multiproduct és multipurpose receptek esetében használható megfelelően, de kibővíthető, hogy a sokkal általánosabb precedential receptek is megoldhatók legyenek ezek segítségével. 
   
@@ -67,14 +68,7 @@ Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét esem�
 \end{itemize}
 
 \subsection{S-gráf módszertan}
-Az S-gráf keretrendszer volt az első olyan módszer, amely publikált gráf elméleten alapult, valamint szakaszos gyártórendszerek ütemezési problémáinak megoldására szolgált \cite{combtech}. Ez a keretrendszer egy irányított gráf modellből, az S-gráfból, és a hozzá tartozó algoritmusokból áll \cite{combframe}. Az S-gráf egy speciális irányított gráf, amely ütemezési problémák számára lett létrehozva. Nemcsak a recept vizualizációja, hanem egyben matematikai modell is. A keretrendszerben az S-gráf reprezentálja a recepteket, a részleges és a teljes ütemterveket is. Ezekben a gráfokban a termékeket és a feladatokat csúcsok jelölik, amelyeket csomópontoknak (node) nevezünk. Ha két feladat között összeköttetés van, akkor ezt a gráfon lévő, feladatokat reprezentáló csomópontok között lévő nyíl mutatja. Az ütemezési döntés nélküli S-gráfot \textbf{Receptgráfnak} nevezzük. Erre példa a~\ref{receptGraf} ábrán látható \cite{Hegyhati}. 
-
-A jobb oldalon látható három, nagybetűvel jelölt csomópont felel meg a termékeknek, a maradék kilenc pedig a részfeladatokat jelenti. Ezt a kilenc részfeladatot el kell végezni a termékek előállításának érdekében. Az élek (nyilak) a csomópontok közti függőséget mutatják meg. Ezeket \textbf{Receptéleknek} nevezzük. Kétfajta függőséget tudunk megkülönböztetni:
-\begin{itemize}
-  \item Két részfeladat között van él. Ebben az esetben az egyik készíti el a másiknak a bemenetét.
-  \item Egy termék és egy részfeladat között szerepel él. Ilyenkor a részfeladat készíti el a terméket.
-\end{itemize}
-A nyilakon látható súlyok a részfeladat végrehajtásához szükséges időt mutatják meg. Ha egy részfeladatot több berendezés is képes elvégezni, akkor az előbb említett súly mindig a legkisebb előállítási idő lesz.
+Az S-gráf keretrendszer volt az első olyan publikált módszer, amely gráf elméleten alapult, valamint szakaszos gyártórendszerek ütemezési problémáinak megoldására szolgált \cite{combtech}. Ez a keretrendszer egy irányított gráf modellből, az S-gráfból, és a hozzá tartozó algoritmusokból áll \cite{combframe}. Az S-gráf egy speciális irányított gráf, amely ütemezési problémák számára lett létrehozva. Nemcsak a recept vizualizációja, hanem egyben matematikai modell is. A keretrendszerben az S-gráf reprezentálja a recepteket, a részleges és a teljes ütemterveket is. Ezekben a gráfokban a termékeket és a feladatokat csúcsok jelölik, amelyeket csomópontoknak (node) nevezünk. Az ütemezési döntés nélküli S-gráfot \textbf{Receptgráfnak} nevezzük. Erre példa a~\ref{receptGraf} ábrán látható \cite{Hegyhati}. 
 \begin{figure}[H]	
 \begin{center}
 \includegraphics[scale=0.7]{receptGraf}
@@ -82,7 +76,14 @@ A nyilakon látható súlyok a részfeladat végrehajtásához szükséges időt
 \label{receptGraf}
 \end{center}
 \end{figure}
-Minden S-gráf-hoz kapcsolódó algoritmus kiegészíti ezeket a gráfokat az úgynevezett \textbf{ütemezési élekkel}, amelyek az ütemezési döntést testesítik meg. Ezekkel az élekkel kiegészített gráfoknak a neve \textbf{Ütemezési gráf}. Példa a~\ref{utemezesiGraf} ábrán nézhető meg. Az ábrán sötétkékkel jelölt nyilak az ütemezési élek. Az ütemezési élek súlya alapértelmezetten nulla, ha a probléma nem tartalmaz szállítási, vagy tisztítási időt. A részfeladatok csomópontjain már nem a lehetséges berendezések halmaza látható, hanem egy konkrét kiválasztott berendezés, az ütemezési döntésnek megfelelően. 
+A jobb oldalon látható három, nagybetűvel jelölt csomópont felel meg a termékeknek, a maradék kilenc pedig a részfeladatokat jelenti. Ezt a kilenc részfeladatot el kell végezni a termékek előállításának érdekében. Az élek a csomópontok közti függőséget mutatják meg. Ezeket \textbf{Receptéleknek} nevezzük. Kétfajta függőséget tudunk megkülönböztetni:
+\begin{itemize}
+  \item Két részfeladat között van él. Ebben az esetben az egyik készíti el a másiknak a bemenetét.
+  \item Egy termék és egy részfeladat között szerepel él. Ilyenkor a részfeladat készíti el a terméket.
+\end{itemize}
+Az éleken látható súlyok a részfeladat végrehajtásához szükséges időt mutatják meg. Ha egy részfeladatot több berendezés is képes elvégezni, akkor az előbb említett súly mindig a legkisebb előállítási idő lesz.
+
+Minden S-gráf-hoz kapcsolódó algoritmus kiegészíti ezeket a gráfokat az úgynevezett \textbf{ütemezési élekkel}, amelyek az ütemezési döntést testesítik meg. Ezekkel az élekkel kiegészített gráfoknak a neve \textbf{Ütemezési gráf}. Példa a~\ref{utemezesiGraf} ábrán nézhető meg. Az ábrán sötétkékkel jelölt élek az ütemezési élek. Az ütemezési élek súlya alapértelmezetten nulla, ha a probléma nem tartalmaz szállítási, vagy tisztítási időt. A részfeladatok csomópontjain már nem a lehetséges berendezések halmaza látható, hanem egy konkrét kiválasztott berendezés, az ütemezési döntésnek megfelelően. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{utemezesiGraf}
@@ -90,7 +91,7 @@ Minden S-gráf-hoz kapcsolódó algoritmus kiegészíti ezeket a gráfokat az ú
 \label{utemezesiGraf}
 \end{center}
 \end{figure}
-Ugyanahhoz a berendezéshez rendelt részfeladatok végrehajtási sorrendje könnyedén leolvasható a gráfról. A~\ref{utemezesiGraf2} ábrán látható példában az E2-es berendezés által elvégzett részfeladatok sorrendje B1 -\textgreater  C2 -\textgreater  A3. Ahhoz, hogy a berendezés el tudjon végezni egy adott részfeladatot nem elég, hogy az általa végzett előző részfeladatot befejezze, hanem szükség van még ezen kívül arra, hogy a soron következő részfeladathoz szükséges összes részfeladat elkészüljön. Csak ezeket követően tudja megkezdeni az adott részfeladat végrehajtását. Példa: C2-es részfeladat végrehajtásához szükséges, hogy az E2-es berendezés befejezze a B1-es részfeladatot, valamint az is, hogy a C1-es részfeladatot elkészítse az E1-es berendezés.
+Ugyanahhoz a berendezéshez rendelt részfeladatok végrehajtási sorrendje könnyedén leolvasható a gráfról. A~\ref{utemezesiGraf2} ábrán látható példában az E2-es berendezés által elvégzett részfeladatok sorrendje B1 $\to$ C2 $\to$ A3. Az ütemezési él azt mutatja meg, hogy nem elég az, hogy az E2 berendezés végrehajtsa a B1 feladatot, hanem ezt a közbenső terméket a B2 feladathoz tartozó E3 berendezés átvegye. Csak ezeket követően tudja megkezdeni az adott részfeladat végrehajtását.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{utemezesiGraf2}
@@ -108,6 +109,8 @@ Gyakran használt mód az ütemezési feladatok ábrázolására a Gantt diagram
 \end{figure}
 
 \subsection{A makespan minimalizálás algoritmusa}
+Az egyik legelső célja az S-gráf keretrendszer létrehozásának a makespan minimalizálás volt. Ennek alapja egy Branch \& Bound algoritmus, amivel lehetséges a termékek előállítási idejét minimalizálni.
+
 Az algoritmus (\ref{makespanKod} ábra) első lépésben inicializálja a $makespan^{cb}$ értékét végtelennel, majd beállítja az $S$ halmazt, amelyben az ütemezés során a nyitott részproblémák szerepelnek. Kezdetben csak a gyökér probléma szerepel benne, vagyis egy receptgráf bármilyen hozzárendelés nélkül. A \textbf{recipe} függvény visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma receptgráfját.
 
 Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy tetszőleges részprobléma kerül kiválasztásra, majd az $S$-ből eltávolításra. Ennek a függvénynek a viselkedése a különböző megvalósításokban más és más lehet, ami más keresési stratégiát eredményez.
