@@ -111,39 +111,48 @@ Gyakran használt mód az ütemezési feladatok ábrázolására a Gantt diagram
 \subsection{A makespan minimalizálás algoritmusa}
 Az egyik legelső célja az S-gráf keretrendszer létrehozásának a makespan minimalizálás volt. Ennek alapja egy Branch \& Bound algoritmus, amivel lehetséges a termékek előállítási idejét minimalizálni.
 
-Az algoritmus (\ref{makespanKod} ábra) első lépésben inicializálja a $makespan^{cb}$ értékét végtelennel, majd beállítja az $S$ halmazt, amelyben az ütemezés során a nyitott részproblémák szerepelnek. Kezdetben csak a gyökér probléma szerepel benne, vagyis egy receptgráf bármilyen hozzárendelés nélkül. A \textbf{recipe} függvény visszaadja a $G(N,A_1,A_2,w)$ által jelzett probléma receptgráfját.
+Az algoritmus első lépésben inicializálja a $makespan^{cb}$ értékét végtelennel, majd beállítja az $S$ halmazt, amelyben az ütemezés során a nyitott részproblémák szerepelnek. Kezdetben csak a gyökér probléma szerepel benne, vagyis egy receptgráf bármilyen hozzárendelés nélkül. A \textbf{recipe} függvény visszaadja a probléma receptgráfjának modelljét, amit a $G(N,A_1,A_2,w)$ jelöl, amiben:
+\begin{itemize}
+	\item $N:$ a csomópontok halmaza (termékek és taszkok együttese)
+	\item $A_{1}:$ a receptélek halmaza
+	\item $A_{2}:$ az ütemezési élek halmaza (itt még üres halmaz)
+	\item $w_{i,i^{'}}:$ a receptélekhez tartozó súlyok, amelyek az $i$ taszkok legkisebb feldolgozási idejét jelentik.
+\end{itemize}
 
-Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy tetszőleges részprobléma kerül kiválasztásra, majd az $S$-ből eltávolításra. Ennek a függvénynek a viselkedése a különböző megvalósításokban más és más lehet, ami más keresési stratégiát eredményez.
+Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy tetszőleges részprobléma kerül kiválasztásra, majd az $S$-ből eltávolításra. Ennek a függvénynek a viselkedése a különböző megvalósításokban más és más lehet, ami más keresési stratégiát eredményez. A kiválasztott részprobléma a következőképpen néz ki $(G(N,A_1,A_2,w),I',J',{\cal A})$, ahol:
+\begin{itemize}
+	\item $G(N,A_{1},A_{2},w):$ az ütemezési gráf
+	\item $I^{'}:$ a még nem ütemezett taszkok halmaza
+	\item $J^{'}:$ azon berendezések halmaza, amelyekhez az algoritmus még tud rendelni taszkokat 
+	\item $\cal{A}:$ taszk-berendezés hozzárendelések halmaza, $(i,j)$ párok formájában 
+\end{itemize}
 
-Az iteráció elején kiértékelődik, hogy a részprobléma képes-e optimális megoldást nyújtani, vagy sem. Ez a \textbf{bound} függvénnyel történik. A leggyakrabban a leghosszabb út keresésével vizsgálja meg a részproblémát a \textbf{bound} függvény, de lehetséges LP alapú modellek használata is. Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és amennyiben létezik egy következő részprobléma, az kerül kiválasztásra. 
+Az iteráció elején kiértékelődik, hogy a részprobléma képes-e egy optimális megoldást nyújtani vagy sem. Ez a \textbf{bound} függvénnyel történik. Ezzel szemben több követelmény áll fenn. Alsó korlátot kell adnia azoknak a megoldásoknak, amelyek a részproblémából származnak. Biztosítania kell levél problémák pontos makespanjét. Végtelen értékkel térjen vissza, ha a gráf tartalmaz kört, és jelezze, hogy megoldhatatlan. A leggyakrabban a leghosszabb út keresésével vizsgálja meg a részproblémát a \textbf{bound} függvény, de lehetséges LP alapú modellek használata is.
 
-Ha viszont kisebb a korlát, akkor ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, azaz a részprobléma teljesen ütemezett. Ha így van, a legjobb megoldás kerül frissítésre. Ha még szükséges további ütemezés, akkor a  \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J'$ halmazból. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot. Ezek kapnak egy másolatot az aktuális S-gráfról. Ezt kibővíti az új hozzárendelés alapján az ütemezési élekkel. Végezetül pedig az új részproblémát hozzáadja az $S$ halmazhoz. Ha ez az $S$ halmaz üres lesz, akkor a $G^{cb}$ és a hozzárendelések leírják az optimális megoldást, és ha legalább egy megvalósítható, akkor az algoritmus visszatér ezzel az értékkel. Ellenkező esetben nem ad vissza semmit.
+Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és amennyiben létezik egy következő részprobléma, akkor az kerül kiválasztásra.
+Ha viszont kisebb a korlát, abban az esetben ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, vagyis a még nem ütemezett taszkok halmaza üres már ($I^{'}=\emptyset$). Ha így van frissül a legjobb megoldás gráfja, a legjobb makespan és a hozzárendelések halmaza. Ellenben, ha még szükséges további ütemezés, akkor a  \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J^{'}$ halmazból. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot a még nem ütemezett taszkok és a kiválasztott berendezés által elvégezhető taszkok közös halmazából ($i \in I_{j} \cap I^{'}$). Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról. Mivel a csomópontok és a receptélek halmaza nem változik, ezért ezek változatlanok maradnak, csak az ütemezési élek halmaza és súlyok változnak. Ezt a másolatot kibővíti az algoritmus az új hozzárendelés alapján az ütemezési élekkel ($A^{i}_{2}:= A^{i}_{2} \cup \{(i^{'},i)\}$). Ezután minden $i$-ből induló receptél súlya frissül a $t^{pr}_{i,j}$ értékével. Végezetül pedig az új részproblémát hozzáadja az $S$ halmazhoz. Itt $I^{'}$ halmazból kikerül az előbb kiválasztott $i$ taszk, és a hozzárendelések halmazába bekerül az új taszk-berendezés pár (${\cal A}\cup\{(i,j)\}$).
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=1]{makespanKod}
-\caption{A makespan minimalizáló algoritmus pszeudó kódja\cite{Hegyhati}}
-\label{makespanKod}
-\end{center}
-\end{figure}
+Abban az esetben, ha minden még nem ütemezett taszkot a kiválasztott $j$ berendezésen kívül más berendezés is el tud végezni, akkor egy új részproblémát hoz létre az algoritmus, amelyben a $j$ berendezés már nem végez több taszkot, azaz kikerül a még rendelkezésre álló berendezések halmazából ($J^{'}\setminus\{j\}$).
 
-\section{Throughput vagy profitmaximalizálás}
-Eredetileg az S-gráf keretrendszer makespan minimalizációs problémák megoldására lett létrehozva, azonban a későbbiekben bővítésre került, így ezután throughput, profitmaximalizációs problémák megoldására is alkalmazhatóvá vált. Az alapötlet Majozi és Friedler \cite{majozifriedler}, valamint Holczinger \cite{holczinger} nevéhez fűződik.
+Ha az $S$ halmaz üres lesz, akkor a $G^{cb}$ gráf és a hozzárendelések a ${\cal A}^{cb}$ halmazban leírják az optimális megoldást. Ha legalább egy megvalósítható, akkor az algoritmus visszatér ezzel az értékkel, ellenkező esetben nem ad vissza megoldást.
+
+\section{Throughput maximalizálás}
+Eredetileg az S-gráf keretrendszer makespan minimalizációs problémák megoldására lett létrehozva, azonban a későbbiekben bővítésre került, így ezután throughput, profitmaximalizációs problémák megoldására is alkalmazhatóvá vált. Az alapötlet Majozi és Friedler \cite{majozifriedler}, valamint Holczinger és társai \cite{holczinger} nevéhez fűződik. A termékek lehetséges batch darabszámai alapján az algoritmus konfigurációkat hoz létre. A konfiguráció tehát az, ami megmutatja, hogy egy termékből hány batch készül el.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=1]{throughput_alg}
-\caption{A jövedelem maximalizáló algoritmus pszeudó kódja \cite{Hegyhati}}
+\caption{A throughput maximalizáló algoritmus pszeudó kódja \cite{Hegyhati}}
 \label{throughput_alg}
 \end{center}
 \end{figure}
-Az algoritmus először inicializálja az $S$ halmazt a termékekre vonatkozóan minden lehetséges batch számmal. Fontos kiemelni, hogy ebben az esetben minden terméknél a batch méret rögzített. Ezt követően minden iteráció során az előbb említett halmazból kiválasztásra kerül egy konfiguráció a \textbf{select\textunderscore remove} függvény segítségével. Ezután kerül feasibility tesztelésre, amely során eldől, hogy a megadott időhorizont alatt megvalósítható vagy sem. Ha megvalósítható és nagyobb jövedelmet biztosít, akkor a jelenlegi legjobb megoldás felülíródik. Ha infeasible a kiválasztott konfiguráció, akkor ez, és minden ennél nagyobb konfiguráció eltávolításra kerül az S halmazból. Amint az S halmaz üressé válik, és volt feasible megoldás, akkor az algoritmus visszatér a legjobb konfigurációval, és az ehhez tartozó jövedelem mennyiségével.
+Az algoritmus először inicializálja az $S$ halmazt a termékekre vonatkozóan minden lehetséges batch számmal. Fontos kiemelni, hogy ebben az esetben minden terméknél a batch méret rögzített, azaz egy termék batch-jének jövedelme ismert. Ezt követően minden iteráció során az előbb említett halmazból kiválasztásra kerül egy konfiguráció a \textbf{select\textunderscore remove} függvény segítségével. Ezután sor kerül a feasibilitás tesztre, amely során eldől, hogy a megadott időhorizont alatt megvalósítható vagy sem. Ha megvalósítható és nagyobb jövedelmet biztosít, mint az eddig megtalált legnagyobb jövedelem, akkor a jelenlegi legjobb megoldás és az S halmaz frissül. Ha infeasible a kiválasztott konfiguráció, akkor ez, és minden ennél nagyobb konfiguráció eltávolításra kerül az S halmazból. Amint az S halmaz üressé válik, és volt feasible megoldás, akkor az algoritmus visszatér a legjobb konfigurációval, és az ehhez tartozó jövedelem mennyiségével.
 
 A~\ref{throughput1} ábrán látható egy Throughput módszerrel megvalósított feladat eredménye.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.65]{throughput1}
+\includegraphics[scale=0.7]{throughput1}
 \caption{Throughput maximalizálás szemléltetés}
 \label{throughput1}
 \end{center}
 \end{figure}
-Az algoritmus először végighalad a tengelyek mentén, vagyis az egyik termék batch mérete 0 lesz, a másik pedig növekszik. Ezt a haladási irányt addig követi, amíg megtalálja az első nem megvalósítható, azaz infeasible konfigurációt. Ezt követően elvégzi a keresést a másik tengelyen is. Így kap egy jelenleg maximális jövedelmet. Az utolsó még feasible batch méreteknél nagyobb batch méreteket már nem kell vizsgálni, hiszen azokat a megadott időhorizonton belül nem lehet megvalósítani. A képen látható feladatban ez 16 volt. A két tengelyen lévő 16 értékhez tartozó batch méretet összeköti egy vonallal. Jelenlegi példában a B termékhez tartozó 16-os érték nem egész batch mérethez tartozik, a legközelebbi a 15-tel rendelkező, ami infeasible már. A behúzott vonal alatt azok a konfigurációk szerepelnek, amelyek jövedelme nem éri el a jelenlegi maximumot, így ezek nem a lehető legjobb megoldást adják meg. Az algoritmus addig folytatja a futást, amíg a halmaz, amely a konfigurációkat tartalmazza ki nem ürül. Ha nem talált megvalósítható konfigurációt, akkor az adott problémát a megadott időhorizonton belül nem lehet megoldani. Ellenkező esetben az algoritmus megadja az elérhető legnagyobb profitot és a konfigurációt, amellyel ez elérhető. A példafeladatban a maximálisan elérhető jövedelem 25 egység. Ezt 4 darab A termék és 3 darab B termék legyártásával lehet elérni.
+Két termék esetén koordináta rendszeren szemléltethető az algoritmus működése. Egyik tengelyen az egyik termék, a másikon pedig a másik termék szerepel. Kezdetben az összes konfigurációt tartalmazta a konfigurációk halmaza. Az algoritmus először végighaladt az egyik tengely mentén, vagyis az egyik termék batch mérete 0 volt, a másik pedig növekedett. Ezt a haladási irányt addig követte amíg megtalálta az első nem megvalósítható, azaz infeasible konfigurációt. Ezt követően elvégzi a keresést a másik tengelyen is. Így kapott egy jelenleg maximális jövedelmet. Az utolsó még feasible batch számoknál nagyobb batch számokat már nem kell vizsgálni, hiszen azokat a megadott időhorizonton belül nem lehet megvalósítani. A képen látható feladatban a legnagyobb elérhető profit 16 volt. A feketével jelzett egyenes tartalmazza az összes 16 profittal rendelkező pontot. Ezt nevezzük revenue line-nak, amely segítségével csökkenthető a tesztelendő konfigurációk száma. Jelenlegi példában a B termékhez tartozó 16-os érték nem egész batch számhoz tartozik, a legközelebbi 15 profittal rendelkezik, ami infeasible már. Az egyenes alatt azok a konfigurációk szerepelnek, amelyek jövedelme nem éri el a jelenlegi maximumot, így ezek nem a lehető legjobb megoldást adják meg. Az algoritmus addig nem állt le , amíg a halmaz, amely a konfigurációkat tartalmazza ki nem ürül. A példafeladatban a maximálisan elérhető jövedelem 25 egység. Ezt 4 darab A termék és 3 darab B termék legyártásával lehet elérni.

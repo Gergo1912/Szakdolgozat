@@ -5,23 +5,22 @@
 \select@language {magyar} \contentsline {figure}{\numberline {2.3.}{\ignorespaces Az \IeC {\"u}temez\IeC {\'e}si gr\IeC {\'a}f szeml\IeC {\'e}ltet\IeC {\'e}se\relax }}{10}{figure.caption.6}% 
 \select@language {magyar} \contentsline {figure}{\numberline {2.4.}{\ignorespaces E2-es berendez\IeC {\'e}s \IeC {\'a}ltal elv\IeC {\'e}gzett r\IeC {\'e}szfeladatok\relax }}{11}{figure.caption.7}% 
 \select@language {magyar} \contentsline {figure}{\numberline {2.5.}{\ignorespaces Egy \IeC {\"u}temez\IeC {\'e}s Gantt diagramon val\IeC {\'o} megjelen\IeC {\'\i }t\IeC {\'e}se\relax }}{11}{figure.caption.8}% 
-\select@language {magyar} \contentsline {figure}{\numberline {2.6.}{\ignorespaces A makespan minimaliz\IeC {\'a}l\IeC {\'o} algoritmus pszeud\IeC {\'o} k\IeC {\'o}dja\cite {Hegyhati}\relax }}{13}{figure.caption.9}% 
-\select@language {magyar} \contentsline {figure}{\numberline {2.7.}{\ignorespaces A j\IeC {\"o}vedelem maximaliz\IeC {\'a}l\IeC {\'o} algoritmus pszeud\IeC {\'o} k\IeC {\'o}dja \cite {Hegyhati}\relax }}{14}{figure.caption.10}% 
-\select@language {magyar} \contentsline {figure}{\numberline {2.8.}{\ignorespaces Throughput maximaliz\IeC {\'a}l\IeC {\'a}s szeml\IeC {\'e}ltet\IeC {\'e}s\relax }}{15}{figure.caption.11}% 
+\select@language {magyar} \contentsline {figure}{\numberline {2.6.}{\ignorespaces A throughput maximaliz\IeC {\'a}l\IeC {\'o} algoritmus pszeud\IeC {\'o} k\IeC {\'o}dja \cite {Hegyhati}\relax }}{14}{figure.caption.9}% 
+\select@language {magyar} \contentsline {figure}{\numberline {2.7.}{\ignorespaces Throughput maximaliz\IeC {\'a}l\IeC {\'a}s szeml\IeC {\'e}ltet\IeC {\'e}s\relax }}{15}{figure.caption.10}% 
 \select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {3.1.}{\ignorespaces Kondili p\IeC {\'e}ldafeladata\relax }}{17}{figure.caption.12}% 
-\select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {5.1.}{\ignorespaces P\IeC {\'e}ldafeladat\relax }}{34}{figure.caption.16}% 
-\select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {6.1.}{\ignorespaces Tesztfeladat\relax }}{41}{figure.caption.18}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.2.}{\ignorespaces Els\IeC {\H o} feladat bemeneti adatai\relax }}{42}{figure.caption.19}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.3.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl els\IeC {\H o} r\IeC {\'e}sze\relax }}{43}{figure.caption.20}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.4.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl m\IeC {\'a}sodik r\IeC {\'e}sze\relax }}{43}{figure.caption.21}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.5.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl harmadik r\IeC {\'e}sze\relax }}{44}{figure.caption.22}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.6.}{\ignorespaces A solver \IeC {\'a}ltal elk\IeC {\'e}sz\IeC {\'\i }tett Gantt diagram\relax }}{45}{figure.caption.23}% 
-\select@language {magyar} \contentsline {figure}{\numberline {6.7.}{\ignorespaces M\IeC {\'a}sodik tesztfeladat\relax }}{46}{figure.caption.25}% 
+\select@language {magyar} \contentsline {figure}{\numberline {3.1.}{\ignorespaces Kondili p\IeC {\'e}ldafeladata\relax }}{18}{figure.caption.11}% 
 \select@language {magyar} \addvspace {10\p@ }
 \select@language {magyar} \addvspace {10\p@ }
-\select@language {magyar} \contentsline {figure}{\numberline {A.1.}{\ignorespaces Nyolcadik teszteset bemeneti adatai\relax }}{53}{figure.caption.28}% 
+\select@language {magyar} \contentsline {figure}{\numberline {5.1.}{\ignorespaces P\IeC {\'e}ldafeladat\relax }}{35}{figure.caption.15}% 
+\select@language {magyar} \addvspace {10\p@ }
+\select@language {magyar} \contentsline {figure}{\numberline {6.1.}{\ignorespaces Tesztfeladat\relax }}{42}{figure.caption.17}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.2.}{\ignorespaces Els\IeC {\H o} feladat bemeneti adatai\relax }}{43}{figure.caption.18}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.3.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl els\IeC {\H o} r\IeC {\'e}sze\relax }}{44}{figure.caption.19}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.4.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl m\IeC {\'a}sodik r\IeC {\'e}sze\relax }}{44}{figure.caption.20}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.5.}{\ignorespaces A megold\IeC {\'a}st tartalmaz\IeC {\'o} f\IeC {\'a}jl harmadik r\IeC {\'e}sze\relax }}{45}{figure.caption.21}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.6.}{\ignorespaces A solver \IeC {\'a}ltal elk\IeC {\'e}sz\IeC {\'\i }tett Gantt diagram\relax }}{46}{figure.caption.22}% 
+\select@language {magyar} \contentsline {figure}{\numberline {6.7.}{\ignorespaces M\IeC {\'a}sodik tesztfeladat\relax }}{47}{figure.caption.24}% 
+\select@language {magyar} \addvspace {10\p@ }
+\select@language {magyar} \addvspace {10\p@ }
+\select@language {magyar} \contentsline {figure}{\numberline {A.1.}{\ignorespaces Nyolcadik teszteset bemeneti adatai\relax }}{54}{figure.caption.27}% 
 \select@language {magyar} \addvspace {10\p@ }

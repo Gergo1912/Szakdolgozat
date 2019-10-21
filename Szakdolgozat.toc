@@ -6,29 +6,29 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.2}Anal\IeC {\'\i }zis alap\IeC {\'u} eszk\IeC {\"o}z\IeC {\"o}k}{8}{subsection.2.2.2}% 
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.3}S-gr\IeC {\'a}f m\IeC {\'o}dszertan}{8}{subsection.2.2.3}% 
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.4}A makespan minimaliz\IeC {\'a}l\IeC {\'a}s algoritmusa}{12}{subsection.2.2.4}% 
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Throughput vagy profitmaximaliz\IeC {\'a}l\IeC {\'a}s}{13}{section.2.3}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Probl\IeC {\'e}ma defin\IeC {\'\i }ci\IeC {\'o}}{16}{chapter.3}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Az \IeC {\'u}j m\IeC {\'o}dszer}{20}{chapter.4}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Implement\IeC {\'a}l\IeC {\'a}s}{24}{chapter.5}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.1}S-gr\IeC {\'a}f solver}{24}{section.5.1}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Adatok beolvas\IeC {\'a}sa}{25}{section.5.2}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Bemeneti f\IeC {\'a}jl}{25}{subsection.5.2.1}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Beolvas\IeC {\'o} f\IeC {\"u}ggv\IeC {\'e}ny}{26}{subsection.5.2.2}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.3}FlexBatchSchProblem oszt\IeC {\'a}ly}{27}{section.5.3}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}MakeDecisions f\IeC {\"u}ggv\IeC {\'e}ny}{28}{subsection.5.3.1}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Branching f\IeC {\"u}ggv\IeC {\'e}ny}{29}{subsection.5.3.2}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Tov\IeC {\'a}bbi met\IeC {\'o}dusok}{29}{subsection.5.3.3}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.4}SGraph oszt\IeC {\'a}ly}{30}{section.5.4}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}MakeMultipleBatches f\IeC {\"u}ggv\IeC {\'e}ny}{31}{subsection.5.4.1}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}UpdateProfitBound f\IeC {\"u}ggv\IeC {\'e}ny}{34}{subsection.5.4.2}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}UpdateProfitBoundFromTask f\IeC {\"u}ggv\IeC {\'e}ny}{36}{subsection.5.4.3}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Egy\IeC {\'e}b \IeC {\'u}j met\IeC {\'o}dusok}{37}{subsection.5.4.4}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.5}Argumentum hozz\IeC {\'a}ad\IeC {\'a}s}{37}{section.5.5}% 
-\select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{38}{section.5.6}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{39}{chapter.6}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{41}{section.6.1}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o}horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{45}{section.6.2}% 
-\select@language {magyar} \contentsline {section}{\numberline {6.3}M\IeC {\'a}sodik tesztfeladat}{46}{section.6.3}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{50}{chapter.7}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {A}Tesztesetek}{53}{appendix.A}% 
-\select@language {magyar} \contentsline {chapter}{\numberline {B}CD Mell\IeC {\'e}klet tartalma}{55}{appendix.B}% 
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Throughput maximaliz\IeC {\'a}l\IeC {\'a}s}{14}{section.2.3}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Probl\IeC {\'e}ma defin\IeC {\'\i }ci\IeC {\'o}}{17}{chapter.3}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Az \IeC {\'u}j m\IeC {\'o}dszer}{21}{chapter.4}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Implement\IeC {\'a}l\IeC {\'a}s}{25}{chapter.5}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.1}S-gr\IeC {\'a}f solver}{25}{section.5.1}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Adatok beolvas\IeC {\'a}sa}{26}{section.5.2}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Bemeneti f\IeC {\'a}jl}{26}{subsection.5.2.1}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Beolvas\IeC {\'o} f\IeC {\"u}ggv\IeC {\'e}ny}{27}{subsection.5.2.2}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.3}FlexBatchSchProblem oszt\IeC {\'a}ly}{28}{section.5.3}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}MakeDecisions f\IeC {\"u}ggv\IeC {\'e}ny}{29}{subsection.5.3.1}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Branching f\IeC {\"u}ggv\IeC {\'e}ny}{30}{subsection.5.3.2}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Tov\IeC {\'a}bbi met\IeC {\'o}dusok}{30}{subsection.5.3.3}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.4}SGraph oszt\IeC {\'a}ly}{31}{section.5.4}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}MakeMultipleBatches f\IeC {\"u}ggv\IeC {\'e}ny}{32}{subsection.5.4.1}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}UpdateProfitBound f\IeC {\"u}ggv\IeC {\'e}ny}{35}{subsection.5.4.2}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}UpdateProfitBoundFromTask f\IeC {\"u}ggv\IeC {\'e}ny}{37}{subsection.5.4.3}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Egy\IeC {\'e}b \IeC {\'u}j met\IeC {\'o}dusok}{38}{subsection.5.4.4}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.5}Argumentum hozz\IeC {\'a}ad\IeC {\'a}s}{38}{section.5.5}% 
+\select@language {magyar} \contentsline {section}{\numberline {5.6}Megold\IeC {\'a}s f\IeC {\'a}jlba \IeC {\'\i }r\IeC {\'a}sa}{39}{section.5.6}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Tesztel\IeC {\'e}s}{40}{chapter.6}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Taszkok k\IeC {\"o}zti kapacit\IeC {\'a}sok v\IeC {\'a}ltoztat\IeC {\'a}s\IeC {\'a}nak hat\IeC {\'a}sa}{42}{section.6.1}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Id\IeC {\H o}horizont v\IeC {\'a}ltoztat\IeC {\'a}s}{46}{section.6.2}% 
+\select@language {magyar} \contentsline {section}{\numberline {6.3}M\IeC {\'a}sodik tesztfeladat}{47}{section.6.3}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {7}\IeC {\"O}sszefoglal\IeC {\'a}s}{51}{chapter.7}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {A}Tesztesetek}{54}{appendix.A}% 
+\select@language {magyar} \contentsline {chapter}{\numberline {B}CD Mell\IeC {\'e}klet tartalma}{56}{appendix.B}% 
