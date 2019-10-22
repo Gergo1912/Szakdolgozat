@@ -47,7 +47,7 @@ A tárolás második fajta csoportosításának alapját az idő adja, amely a k
 \end{itemize}
 ZW esetben nincs lehetőség a köztes anyag tárolására, azaz ha a berendezés befejezte a munkát, akkor azonnal folytatni kell a gyártást. Az LW esetben van egy idő, amíg a köztes termék várakozhat. Azonban, ha ez a rendelkezésre álló idő elfogy, akkor muszáj folytatni a gyártás folyamatát. Az UW eset a legmegengedőbb mind közül, ugyanis ha a köztes anyag tulajdonságai lehetőséget biztosítanak, akkor a tárolási idő nincs korlátozva, bármennyi ideig lehetőség van a tárolásra, raktározásra.
 \newpage
-\section{Megoldó módszerek}
+\section{Megoldó módszerek az irodalomban}
 Az ütemezési feladatok megoldására számos megoldó módszer létezik. Ezek közül a legismertebbek, és legszélesebb körben elterjedt módszerek kerülnek bemutatásra a dolgozatom következő pontjaiban.
 \subsection{MILP modellek}
 Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming, azaz a vegyes egészértékű lineáris programozás. Az ilyen modellekben vegyesen fordulnak elő folytonos és egész változók. Több altípus létezik:
@@ -67,7 +67,7 @@ Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét esem�
 	\item[] \textbf{Időzített Petri háló:} Az alap ilyen módszereknél, hogy az átvitel jele késleltetés alapján jön létre. Többen is foglalkoztak a témával, például Ghaeli \cite{ghaeli}, aki batch folyamatok ütemezésével tanulmányozta.
 \end{itemize}
 
-\subsection{S-gráf módszertan}
+\section{S-gráf módszertan}
 Az S-gráf keretrendszer volt az első olyan publikált módszer, amely gráf elméleten alapult, valamint szakaszos gyártórendszerek ütemezési problémáinak megoldására szolgált \cite{combtech}. Ez a keretrendszer egy irányított gráf modellből, az S-gráfból, és a hozzá tartozó algoritmusokból áll \cite{combframe}. Az S-gráf egy speciális irányított gráf, amely ütemezési problémák számára lett létrehozva. Nemcsak a recept vizualizációja, hanem egyben matematikai modell is. A keretrendszerben az S-gráf reprezentálja a recepteket, a részleges és a teljes ütemterveket is. Ezekben a gráfokban a termékeket és a feladatokat csúcsok jelölik, amelyeket csomópontoknak (node) nevezünk. Az ütemezési döntés nélküli S-gráfot \textbf{Receptgráfnak} nevezzük. Erre példa a~\ref{receptGraf} ábrán látható \cite{Hegyhati}. 
 \begin{figure}[H]	
 \begin{center}
@@ -136,7 +136,7 @@ Abban az esetben, ha minden még nem ütemezett taszkot a kiválasztott $j$ bere
 
 Ha az $S$ halmaz üres lesz, akkor a $G^{cb}$ gráf és a hozzárendelések a ${\cal A}^{cb}$ halmazban leírják az optimális megoldást. Ha legalább egy megvalósítható, akkor az algoritmus visszatér ezzel az értékkel, ellenkező esetben nem ad vissza megoldást.
 
-\section{Throughput maximalizálás}
+\subsection{Throughput maximalizálás}
 Eredetileg az S-gráf keretrendszer makespan minimalizációs problémák megoldására lett létrehozva, azonban a későbbiekben bővítésre került, így ezután throughput, profitmaximalizációs problémák megoldására is alkalmazhatóvá vált. Az alapötlet Majozi és Friedler \cite{majozifriedler}, valamint Holczinger és társai \cite{holczinger} nevéhez fűződik. A termékek lehetséges batch darabszámai alapján az algoritmus konfigurációkat hoz létre. A konfiguráció tehát az, ami megmutatja, hogy egy termékből hány batch készül el.
 \begin{figure}[H]
 \begin{center}

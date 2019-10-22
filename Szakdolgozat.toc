@@ -1,12 +1,12 @@
 \select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{1}{chapter.1}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {2}Irodalmi \IeC {\'a}ttekint\IeC {\'e}s}{3}{chapter.2}% 
 \select@language {magyar} \contentsline {section}{\numberline {2.1}Ipari \IeC {\"u}temez\IeC {\'e}si feladatok}{3}{section.2.1}% 
-\select@language {magyar} \contentsline {section}{\numberline {2.2}Megold\IeC {\'o} m\IeC {\'o}dszerek}{7}{section.2.2}% 
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Megold\IeC {\'o} m\IeC {\'o}dszerek az irodalomban}{7}{section.2.2}% 
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.1}MILP modellek}{7}{subsection.2.2.1}% 
 \select@language {magyar} \contentsline {subsection}{\numberline {2.2.2}Anal\IeC {\'\i }zis alap\IeC {\'u} eszk\IeC {\"o}z\IeC {\"o}k}{8}{subsection.2.2.2}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.3}S-gr\IeC {\'a}f m\IeC {\'o}dszertan}{8}{subsection.2.2.3}% 
-\select@language {magyar} \contentsline {subsection}{\numberline {2.2.4}A makespan minimaliz\IeC {\'a}l\IeC {\'a}s algoritmusa}{12}{subsection.2.2.4}% 
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Throughput maximaliz\IeC {\'a}l\IeC {\'a}s}{14}{section.2.3}% 
+\select@language {magyar} \contentsline {section}{\numberline {2.3}S-gr\IeC {\'a}f m\IeC {\'o}dszertan}{8}{section.2.3}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}A makespan minimaliz\IeC {\'a}l\IeC {\'a}s algoritmusa}{12}{subsection.2.3.1}% 
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.2}Throughput maximaliz\IeC {\'a}l\IeC {\'a}s}{14}{subsection.2.3.2}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {3}Probl\IeC {\'e}ma defin\IeC {\'\i }ci\IeC {\'o}}{17}{chapter.3}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {4}Az \IeC {\'u}j m\IeC {\'o}dszer}{21}{chapter.4}% 
 \select@language {magyar} \contentsline {chapter}{\numberline {5}Implement\IeC {\'a}l\IeC {\'a}s}{25}{chapter.5}% 
