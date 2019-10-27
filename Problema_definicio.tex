@@ -1,8 +1,8 @@
 \chapter{Probléma definíció}
-Számos esettanulmány és irodalmi példa esetében a batch méretek nem rögzítettek, és ha több egység képes elvégezni egy részfeladatot, akkor párhuzamosan tehetik meg azt. Ez a fajta probléma meghatározás különösen gyakran a throughput vagy bevétel maximalizációs probléma esetén jelentkezik, de megjelenhet a makespan minimalizálásnál is. Az idő diszkréción alapuló megközelítések meg tudják oldani ezt a problémát, azonban az S-gráf keretrendszer esetén néhány módosítás szükséges. Az ~\ref{throughput_alg} ábrán látható algoritmus megköveteli, hogy a recept rögzített legyen, valamint egy termékhez tartozó batch jövedelme is előre ismert legyen. Az előbb említett problémák esetén viszont egyik sem garantált. 
+Az előző fejezetben bemutatott throughput maximalizálás esetében kikötés volt, hogy minden termék batch mérete rögzített legyen, azaz a termékek batch-jének jövedelmét ismerjük. Abban az esetben minden taszkhoz egy berendezés hozzárendelése megengedett, azaz csak egy berendezés végezheti el. Azonban számos esettanulmány és irodalmi példa esetében a batch méretek nem rögzítettek. Ha több berendezés képes elvégezni ugyanazt a taszkot, akkor ezt megtehetik párhuzamosan. Ilyen eset főleg a throughput maximalizálás során léphet fel, de megjelenhet makespan minimalizálásnál is. Az időfelosztásos módszerek meg tudják oldani az ilyen problémákat, azonban az S-gráf keretrendszer esetén néhány módosítás szükséges. Az ~\ref{throughput_alg} ábrán látható algoritmus megköveteli, hogy a recept rögzített, valamint egy termék batch-kének jövedelme is előre ismert legyen. Az előbb említett problémák esetén viszont egyik sem garantált. 
 A javasolt megközelítés szemléltetésére a Kondili és munkatársaitól származó példát veszem igénybe \cite{kondili}. Ez látható \ref{kondiliPelda} ábrán.
 
-A folyamat 5 taszkból áll: fűtésből, 3 darab reakcióból, és az elválasztásból. Ezekhez 4 berendezés áll rendelkezésre: a fűtőtest és szeparátor, mindkettő 100 kilogrammos kapacitással a fűtés és elválasztás folyamatához. A három reakciós folyamathoz van 2 darab reaktor ugyanakkora feldolgozási idővel. A kapacitásuk eltér, egyiké 80 kilogramm a másiké pedig 50 kilogramm, de ezeket a reaktorokat párhuzamosan is igénybe lehet venni. Feltételezzük, hogy az összes egység képes a kapacitásuknál kisebb terheléssel működni, azaz nincs a teherbírásuknak alsó határa. A folyamat során két termék készül azonos profittal. A következő korlátozások fennállnak: nem marad semmilyen köztes anyag a termelő folyamat végén, nem lehet csak az egyes számú terméket gyártani, illetve nincs tárolásra lehetőség a folyamat során.
+A folyamat 5 taszkból áll: fűtésből, 3 darab reakcióból, és az szétválasztásból. Ezekhez 4 berendezés áll rendelkezésre: a fűtőtest és szeparátor, mindkettő 100 kilogrammos kapacitással a fűtés és elválasztás folyamatához. A három reakciós folyamathoz van 2 darab reaktor ugyanakkora feldolgozási idővel. A kapacitásuk eltér, egyiké 80 kilogramm a másiké pedig 50 kilogramm, de ezeket a reaktorokat párhuzamosan is igénybe lehet venni. Feltételezzük, hogy az összes egység képes a kapacitásuknál kisebb terheléssel működni, azaz nincs meghatározva, hogy minimálisan mekkora mennyiség szükséges. A folyamat során két termék készül azonos profittal. A következő korlátozások fennállnak: nem marad semmilyen köztes anyag a termelő folyamat végén, nem lehet csak az egyes számú terméket gyártani, illetve nincs tárolásra lehetőség a folyamat során.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.65]{kondiliPelda}
@@ -10,11 +10,13 @@ A folyamat 5 taszkból áll: fűtésből, 3 darab reakcióból, és az elválasz
 \label{kondiliPelda}
 \end{center}
 \end{figure}
-Mindegyik reakciós folyamat elvégezhető egyik vagy másik reaktor által, illetve ezekkel párhuzamosan. Ez $3^3 = 27$ fix receptet eredményez, amelyek különböző batch méret intervallummal rendelkezhetnek. Mindegyik esetben különálló S-gráf receptet kell létrehozni, hogy a korábban említett S-gráf algoritmust igénybe lehessen venni profit maximalizálásra, így a keresési terület 27 dimenziós térré válna. Ez óriási CPU igényhez vezetne az optimalizálás során, ezért az esetek számának csökkentése elengedhetetlen.
+Mindegyik reakció elvégezhető az egyik, a másik, vagy mindkettő reaktor által párhuzamosan. Ez $3^3 = 27$ rögzített receptet eredményez, amelyek különböző batch mérettel rendelkezhetnek. Mindegyik esetben különálló S-gráf receptet kell létrehozni, hogy a korábban említett S-gráf algoritmust igénybe lehessen venni profit maximalizálásra, így a legfelső szinten lévő keresési terület 27 dimenziós térré válna. Ez óriási CPU igényhez vezetne az optimalizálás során, ezért az esetek számának csökkentése elengedhetetlen.
 
-\begin{table}[H]
+Ha megnézzük a \ref{tabla1} táblázatot észrevehető, hogy csupán néhány érték ismétlődik. Ennek oka az anyagok egyensúlyából származik. Például, hogy ha mind az R1-et mind az R2-t hozzárendeljük a hármas számú reakcióhoz ahelyett, hogy csak az R1 lenne hozzárendelve, akkor sem lesz nagyobb a kimenet, mert a korábbi reakciókból származó pótlás nem éri el a szükséges szintet. Ha a két különböző eset, $c$ és $c'$, ugyanakkora maximális jövedelemmel rendelkezik, de a $c$ eset csak kisebb részét használja a $c'$ által használt egységeknek, ekkor az mondjuk, hogy a $c$ \textit{dominálja} a $c'$-t. A példából látható, hogy a 9-es eset dominálja a 27-es esetet. Továbbá a 24-es eset dominálva van a 4, 5, 6, 13, 14, 15, 22, 23 esetek által. Megállapíthatjuk, hogy ha egy eset legalább egy másik által dominálva van, akkor azt kizárhatjuk a vizsgálatból, mert az továbbra is garantálva van, hogy megtalálja az optimális megoldást. A \ref{tabla3} táblázat tartalmazza azokat az eseteket, amelyek nincsenek dominálva más esetek által. 
+
+\begin{table}
 	\begin{center}
-		\caption{A 27 állandó recept Kondili példájához}
+		\caption{A 27 rögzített recept Kondili példájához}
 		\captionsetup[table]{skip=10pt}
 		\label{tabla1}
 		\begin{tabular}{r|ccc|l}
@@ -51,7 +53,7 @@ Mindegyik reakciós folyamat elvégezhető egyik vagy másik reaktor által, ill
 	\end{center}
 \end{table}
 
-Ha megnézzük a \ref{tabla1} táblázatot észrevehető, hogy csupán néhány érték ismétlődik. Ennek oka az anyagok egyensúlyából származik. Például, hogy ha mind az R1-et mind az R2-t hozzárendeljük a hármas számú reakcióhoz ahelyett, hogy csak az R1 lenne hozzárendelve, akkor sem lesz nagyobb a kimenet, mert a korábbi reakciókból származó pótlás nem éri el a szükséges szintet. Ha a két különböző eset, $c$ és $c'$, ugyanakkora maximális jövedelemmel rendelkezik, de a $c$ eset csak kisebb részét használja a $c'$ által használt egységeknek, ekkor az mondjuk, hogy a $c$ \textit{dominálja} a $c'$-t. A példából látható, hogy a 9-es eset dominálja a 27-es esetet. Továbbá a 24-es eset dominálva van a 4, 5, 6, 13, 14, 15, 22, 23 esetek által. Megállapíthatjuk, hogy ha egy eset legalább egy másik által dominálva van, akkor azt kizárhatjuk a vizsgálatból, mert az továbbra is garantálva van, hogy megtalálja az optimális megoldást. A \ref{tabla3} táblázat tartalmazza azokat az eseteket, amelyek nincsenek dominálva más esetek által. 	
+	
 
 \begin{table}[H]
 	\begin{center}
@@ -95,6 +97,8 @@ Ezután a esetszám csökkenés után is még mindig 11 esetet kellene az S-grá
 		\end{tabular}
 	\end{center}
 \end{table}
+
+Látható, hogy az ilyen típusú feladatoknál nem lehet közvetlenül a megoldó programot igénybe venni a feladat megoldásához, szükség van előzetes lépésekre, hogy megfelelő formába kerüljön a feladat. Ez mindig plusz időbe kerül, és ez az idő annál nagyobb lehet, minél több taszk és berendezés szerepel az adott feladatban. A következő fejezetben bemutatott új módszer esetén ezek a lépések elhagyhatóak, ezáltal időt lehet megspórolni.
 
 
 

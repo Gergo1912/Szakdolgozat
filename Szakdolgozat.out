@@ -9,26 +9,29 @@
 \BOOKMARK [2][-]{subsection.2.3.2}{Throughput maximaliz\341l\341s}{section.2.3}% 9
 \BOOKMARK [0][-]{chapter.3}{Probl\351ma defin\355ci\363}{}% 10
 \BOOKMARK [0][-]{chapter.4}{Az \372j m\363dszer}{}% 11
-\BOOKMARK [0][-]{chapter.5}{Implement\341l\341s}{}% 12
-\BOOKMARK [1][-]{section.5.1}{S-gr\341f solver}{chapter.5}% 13
-\BOOKMARK [1][-]{section.5.2}{Adatok beolvas\341sa}{chapter.5}% 14
-\BOOKMARK [2][-]{subsection.5.2.1}{Bemeneti f\341jl}{section.5.2}% 15
-\BOOKMARK [2][-]{subsection.5.2.2}{Beolvas\363 f\374ggv\351ny}{section.5.2}% 16
-\BOOKMARK [1][-]{section.5.3}{FlexBatchSchProblem oszt\341ly}{chapter.5}% 17
-\BOOKMARK [2][-]{subsection.5.3.1}{MakeDecisions f\374ggv\351ny}{section.5.3}% 18
-\BOOKMARK [2][-]{subsection.5.3.2}{Branching f\374ggv\351ny}{section.5.3}% 19
-\BOOKMARK [2][-]{subsection.5.3.3}{Tov\341bbi met\363dusok}{section.5.3}% 20
-\BOOKMARK [1][-]{section.5.4}{SGraph oszt\341ly}{chapter.5}% 21
-\BOOKMARK [2][-]{subsection.5.4.1}{MakeMultipleBatches f\374ggv\351ny}{section.5.4}% 22
-\BOOKMARK [2][-]{subsection.5.4.2}{UpdateProfitBound f\374ggv\351ny}{section.5.4}% 23
-\BOOKMARK [2][-]{subsection.5.4.3}{UpdateProfitBoundFromTask f\374ggv\351ny}{section.5.4}% 24
-\BOOKMARK [2][-]{subsection.5.4.4}{Egy\351b \372j met\363dusok}{section.5.4}% 25
-\BOOKMARK [1][-]{section.5.5}{Argumentum hozz\341ad\341s}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.6}{Megold\341s f\341jlba \355r\341sa}{chapter.5}% 27
-\BOOKMARK [0][-]{chapter.6}{Tesztel\351s}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Taszkok k\366zti kapacit\341sok v\341ltoztat\341s\341nak hat\341sa}{chapter.6}% 29
-\BOOKMARK [1][-]{section.6.2}{Idohorizont v\341ltoztat\341s}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.3}{M\341sodik tesztfeladat}{chapter.6}% 31
-\BOOKMARK [0][-]{chapter.7}{\326sszefoglal\341s}{}% 32
-\BOOKMARK [0][-]{appendix.A}{Tesztesetek}{}% 33
-\BOOKMARK [0][-]{appendix.B}{CD Mell\351klet tartalma}{}% 34
+\BOOKMARK [1][-]{section.4.1}{Vez\351rlo}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.2}{Maxprofit elj\341r\341s}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.3}{Profitbound elj\341r\341s}{chapter.4}% 14
+\BOOKMARK [0][-]{chapter.5}{Implement\341l\341s}{}% 15
+\BOOKMARK [1][-]{section.5.1}{S-gr\341f solver}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.2}{Adatok beolvas\341sa}{chapter.5}% 17
+\BOOKMARK [2][-]{subsection.5.2.1}{Bemeneti f\341jl}{section.5.2}% 18
+\BOOKMARK [2][-]{subsection.5.2.2}{Beolvas\363 f\374ggv\351ny}{section.5.2}% 19
+\BOOKMARK [1][-]{section.5.3}{FlexBatchSchProblem oszt\341ly}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.3.1}{MakeDecisions f\374ggv\351ny}{section.5.3}% 21
+\BOOKMARK [2][-]{subsection.5.3.2}{Branching f\374ggv\351ny}{section.5.3}% 22
+\BOOKMARK [2][-]{subsection.5.3.3}{Tov\341bbi met\363dusok}{section.5.3}% 23
+\BOOKMARK [1][-]{section.5.4}{SGraph oszt\341ly}{chapter.5}% 24
+\BOOKMARK [2][-]{subsection.5.4.1}{MakeMultipleBatches f\374ggv\351ny}{section.5.4}% 25
+\BOOKMARK [2][-]{subsection.5.4.2}{UpdateProfitBound f\374ggv\351ny}{section.5.4}% 26
+\BOOKMARK [2][-]{subsection.5.4.3}{UpdateProfitBoundFromTask f\374ggv\351ny}{section.5.4}% 27
+\BOOKMARK [2][-]{subsection.5.4.4}{Egy\351b \372j met\363dusok}{section.5.4}% 28
+\BOOKMARK [1][-]{section.5.5}{Argumentum hozz\341ad\341s}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.6}{Megold\341s f\341jlba \355r\341sa}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{Tesztel\351s}{}% 31
+\BOOKMARK [1][-]{section.6.1}{Taszkok k\366zti kapacit\341sok v\341ltoztat\341s\341nak hat\341sa}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.2}{Idohorizont v\341ltoztat\341s}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.3}{M\341sodik tesztfeladat}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{\326sszefoglal\341s}{}% 35
+\BOOKMARK [0][-]{appendix.A}{Tesztesetek}{}% 36
+\BOOKMARK [0][-]{appendix.B}{CD Mell\351klet tartalma}{}% 37
