@@ -22,12 +22,12 @@ A recepteket a feladatok precedenciája szerint az alábbi csoportokba lehet bes
 	\item \textbf{Precedential:} Egy termék gyártása nem szükségszerűen lineáris, lehetnek elágazások, kör azonban nem megengedett. Minden taszk előfeltételét be kell fejezni mielőtt az adott lépés megkezdődik. 
 	\item \textbf{General Network:} A legáltalánosabb recept, ahol a taszkok a bemenetük és a kimenetük által adottak. Ilyen esetben kör is lehetséges.
 \end{itemize}
-Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek} ábrán. A receptek jobb oldalán lévő, T-vel jelölt kör reprezentálja a terméket, a többi pedig a taszkokat.
+Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek_block} ábrán. A receptek jobb oldalán lévő, T-vel jelölt kör reprezentálja a terméket, a többi pedig a taszkokat.
 \begin{figure}[H]	
 \begin{center}
-\includegraphics[scale=0.7]{receptek}
-\caption{Különböző receptek szemléltetése}
-\label{receptek}
+\includegraphics[scale=0.5]{receptek_block}
+\caption{Különböző receptek szemléltetése blokkdiagramon}
+\label{receptek_block}
 \end{center}
 \end{figure}
 \newpage
@@ -58,10 +58,10 @@ Minden időpontban bináris változók vannak hozzárendelve a feladatokhoz asze
   
   \item[] \textbf{Precedencia alapú modellek - Precedence based:} Ezeknél a módszereknél, szemben az időfelosztásos módszerekkel, nincs szükség az időhorizont diszkretizáció- jára, azaz nem használnak ismeretlen paramétert a modellben. Általánosságban jobb számítási eredményeket nyújtanak az általuk kezelt problémákra, azonban ez a készlet sokkal kisebb, mint az időfelosztásos modellekhez tartozó kollekció. Alapvetően a multiproduct és multipurpose receptek esetében használható megfelelően, de kibővíthető, hogy a sokkal általánosabb precedential receptek is megoldhatók legyenek ezek segítségével. 
   
-Ez a módszer kettő darab bináris változót használ. Az első $Y_{i,j}$, aminek az értéke abban az esetben lesz 1, ha $i$ feladatot $j$ berendezés végzi el. A második változó: $X_{i,j,i'}$. Értéke akkor lesz 1, ha ugyanaz a berendezés végzi el az $i$ és $i'$ taszkot, méghozzá úgy, hogy előbb az $i$-t teljesíti. 
+Ez a módszer kétféle bináris változót használ. Az első $Y_{i,j}$, aminek az értéke abban az esetben lesz 1, ha $i$ feladatot $j$ berendezés végzi el. A második változó: $X_{i,j,i'}$. Értéke akkor lesz 1, ha ugyanaz a berendezés végzi el az $i$ és $i'$ taszkot, méghozzá úgy, hogy előbb az $i$-t teljesíti. 
 \end{itemize}
 \subsection{Analízis alapú eszközök}
-Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét eseményrendszerek modellezésére \cite{cassandras}. Számos kísérletet tettek ezen eszközök modellezési teljesítményének kiterjesztésére annak érdekében, hogy batch folyamatok ütemezésére is alkalmassá tegyék az említett eszközöket. A meglévő modelleket időzítéssel egészítették ki, így jöttek létre a Timed Place Petri Nets (TPPN) and Timed Priced Automata (TPA) módszerek, amelyek Branch and Bound algoritmust használnak azért, hogy a legelőnyösebb megoldást megtalálják. Ezen módszereknek a hatékonysága elmarad a MILP és az S-gráf modell hatékonyságától is.
+Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét eseményű rendszerek modellezésére \cite{cassandras}. Számos kísérletet tettek ezen eszközök modellezési teljesítményének kiterjesztésére annak érdekében, hogy batch folyamatok ütemezésére is alkalmassá tegyék az említett eszközöket. A meglévő modelleket időzítéssel egészítették ki, így jöttek létre a Timed Place Petri Nets (TPPN) and Timed Priced Automata (TPA) módszerek, amelyek Branch and Bound algoritmust használnak azért, hogy a legelőnyösebb megoldást megtalálják. Ezen módszereknek a hatékonysága elmarad a MILP és az S-gráf modell hatékonyságától is.
 \begin{itemize}
 	\item[] \textbf{Időzített automaták:} Ezekben a megközelítésekben a recepteket és a berendezéseket külön modellezik, és a rendszer modellje ezeknek a párhuzamos összetételével jön létre. A bonyolultságot az jelenti, hogy az órák állapota végtelen lehet, és emiatt a rendszer állapotterülete is az lehet.
 	\item[] \textbf{Időzített Petri háló:} Az alap ilyen módszereknél, hogy az átvitel jele késleltetés alapján jön létre. Többen is foglalkoztak a témával, például Ghaeli \cite{ghaeli}, aki batch folyamatok ütemezésével tanulmányozta.
@@ -136,15 +136,71 @@ Abban az esetben, ha minden még nem ütemezett taszkot a kiválasztott $j$ bere
 
 Ha az $S$ halmaz üres lesz, akkor a $G^{cb}$ gráf és a hozzárendelések a ${\cal A}^{cb}$ halmazban leírják az optimális megoldást. Ha legalább egy megvalósítható, akkor az algoritmus visszatér ezzel az értékkel, ellenkező esetben nem ad vissza megoldást.
 
+\begin{algorithm}[H]
+\caption{A makespan minimalizálás pszeudó kódja}
+\label{makespan_min}
+\begin{algorithmic}[1]
+  \State $makespan^{cb}:= \infty$
+  \State ${\cal S}:= \{($\textbf{recipe()}$,I,J,\emptyset)\}$  
+  \While {${\cal S}\ne\emptyset $}
+    \State $(G(N,A_1,A_2,w),I',J',{\cal A}):= $\textbf{select\_remove(}$\cal S$\textbf{)}
+    \If{\textbf{bound(}$G$\textbf{)}$<makespan^{cb}$}
+      \If{$I'=\emptyset$}
+        \State $makespan^{cb}:= $\textbf{bound(}$G$\textbf{)}
+        \State $G^{cb}\:= G$
+        \State ${\cal A}^{cb}:= {\cal A}$        
+      \Else
+        \State $j:= $\textbf{select(}$J'${)} 
+        \ForAll{$i \in I_j \cap I'$}
+          \State $G^i(N,A_1,A^i_2,w^i):= G(N,A_1,A_2,w)$
+          \ForAll{$i' \in \bigcup_{(i',j)\in{\cal A}}I^+_{i'}\setminus\{i\}$}
+            \State $A^i_2:= A^i_2 \cup \{(i',i)\}$
+          \EndFor        
+          \ForAll{$i' \in I^+_{i}$}
+            \State $w^i_{i,i'}:= t^{pr}_{i,j}$
+          \EndFor
+          \State ${\cal S}:= {\cal S} \cup (G^i(N,A_1,A^i_2,w^i),I'\setminus\{i\},J',{\cal A}\cup\{(i,j)\})$
+        \EndFor
+        \If{$I'\subseteq\bigcup_{j'\in J',j\ne j'}I_{j'}$}
+          \State ${\cal S}:= {\cal S} \cup (G(N,A_1,A_2),I',J'\setminus\{j\},{\cal A})$
+        \EndIf
+      \EndIf %ha nem megoldas 
+    \EndIf % bound jo
+  \EndWhile % S minden elemere
+  \If {$makespan^{cb}\ne\infty$}
+    \State \textbf{return} ($G^{cb},{\cal A}^{cb}$)
+  \EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
 \subsection{Throughput maximalizálás}
 Eredetileg az S-gráf keretrendszer makespan minimalizációs problémák megoldására lett létrehozva, azonban a későbbiekben bővítésre került, így ezután throughput, profitmaximalizációs problémák megoldására is alkalmazhatóvá vált. Az alapötlet Majozi és Friedler \cite{majozifriedler}, valamint Holczinger és társai \cite{holczinger} nevéhez fűződik. A termékek lehetséges batch darabszámai alapján az algoritmus konfigurációkat hoz létre. A konfiguráció tehát az, ami megmutatja, hogy egy termékből hány batch készül el. Ha $n$ a termékek számát jelöli, akkor egy $n$ dimenziós térben lehet elképzelni ezeket a konfigurációkat. 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=1]{throughput_alg}
-\caption{A throughput maximalizáló algoritmus pszeudó kódja \cite{Hegyhati}}
-\label{throughput_alg}
-\end{center}
-\end{figure}
+
+\begin{algorithm}[H]
+\caption{Az algoritmus pszeudó kódja}
+\label{throughput}
+\begin{algorithmic}[1]
+  \State $revenue^{cb}:=  0$
+  \State ${\cal S}:=  (\mathbb{Z}^*)^{|P|}$
+  \While {${\cal S}\ne\emptyset$}
+    \State $x:= $\textbf{select\_remove(}$\cal S$\textbf{)}
+    \If{\textbf{feasible(recipe(}$x$\textbf{),$t^H$)}}
+      \If{\textbf{revenue(}$x$\textbf{)}$>revenue^{cb}$}
+        \State $revenue^{cb}:= $\textbf{revenue(}$x$\textbf{)}
+        \State $x^{cb}:=  x$
+        \State \textbf{update(}${\cal S},revenue^{cb}$\textbf{)}
+      \EndIf
+    \Else
+      \State ${\cal S}:= \{ x'\in{\cal S} \mid x' \not\ge x\}$
+    \EndIf
+  \EndWhile
+  \If {$revenue^{cb}\ne 0$}
+    \State \textbf{return} ($x^{cb},revenue^{cb}$)
+  \EndIf
+\end{algorithmic}
+\end{algorithm}
+
 Az algoritmus először inicializálja az $S$ halmazt a termékekre vonatkozóan minden lehetséges batch számmal. Fontos kiemelni, hogy ebben az esetben minden terméknél a batch méret rögzített, azaz egy termék batch-jének jövedelme ismert. Ezt követően minden iteráció során az előbb említett halmazból kiválasztásra kerül egy konfiguráció a \textbf{select\textunderscore remove} függvény segítségével. Ezután sor kerül a megvalósíthatóság tesztelésére, amely során eldől, hogy a megadott időhorizont alatt megvalósítható vagy sem. Ha megvalósítható és nagyobb jövedelmet biztosít, mint az eddig megtalált legnagyobb jövedelem, akkor a jelenlegi legjobb megoldás és az S halmaz frissül. Ha infeasible a kiválasztott konfiguráció, akkor ez, és minden ennél nagyobb konfiguráció eltávolításra kerül az S halmazból. Amint az S halmaz üressé válik, és volt feasible megoldás, akkor az algoritmus visszatér a legjobb konfigurációval, és az ehhez tartozó jövedelem mennyiségével.
 
 A~\ref{throughput1} ábrán látható egy Throughput módszerrel megvalósított feladat eredménye.

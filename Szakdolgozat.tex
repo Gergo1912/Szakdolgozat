@@ -21,7 +21,7 @@
 \usepackage{rotating}
 \usepackage{makecell}
 \usepackage{amsfonts}
-
+\usepackage{multirow}
 
 \geometry{
  left=30mm,
@@ -37,6 +37,7 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \fancyfoot[C]{\thepage}
 
+\renewcommand{\listalgorithmname}{Algoritmusok jegyzéke}
 \renewcommand{\lstlistingname}{Kódrészlet}
 \makeatletter
 \renewcommand{\ALG@name}{Algoritmus}
@@ -67,6 +68,7 @@
 \tableofcontents
 \listoffigures 
 \listoftables
+\listofalgorithms
 \clearpage
 \pagenumbering{arabic}
 \include{Bevezetes}
