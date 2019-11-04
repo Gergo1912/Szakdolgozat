@@ -1,12 +1,17 @@
 \chapter{Implementálás}
 \section{S-gráf solver}
-Az S-gráf megoldó szoftver egy a Pannon Egyetem, Műszaki Informatikai Kar, Rendszer- és Számítástudományi Tanszék által fejlesztett szoftver. C++ nyelven íródott, amely képes nagy teljesítményre, ami fontos a tudományos területeken. A szoftverben a C++ nyelv sajátosságai fedezhetőek fel, többek között az objektum orientált paradigma, valamint különböző, a nyelvbe nem beépített tárolók és algoritmusok.
+Az S-gráf solver program egy C++ nyelven megvalósított, nagy teljesítményre képes, több szálas program. A szoftver szakaszos üzemű termelőrendszerek rövidtávú ütemezésével foglalkozik. Tárolási stratégiákat tekintve jelenleg támogatja a NIS, UIS, UW és LW feladatokat, valamint lehetőség van AWS feladatok megoldására is. A célfüggvények közül a makespan minimalizáció, a throughput maximalizáció és a ciklusidő minimalizálás támogatott. 
 
-A szoftver szakaszos üzemű termelőrendszerek rövidtávú ütemezésével foglalkozik. A megoldó jelenleg a tárolási stratégiákat tekintve a NIS, UIS, UW és LW feladatokat támogatja. Ezek mellett lehetőség van AWS feladatok megoldására is. A célfüggvények közül a makespan minimalizáció, a throughput maximalizáció és a ciklusidő minimalizálás támogatott.
+A szoftver felépítésében nagy szerepe van az objektum orientáltságnak az osztályok használatán keresztül. Ezek segítségével a megoldóban el vannak különítve a beolvasás, a végeredmény kiírás, valamint a különböző megoldó algoritmusokat végző részek, modulok. A program képes különböző formátumú fájlok beolvasására (Pl: xml, ods, csv), amelyek tartalmazzák a probléma megoldásához szükséges információkat. A bemeneti fájl alapján felépül a receptgráf, és ebből legenerálja a részproblémákat. A szoftver az eredmény képernyőn való megjelenítésén kívül fájlban is eltárolja azt. Továbbá a Gantt diagram adatait karakteres formában is elmenti az említett fájlba, illetve lehetőség van arra is, hogy ezt a diagramot képfájlban mentse el. A megoldó használata környezeti változók segítségével történik. Ezekkel adható meg a bementi fájl, az eredményeket tároló fájl, a kívánt megoldó módszer meghatározása, az időhorizont megadása, továbbá számos különböző beállítási lehetőség. Erre egy példa: $$-i\:input.ods -o\: output.txt -t\:2 -m\:eqbased$$ Az "-i" paranccsal adható meg a bemeneti, input fájl, az "-o" paranccsal pedig a kimeneti, output fájlt lehet megadni. A "-t" utasítás a maximálisan használható szálak megadására szolgál. A példában az utolsó paranccsal, az "-m" kapcsolóval, pedig a megoldó módszert tudjuk kiválasztani.
 
-A szoftver felépítésében nagy szerepe van az objektum orientáltságnak az osztályok használatán keresztül. Ezek segítségével a megoldóban el vannak különítve a beolvasás, a végeredmény kiírás, valamint a különböző megoldó algoritmusokat végző részek, modulok. A program képes különböző formátumú fájlok beolvasására (Pl: xml, ods, csv), amelyek tartalmazzák a probléma megoldásához szükséges információkat. A bemeneti fájl alapján felépül a receptgráf, és ebből legenerálja a részproblémákat. A szoftver az eredmény képernyőn való megjelenítésén kívül fájlban is eltárolja azt, továbbá a Gantt diagram adatait karakteres formában is elmenti az említett fájlban, illetve lehetőség van arra is, hogy ezt a diagramot képfájlban mentse el. A megoldó használata környezeti változók segítségével történik. Ezek segítségével adható meg a bementi fájl, az eredményeket tároló fájl, a kívánt megoldó módszer meghatározása, az időhorizont megadása, továbbá számos különböző beállítási lehetőség. Erre egy példa: $$-i\:input.ods -o\: output.txt -t\:2 -m\:eqbased$$ Az "-i" paranccsal adható meg a bemeneti, input fájl, az "-o" paranccsal pedig a kimeneti, output fájlt lehet megadni. A "-t" utasítás a maximálisan használható szálak megadására szolgál. A példában az utolsó paranccsal, az "-m" kapcsolóval, pedig a megoldó módszert tudjuk kiválasztani.
+A megoldóban egyik legfontosabb szerepet tölti be a Branch and Bound, azaz a Korlátozás és Szétválasztás algoritmus. A szétválasztás több módszerrel is végrehajtható, ezért a szoftver kialakítása révén létrehozhatóak, hozzáadhatóak új algoritmusok a megoldóhoz.
 
-A megoldóban egyik legfontosabb szerepet tölti be a Branch and Bound, azaz a Korlátozás és Szétválasztás algoritmus. A döntések az ütemezés során azt reprezentálják, hogy melyik berendezés, melyik részfeladatot, taszkot végzi el, illetve ezek sorrendjét is megmutatják. A szétválasztás több módszerrel is végrehajtható, ezért a szoftver kialakítása révén létrehozhatóak, hozzáadhatóak új algoritmusok a megoldóhoz.
+\subsection{A megoldó működése}
+A szoftver parancssori kapcsolókkal futtatható. Az összes ilyen paraméter a \textbf{Arguments.cpp} fájlban van tárolva. A \textbf{MainSolver} osztályban meghívásra kerül a \textbf{getOptions} függvény, ami létrehoz egy példányt a \textbf{SolverOptions} osztályból, amely tartalmazza a megadott paraméter alapján létrejött beállításokat. Ezt követően megtörténik a bemeneti adatok beolvasása, és létrejön egy \textbf{SGraph} objektum, ami a recept gráfot tartalmazza. Ehhez meghívásra kerül a \textbf{ReadInputFromFile} metódus, majd azon belül a \textbf{RelationalProblemReader} objektum \textbf{ReadSGraph} metódusa. Miután ez sikeresen lezajlott a \textbf{getProblem} metódus segítségével meghatározza a program a probléma típusát. Ezt követően a \textbf{getSolver} függvény példányosítja a szükséges solvert, amellyel a problémát megoldja. Ez a solver throughput maximalizálás során a \textbf{ThroughputSolver} osztály egy példánya lesz. A\textbf{Solver} metódus meghívásával kezdődik a probléma megoldása. Egy \textbf{TreeNode} objektum tartalmazza az optimális megoldás ütemezési gráfját. Miután megvan a megoldás egy \textbf{SolutionWriter} objektum \textbf{Write} függvényének meghívásával kiírja a megadott fájlba a megtalált megoldást.
+
+Az eddig leírtakban nem volt szükség nagyobb módosításra az új megoldó módszer létrehozásához. A \textbf{ThroughputSolver} osztály működésével kapcsolatban volt szükség új kódrészek implementálásához és a meglévők módosítására. A már említett \textbf{Solve} metódus először megkeresi az optimális megoldást tartalmazó teret. Ehhez végigmegy a tengelyek mindaddig, amíg megvalósítható az adott konfiguráció. Ha megvalósítható akkor megnöveli az adott termék batch számát. Első nagyobb eltérés az új és a régi megoldó között, hogy még a régiben a \textbf{FirstFeasible} metódus hívódik meg, addig az újban a \textbf{SolveBest}. A \textbf{FirstFeasible} lényege abban van, hogy amint talál egy megvalósítható megoldást akkor nem keres tovább. Az újban viszont ez nem jó, mert nem minden esetben az először megtalált megoldás egy konfiguráción belül a legjobb. Ha az adott konfiguráció megvalósítható, akkor a \textbf{NewSolution}
+metódus meghívódik, és létrehoz egy új lehetséges megoldást tartalmazó objektumot. Ha nem lehet megvalósítani, akkor null érték kerül visszaadásra. Ha ez történik akkor az adott tengelyen befejeződik a keresés. Ha minden tengelyen ez végbement, akkor létrejön a keresési tér. A következő lépés ennek a térnek a bejárása a \textbf{SearchThrSolution} függvénnyel. Az új módszer létrehozása során szükség volt ennek a metódusnak a módosítására. Eredetileg ez használja a revenue line gyorsítási stratégiát. Ennek használatát feltételhez kellett kötni, mert az új módszer esetén ennek használata nem lehetséges. Továbbá a jövedelem módosítására is szükség volt, mert nem egyezik meg a vizsgált korlát a két módszer esetében. A keresés végeztél a \textbf{Solve} metódus visszaadja a legjobb megoldást a \textbf{MainSolver} számára. Abban az esetben, ha nincs megoldás akkor egy exceptiont dob a \textbf{Solve} függvény, amely kezelése során a felhasználót értesíti a program arról, hogy az adott feladatnak nincs megoldása.
+
 \section{Adatok beolvasása}
 \subsection{Bemeneti fájl}
 A program működéséhez szükséges adatokat ods kiterjesztésű fájlban lehet megadni. A solver mappa input almappájában megtalálható az \textbf{extended\textunderscore precedential.ods} fájl, amely segítségül szolgál ahhoz, ha új fájlt kívánunk létrehozni a saját feladatunkhoz tartozó adatokkal. Ez a fájl egy, a szoftver működtetéséhez alkalmas, korábban létrehozott fájl kibővített változata. Az abban megtalálható táblázatokhoz további oszlopok kerültek hozzáadásra, amelyben az új módszerhez szükséges adatok szerepelnek. Az új fájl a következő táblákat tartalmazza, jelezve az újonnan hozzáadott oszlopokat:
@@ -15,10 +20,10 @@ A program működéséhez szükséges adatokat ods kiterjesztésű fájlban lehe
   \item Equipment táblában találhatóak a berendezésekhez kapcsolódó információk. Újonnan került hozzáadásra az úgynevezett b\textunderscore capacity oszlop, amely az adott berendezés kapacitását mutatja meg.
   \item Precendence tábla, amely a gráfban szereplő éleket az él kezdő csomópontjának és végpontjának feltüntetésével szemlélteti. Két új, hasonló oszlop lett a táblázathoz illesztve, ezek a következőek:
   	\begin{itemize}
-  		\item Az s\textunderscore percent oszlop, amely a táblázat task1 oszlopában szereplő részfeladathoz tartozó százalékot mutatja.
-  		\item A d\textunderscore percent oszlop, amely a táblázat task2 oszlopában szereplő részfeladathoz tartozó százalékot mutatja.
+  		\item Az s\textunderscore percent oszlop, amely a táblázat task1 oszlopában szereplő részfeladat kapacitásának hasznosuló százalékát mutatja.
+  		\item A d\textunderscore percent oszlop, amely azt mutatja, hogy a task1 oszlopban szereplő részfeladat kapacitásának mekkora részét tudj felvenni a task2 oszlopban szereplő részfeladat.
   	\end{itemize}
-  	\item A részfeladatok adatait tartalmazzó task tábla változatlanul került felhasználásra.
+  	\item A taszkok adatait tartalmazó task tábla változatlanul került felhasználásra.
   	\item A Proctime táblában találhatóak meg azok az adatok, hogy melyik taszkot melyik berendezés tudja elvégezni, valamint, hogy mennyi idő szükséges ehhez. Ez szintén módosítás nélkül lett átemelve.
 \end{itemize}
 \subsection{Beolvasó függvény}
@@ -27,7 +32,8 @@ Az új módszer megoldásához szükséges adatok beolvasása, hasonlóan a fáj
 Az említett függvényben meghívásra kerül a \textbf{ParseEquipments(SGraph* graph)} eljárás, ami a fejlesztés során ki lett egészítve azzal, hogy vizsgálja meg, hogy a fájlban lévő equipment tábla rendelkezik-e b\textunderscore capacity nevű oszloppal.
 Ha igen, akkor ellenőrzi, hogy a beolvasott érték negatív vagy sem. Abban az esetben, ha negatív, akkor a szoftver dob egy kivételt és a működés leáll, mivel csak nem negatív értékekkel oldható meg a probléma. Ellenkező esetben pedig az \textbf{SGraph} objektum \textbf{Equipment} objektumában, amely ki lett bővítve egy double típusú változóval az új adatok megőrzésének érdekében, eltárolásra kerül a beolvasott adat.
 
-Következő változtatás az, hogy a fájlban megtalálható precedence tábla két új oszlopában (s\textunderscore percent, d\textunderscore percent) található értékeket el tudja a szoftver tárolni. Ezek az értékek az \textbf{SGraph} objektum \textbf{Recipe} objektumában tárolódnak. A tárolást úgy lehet elképzelni, mint egy mátrixot, ami azt mutatja meg, hogy az adott taszkból, melyik taszkba mutat él. A mátrixok mérete $N\times N$-es, ahol az N a taszkok számát jelenti. A \textbf{sourcePercents} azt testesíti meg, hogy annak a taszknak, amelyből az él indul, mekkora kapacitása megy az adott élen. A \textbf{demandPercents} pedig azt reprezentálja, hogy mekkora százalékot tud felvenni az a taszk, amelybe az él mutat.
+Következő változtatás az, hogy a fájlban megtalálható precedence tábla két új oszlopában (s\textunderscore percent, d\textunderscore percent) található értékeket el tudja a szoftver tárolni. Ezek az értékek az \textbf{SGraph} objektum \textbf{Recipe} objektumában tárolódnak. A tárolást úgy lehet elképzelni, mint egy mátrixot, ami azt mutatja meg, hogy az adott taszkból, melyik taszkba mutat él. A mátrixok mérete $N\times N$-es, ahol az N a taszkok számát jelenti. A \textbf{sourcePercents} azt testesíti meg, hogy annak a taszknak, amelyből az él indul,a kapacitásának mekkora része hasznosul. A \textbf{demandPercents} pedig azt reprezentálja, hogy mekkora százalékot tud felvenni az a taszk, amelybe az él mutat.
+
 \section{FlexBatchSchProblem osztály}
 Ezen osztály feladata a branching, vagyis a szétválasztás elvégzése az ütemezés során. Megállapítja, hogy melyik taszkokhoz melyik berendezés vagy berendezések hozzárendelése szükséges. Másképpen fogalmazva azt kell meghatároznia, hogy melyik berendezésnek, melyik taszkokat kell elvégezni a lehető legnagyobb profit elérésének érdekében. Az osztály forráskódja megtalálható az \textbf{src\textbackslash solver} mappában a \textbf{flexbatchschproblem.cpp} és a \textbf{flexbatchschproblem.cpp} fájlokban. Ez az osztály egy származtatott osztály. A szülőosztálya az \textbf{EqBasedSchProblem} osztály, aminek szintén van egy ősosztálya az \textbf{SchProblem} osztály. Az új módszer lényege abban áll, hogy egy adott taszkhoz több berendezést is hozzá lehet rendelni, ezért az EqBasedSchProblem osztályban megtalálható Branching függvény az ott szereplő formában ehhez a megoldó módszerhez nem megfelelő. Az eddigi adattagok mellett, az átdolgozott kiválasztás módszer miatt, szükséges új adattagok bevezetése. Az első új adattag egy vectoron belüli vector segítéségével megvalósított mátrix, amely azt reprezentálja, hogy melyik berendezéshez melyik taszk lett már hozzárendelve. A másik új adattag pedig egy \textbf{IndexSet} típusú változó, amelyben azok a berendezések szerepelnek, amelyek még nincsenek ütemezve, azaz még képes elvégezni taszkokat.
 \begin{lstlisting}[caption={FlexBatchSchProblem osztály adattagjai}]
@@ -56,67 +62,6 @@ Az \textbf{SGraph} osztály egy olyan osztály, amely támogatja különböző m
 Ez a függvény abban az esetben játszik fontos szerepet, amikor legalább egy termékből egynél több darabot szeretnénk gyártani, vagyis a batch szám nagyobb lesz mint egy. Ilyenkor az adott termékhez tartozó minden taszk számát a program futása során annyira kell módosítani, amennyi terméket kell legyártani. Tekinthetünk úgy rá, hogy minden darab termékhez saját recept készül. A beolvasás eredetileg egy receptet készít el, vagyis minden taszkból csak egy szerepel. Ezen taszkok új száma alapján módosul már az 5.2.2. pontban említett \textbf{Recipe} osztályban lévő $N\times N$-es mátrixok mérete. A függvény a korábban meglévő módszerekhez szükséges adatok átdolgozásáról gondoskodik, csak az új adattagok módosításával kell foglalkozni, így a taszkok száma már megfelelő lesz, mikor a százalékokat tartalmazó mátrixot módosítani kell. Ezek a százalékok azt jelentik, hogy az él mekkora mennyiségekkel foglalkozik. A bemeneti fájlban megtalálható \textbf{s\textunderscore percent} oszlopban lévő adat azt mutatja meg, hogy az él, abból a taszkból, amelyből indul, onnan az ott gyártott mennyiség mekkora részét képes átvenni. A \textbf{d\textunderscore percent} oszlopban lévő adatok pedig, hogy az a taszk, amelybe az él befut, mekkora százalékát képes felvenni a mennyiségnek. 
 
 Az eredetileg szereplő taszkok azonosítója megváltozik, mivel az új taszkokat nem csak hozzá adjuk azokhoz a következő azonosítóval. Az ugyanolyan taszkok egymást követő azonosítót kapnak, így a százalékokat tároló mátrixot is módosítani kell. Fontos dolog az, hogy csak az adott recepthez tartozó taszkok között lehet élt behúzni, nem lehet másik receptben szereplő taszkhoz hozzárendelni. Ezeket különböző feltételek bevonásával lehet megvalósítani. A megvalósítás úgy jött létre, hogy a mátrix  első sorának ellenőrzése kis mértékben eltér a további sorok átvizsgálásától. Ez az eltérése az over változóban mutatkozik meg, mégpedig úgy, hogy ez a változó ugyanazokat a taszkokat reprezentáló, különböző azonosítókat vizsgálja a feljebb lévő sorokban. A feltételek forráskódjai a következő részben tekinthetőek meg.
-%A feltételek az ~\ref{MakeBatchFeltetelek} ábrán láthatóak.
-%\begin{figure}[H]
-%\begin{center}
-%\includegraphics[scale=0.75]{MakeBatchFeltetelek}
-%\caption{Éleken lévő százalékok beállításának feltételei}
-%\label{MakeBatchFeltetelek}
-%\end{center}
-%\end{figure}
-
-\begin{lstlisting}[language=C++, caption={Taszkokhoz tartozó százalékok mátrixának növelése}, frame={single}]
-if(return_graph->IsProfitMaximization()){
-   vector<vector<double>> newSourcePercents(return_graph->GetRecipe()->GetTaskCount(), vector<double>(return_graph->GetRecipe()->GetTaskCount(),0));
-   vector<vector<double>> newDemandPercents(return_graph->GetRecipe()->GetTaskCount(), vector<double>(return_graph->GetRecipe()->GetTaskCount(),0));
-   bool wasAlreadyP = false;
-   bool over = false;
-   for(uint i = 0; i<return_graph->GetRecipe()->GetTaskCount(); i++){
-      for(uint j = 0; j<return_graph->GetRecipe()->GetTaskCount(); j++){
-         if(i==0){
-            if(j>0 && tasksOldIds[j]!=tasksOldIds[j-1]){
-               wasAlreadyP = false;
-            }
-            if(j>0 && tasksOldIds[j]==tasksOldIds[j-1] && GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j])!=-1 && !wasAlreadyP){
-               wasAlreadyP = true;
-            }
-            if(!wasAlreadyP){
-               newSourcePercents[i][j] = GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j]);
-               newDemandPercents[j][i] = GetRecipe()->getDemandPercent(tasksOldIds[j],tasksOldIds[i]);
-            }
-            else{
-               newSourcePercents[i][j] = -1;
-               newDemandPercents[j][i] = -1;
-            }
-         }
-         else{
-            over = false;
-            if(j>0 && tasksOldIds[j]!=tasksOldIds[j-1]){
-               wasAlreadyP = false;
-            }
-            if(j>0 && tasksOldIds[j]==tasksOldIds[j-1] && GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j])!=-1 && !wasAlreadyP &&newSourcePercents[i][j-1]!=-1){
-               wasAlreadyP = true;
-            }
-            for(uint k = 1; k<=i;k++){
-               if(tasksOldIds[i]==tasksOldIds[i-k] && newSourcePercents[i-k][j]!=-1 ){
-                  over =true;
-               }
-            }
-            if(!wasAlreadyP && !over){
-               newSourcePercents[i][j] = GetRecipe()->getSourcePercent(tasksOldIds[i],tasksOldIds[j]);
-               newDemandPercents[j][i] = GetRecipe()->getDemandPercent(tasksOldIds[j],tasksOldIds[i]);
-            }
-            else {
-               newSourcePercents[i][j] = -1;
-               newDemandPercents[j][i] = -1;
-            }
-         }
-      }
-   }
-   return_graph->GetRecipe()->SetSourcePercents(newSourcePercents);
-   return_graph->GetRecipe()->SetDemandPercents(newDemandPercents);
-}
-\end{lstlisting}
 
 A könnyebb átláthatóság érdekében az ~\ref{MakeBatchPelda} ábrán látható egy példa. Két darab A terméket akarunk legyártani. Az adatok fájlból való beolvasása során az A1-es taszk megkapja a 0. azonosítót, az A2 pedig az 1. sorszámot. Mivel kettőt gyártunk le, ezért meghívódik a \textbf{MakeMultipleBatches} függvény, és újra kiosztja az azonosítókat, miközben létrehozta kellő számban az eredetiről lemásolt taszkokat. 
 \begin{figure}[H]
@@ -147,13 +92,8 @@ Azt nem lehet megengedni, hogy a 0. azonosítóval rendelkező taszk és a 3. az
 \subsection{UpdateProfitBound függvény}
 A függvény feladata, hogy kiszámolja az első S-gráfhoz tartozó korlátot, valamint minden egyes taszkhoz tartozó kapacitást is meghatározza. Legelső lépésben beállítja a taszkoknak az úgynevezett alap kapacitását. Ezt az alapján lehet meghatározni, hogy egyes berendezések, melyek a részfeladatot képesek elvégezni rendelkeznek-e kapacitással. Ezeket a bemeneti fájlból olvassa be a szoftver. Egy taszk kapacitását az összes, őt elvégezni képes taszk kapacitásának összege adja meg. Miután ez megtörtént a következő lépés a kezdő csomópontok, taszkok megkeresése. Ez 2 \textit{for} ciklus segítségével történik, amelyekben megvizsgáljuk, hogy az adott csomópont rendelkezik-e abba tartó, bementi éllel. Ha ilyen nincs akkor biztosak lehetünk benne, hogy az adott csomópont kezdő csomópont. Miután ezzel megvagyunk akkor megkeressük az előbb megtalált csomópontok szomszédjait. Ehhez egy \textbf{\textit{deque}} (double-ended queue), azaz kétvégű sort veszünk igénybe. Ennek előnye abban rejlik, hogy mind az elejéhez, mind a végéhez lehetséges elemet fűzni, illetve onnan eltávolítani. Ebbe a változóba tároljuk a kezdő csomópontok szomszédjait. Ismét két \textit{for} ciklus segítségével bejárjuk a taszkokat, amennyiben van köztük él, és még nem szerepel az adott taszk a \textbf{\textit{deque-ban}}, akkor beletesszük.
 
-Mindezeket követően elérkezik az a rész, ahol a kapacitások felülvizsgálata következik. Egy \textit{while} ciklus segítségével minden \textbf{\textit{deque-ban}} szereplő elemet vizsgálunk addig, amíg az teljesen üressé nem válik. Először a \textbf{\textit{deque}} első elemét kivesszük belőle, majd egy \textit{for} ciklus segítségével ismét végighaladunk a taszkokon. Ha az éppen ciklusban lévő taszkból mutat él a \textbf{deque-ból} kivett taszkba, továbbá a taszknak, amiből az él indult, már korábban, a mostani függvény futása során felül lett vizsgálva a kapacitása, akkor lehet ellenőrizni a \textbf{\textit{deque-ból}} kivett taszk kapacitását. Ha az aktuálisan kiszámolt kapacitás nagyobb mint az eddigi, akkor a korábbi helyett az újat jelöljük ki a taszk kapacitásának. Ennek kiszámításhoz a következő képletet kell használni.
-\begin{gather}
-\scalebox{0.75}{$
-\begin{align*}
-\text{kapacitás}&= \text{előző taszk kapacitása}&*\frac{\text{előző taszkból felvett kapacitás mennyiségnek százaléka}}{\text{a mennyiég százaléka, amit az éppen vizsgált taszk feltud venni}}
-\end{align*}$}	
-\end{gather}
+Mindezeket követően elérkezik az a rész, ahol a kapacitások felülvizsgálata következik. Egy \textit{while} ciklus segítségével minden \textbf{\textit{deque-ban}} szereplő elemet vizsgálunk addig, amíg az teljesen üressé nem válik. Először a \textbf{\textit{deque}} első elemét kivesszük belőle, majd egy \textit{for} ciklus segítségével ismét végighaladunk a taszkokon. Ha az éppen ciklusban lévő taszkból mutat él a \textbf{deque-ból} kivett taszkba, továbbá a taszknak, amiből az él indult, már korábban, a mostani függvény futása során felül lett vizsgálva a kapacitása, akkor lehet ellenőrizni a \textbf{\textit{deque-ból}} kivett taszk kapacitását. Ha az aktuálisan kiszámolt kapacitás nagyobb mint az eddigi, akkor a korábbi helyett az újat jelöljük ki a taszk kapacitásának. Ennek kiszámításhoz a 4. fejezetben bemutatott képletet kell használni.
+
 Abban az esetben, ha a kezdeti taszk még nem lett ellenőrizve, akkor nem lehet megvizsgálni az éppen kiválasztott taszkot, ezért visszatesszük a \textbf{\textit{deque}} végére. Ha viszont lehetséges volt és végbe is ment az adott taszk felülvizsgálata, akkor megkeressük ennek a csomópontnak a szomszédjait és hozzáfűzzük a \textbf{\textit{deque}} végéhez.
 
 A függvény utolsó szakaszában történik meg a profit korlát meghatározása, kiszámolása. A korlátot azoknak a taszkoknak a kapacitása adja meg, amelyek a termékek előtti utolsó részfeladatok. Ezek megtalálása úgy történik, hogy \textit{for} ciklus segítségével bejárjuk a termékeket, valamit a taszkokat is. Ha valamelyik taszkból indul él egy termékbe, akkor a taszk kapacitását megszorozzuk a termékből származó jövedelemmel.
