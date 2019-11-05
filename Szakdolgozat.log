@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  4 NOV 2019 18:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  5 NOV 2019 10:48
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -1031,7 +1031,7 @@ been already used, duplicate ignored
 l.23 	\item \textbf
                    {General Network:} A legáltalánosabb recept, ahol a tas...
 [4]
-<./Abrak/receptek_block.pdf, id=359, 597.47943pt x 685.68298pt>
+<./Abrak/receptek_block.pdf, id=360, 597.47943pt x 685.68298pt>
 File: ./Abrak/receptek_block.pdf Graphic file (type pdf)
 <use ./Abrak/receptek_block.pdf>
 Package pdftex.def Info: ./Abrak/receptek_block.pdf  used on input line 28.
@@ -1060,24 +1060,24 @@ Overfull \hbox (8.75896pt too wide) in paragraph at lines 66--67
 ek-nek a parhuzamos osszetetelevel
  []
 
-<./Abrak/receptGraf.pdf, id=394, 526.34753pt x 295.88022pt>
+<./Abrak/receptGraf.pdf, id=395, 526.34753pt x 295.88022pt>
 File: ./Abrak/receptGraf.pdf Graphic file (type pdf)
 <use ./Abrak/receptGraf.pdf>
 Package pdftex.def Info: ./Abrak/receptGraf.pdf  used on input line 74.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
 [8] [9 <./Abrak/receptGraf.pdf>]
-<./Abrak/utemezesiGraf.pdf, id=424, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf.pdf, id=425, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf.pdf  used on input line 89.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
-<./Abrak/utemezesiGraf2.pdf, id=426, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf2.pdf, id=427, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf2.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf2.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf2.pdf  used on input line 97.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
  [10 <./Abrak/utemezesiGraf.pdf>]
-<./Abrak/GanttDiagram.pdf, id=448, 540.5739pt x 284.4991pt>
+<./Abrak/GanttDiagram.pdf, id=449, 540.5739pt x 284.4991pt>
 File: ./Abrak/GanttDiagram.pdf Graphic file (type pdf)
 <use ./Abrak/GanttDiagram.pdf>
 Package pdftex.def Info: ./Abrak/GanttDiagram.pdf  used on input line 105.
@@ -1109,7 +1109,7 @@ Overfull \hbox (7.78506pt too wide) in paragraph at lines 122--124
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 140.
  [13] [14] [15]
-<./Abrak/throughput1.png, id=605, 615.4995pt x 368.577pt>
+<./Abrak/throughput1.png, id=606, 615.4995pt x 368.577pt>
 File: ./Abrak/throughput1.png Graphic file (type png)
 <use ./Abrak/throughput1.png>
 Package pdftex.def Info: ./Abrak/throughput1.png  used on input line 209.
@@ -1125,7 +1125,7 @@ t}o az al-go-rit-mus m}ukodese. Egyik
 
  (Problema_definicio.tex
 3. fejezet.
-<./Abrak/kondiliPelda.png, id=619, 633.567pt x 409.53pt>
+<./Abrak/kondiliPelda.png, id=620, 633.567pt x 409.53pt>
 File: ./Abrak/kondiliPelda.png Graphic file (type png)
 <use ./Abrak/kondiliPelda.png>
 Package pdftex.def Info: ./Abrak/kondiliPelda.png  used on input line 8.
@@ -1421,7 +1421,7 @@ rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on Szakdolgozat.pdf (68 pages, 1088296 bytes).
+Output written on Szakdolgozat.pdf (68 pages, 1088591 bytes).
 PDF statistics:
  972 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
