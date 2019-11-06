@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  5 NOV 2019 10:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.1)  6 NOV 2019 15:20
 entering extended mode
 **./Szakdolgozat.tex
 (Szakdolgozat.tex
@@ -847,84 +847,41 @@ LaTeX Info: Redefining \nameref on input line 64.
 LaTeX Info: Redefining \cal on input line 576.
 LaTeX Info: Redefining \mit on input line 577.
 )
-<kezdo_oldalak.pdf, id=155, 597.432pt x 845.07718pt>
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 66.
+<kezdolap.pdf, id=155, 597.432pt x 845.07718pt>
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf>
+Package pdftex.def Info: kezdolap.pdf  used on input line 66.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf>
-Package pdftex.def Info: kezdo_oldalak.pdf  used on input line 66.
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf>
+Package pdftex.def Info: kezdolap.pdf  used on input line 66.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
-<kezdo_oldalak.pdf, id=158, page=1, 597.432pt x 845.07718pt>
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 66.
+<kezdolap.pdf, id=158, page=1, 597.432pt x 845.07718pt>
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf, page 1>
+Package pdftex.def Info: kezdolap.pdf , page1 used on input line 66.
 (pdftex.def)             Requested size: 597.43054pt x 845.07512pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 66.
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf, page 1>
+Package pdftex.def Info: kezdolap.pdf , page1 used on input line 66.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 66.
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf, page 1>
+Package pdftex.def Info: kezdolap.pdf , page1 used on input line 66.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 66.
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf, page 1>
+Package pdftex.def Info: kezdolap.pdf , page1 used on input line 66.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 1>
-Package pdftex.def Info: kezdo_oldalak.pdf , page1 used on input line 66.
+File: kezdolap.pdf Graphic file (type pdf)
+<use kezdolap.pdf, page 1>
+Package pdftex.def Info: kezdolap.pdf , page1 used on input line 66.
 (pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
 
 [1
 
 
- <./kezdo_oldalak.pdf>]
-<kezdo_oldalak.pdf, id=188, page=2, 597.432pt x 845.07718pt>
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 2>
-Package pdftex.def Info: kezdo_oldalak.pdf , page2 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
- [2 <./kezdo_oldalak.pdf>]
-<kezdo_oldalak.pdf, id=202, page=3, 597.432pt x 845.07718pt>
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 3>
-Package pdftex.def Info: kezdo_oldalak.pdf , page3 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
- [3 <./kezdo_oldalak.pdf>]
-<kezdo_oldalak.pdf, id=216, page=4, 597.432pt x 845.07718pt>
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-File: kezdo_oldalak.pdf Graphic file (type pdf)
-<use kezdo_oldalak.pdf, page 4>
-Package pdftex.def Info: kezdo_oldalak.pdf , page4 used on input line 66.
-(pdftex.def)             Requested size: 562.05109pt x 795.0303pt.
-
-[4 <./kezdo_oldalak.pdf>] (Szakdolgozat.toc
+ <./kezdolap.pdf>] (Szakdolgozat.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 ("C:\Users\USER\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -999,22 +956,12 @@ l.74 \include{Bevezetes}
 
 
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.74 \include{Bevezetes}
-                         [2]
+] [2]
 \openout2 = `Irodalmi_attekintes.aux'.
 
  (Irodalmi_attekintes.tex
 2. fejezet.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.7 
-     [3
+[3
 
 
 
@@ -1024,14 +971,8 @@ Overfull \hbox (9.44864pt too wide) in paragraph at lines 22--23
 uksegszer}uen linearis, le-het-nek elagazasok,
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.23 	\item \textbf
-                   {General Network:} A legáltalánosabb recept, ahol a tas...
 [4]
-<./Abrak/receptek_block.pdf, id=360, 597.47943pt x 685.68298pt>
+<./Abrak/receptek_block.pdf, id=331, 597.47943pt x 685.68298pt>
 File: ./Abrak/receptek_block.pdf Graphic file (type pdf)
 <use ./Abrak/receptek_block.pdf>
 Package pdftex.def Info: ./Abrak/receptek_block.pdf  used on input line 28.
@@ -1060,24 +1001,24 @@ Overfull \hbox (8.75896pt too wide) in paragraph at lines 66--67
 ek-nek a parhuzamos osszetetelevel
  []
 
-<./Abrak/receptGraf.pdf, id=395, 526.34753pt x 295.88022pt>
+<./Abrak/receptGraf.pdf, id=367, 526.34753pt x 295.88022pt>
 File: ./Abrak/receptGraf.pdf Graphic file (type pdf)
 <use ./Abrak/receptGraf.pdf>
 Package pdftex.def Info: ./Abrak/receptGraf.pdf  used on input line 74.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
 [8] [9 <./Abrak/receptGraf.pdf>]
-<./Abrak/utemezesiGraf.pdf, id=425, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf.pdf, id=397, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf.pdf  used on input line 89.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
-<./Abrak/utemezesiGraf2.pdf, id=427, 526.34753pt x 295.88022pt>
+<./Abrak/utemezesiGraf2.pdf, id=399, 526.34753pt x 295.88022pt>
 File: ./Abrak/utemezesiGraf2.pdf Graphic file (type pdf)
 <use ./Abrak/utemezesiGraf2.pdf>
 Package pdftex.def Info: ./Abrak/utemezesiGraf2.pdf  used on input line 97.
 (pdftex.def)             Requested size: 368.44075pt x 207.11473pt.
  [10 <./Abrak/utemezesiGraf.pdf>]
-<./Abrak/GanttDiagram.pdf, id=449, 540.5739pt x 284.4991pt>
+<./Abrak/GanttDiagram.pdf, id=420, 540.5739pt x 284.4991pt>
 File: ./Abrak/GanttDiagram.pdf Graphic file (type pdf)
 <use ./Abrak/GanttDiagram.pdf>
 Package pdftex.def Info: ./Abrak/GanttDiagram.pdf  used on input line 105.
@@ -1109,7 +1050,7 @@ Overfull \hbox (7.78506pt too wide) in paragraph at lines 122--124
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 140.
  [13] [14] [15]
-<./Abrak/throughput1.png, id=606, 615.4995pt x 368.577pt>
+<./Abrak/throughput1.png, id=578, 615.4995pt x 368.577pt>
 File: ./Abrak/throughput1.png Graphic file (type png)
 <use ./Abrak/throughput1.png>
 Package pdftex.def Info: ./Abrak/throughput1.png  used on input line 209.
@@ -1125,7 +1066,7 @@ t}o az al-go-rit-mus m}ukodese. Egyik
 
  (Problema_definicio.tex
 3. fejezet.
-<./Abrak/kondiliPelda.png, id=620, 633.567pt x 409.53pt>
+<./Abrak/kondiliPelda.png, id=591, 633.567pt x 409.53pt>
 File: ./Abrak/kondiliPelda.png Graphic file (type png)
 <use ./Abrak/kondiliPelda.png>
 Package pdftex.def Info: ./Abrak/kondiliPelda.png  used on input line 8.
@@ -1231,7 +1172,7 @@ le-gyen parhuzamos hozzarendelest
  []
 
 [36] [37]
-<./Abrak/MakeBatchPelda.pdf, id=720, 483.6684pt x 201.98611pt>
+<./Abrak/MakeBatchPelda.pdf, id=692, 483.6684pt x 201.98611pt>
 File: ./Abrak/MakeBatchPelda.pdf Graphic file (type pdf)
 <use ./Abrak/MakeBatchPelda.pdf>
 Package pdftex.def Info: ./Abrak/MakeBatchPelda.pdf  used on input line 69.
@@ -1258,7 +1199,7 @@ zo ka-pa-citasokat kell ujraszamolnia.
 
 
 ]
-<./Abrak/tesztFeladat.pdf, id=766, 512.12117pt x 315.79712pt>
+<./Abrak/tesztFeladat.pdf, id=738, 512.12117pt x 315.79712pt>
 File: ./Abrak/tesztFeladat.pdf Graphic file (type pdf)
 <use ./Abrak/tesztFeladat.pdf>
 Package pdftex.def Info: ./Abrak/tesztFeladat.pdf  used on input line 31.
@@ -1270,7 +1211,7 @@ kok altal elerhet}o mennyisegek nem 100 szazalekban
  []
 
 [46 <./Abrak/tesztFeladat.pdf>]
-<./Abrak/bemenet1.png, id=789, 657.657pt x 282.45525pt>
+<./Abrak/bemenet1.png, id=760, 657.657pt x 282.45525pt>
 File: ./Abrak/bemenet1.png Graphic file (type png)
 <use ./Abrak/bemenet1.png>
 Package pdftex.def Info: ./Abrak/bemenet1.png  used on input line 44.
@@ -1280,7 +1221,7 @@ Overfull \hbox (3.69pt too wide) in paragraph at lines 44--45
  [] 
  []
 
-<./Abrak/eredmeny1.png, id=791, 143.3355pt x 190.91325pt>
+<./Abrak/eredmeny1.png, id=762, 143.3355pt x 190.91325pt>
 File: ./Abrak/eredmeny1.png Graphic file (type png)
 <use ./Abrak/eredmeny1.png>
 Package pdftex.def Info: ./Abrak/eredmeny1.png  used on input line 54.
@@ -1291,23 +1232,23 @@ Overfull \hbox (0.2022pt too wide) in paragraph at lines 60--61
 a-citasok, va-la-mint a termekekhez
  []
 
-<./Abrak/eredmeny2.png, id=797, 121.05225pt x 162.00525pt>
+<./Abrak/eredmeny2.png, id=768, 121.05225pt x 162.00525pt>
 File: ./Abrak/eredmeny2.png Graphic file (type png)
 <use ./Abrak/eredmeny2.png>
 Package pdftex.def Info: ./Abrak/eredmeny2.png  used on input line 64.
 (pdftex.def)             Requested size: 133.15787pt x 178.2063pt.
 [48 <./Abrak/eredmeny1.png> <./Abrak/eredmeny2.png>]
-<./Abrak/eredmeny3.png, id=805, 231.264pt x 135.50626pt>
+<./Abrak/eredmeny3.png, id=776, 231.264pt x 135.50626pt>
 File: ./Abrak/eredmeny3.png Graphic file (type png)
 <use ./Abrak/eredmeny3.png>
 Package pdftex.def Info: ./Abrak/eredmeny3.png  used on input line 74.
 (pdftex.def)             Requested size: 231.26343pt x 135.5059pt.
-<./Abrak/kimenet.png, id=807, 722.7pt x 385.44pt>
+<./Abrak/kimenet.png, id=778, 722.7pt x 385.44pt>
 File: ./Abrak/kimenet.png Graphic file (type png)
 <use ./Abrak/kimenet.png>
 Package pdftex.def Info: ./Abrak/kimenet.png  used on input line 83.
 (pdftex.def)             Requested size: 361.3491pt x 192.71953pt.
-<./Abrak/regi_grafok.pdf, id=810, 938.91249pt x 426.7629pt>
+<./Abrak/regi_grafok.pdf, id=781, 938.91249pt x 426.7629pt>
 File: ./Abrak/regi_grafok.pdf Graphic file (type pdf)
 <use ./Abrak/regi_grafok.pdf>
 Package pdftex.def Info: ./Abrak/regi_grafok.pdf  used on input line 93.
@@ -1318,13 +1259,13 @@ Overfull \hbox (12.78833pt too wide) in paragraph at lines 93--94
  []
 
 [49 <./Abrak/eredmeny3.png> <./Abrak/kimenet.png (PNG copy)>]
-<./Abrak/regi_bemenet.png, id=816, 742.57425pt x 283.65974pt>
+<./Abrak/regi_bemenet.png, id=788, 742.57425pt x 283.65974pt>
 File: ./Abrak/regi_bemenet.png Graphic file (type png)
 <use ./Abrak/regi_bemenet.png>
 Package pdftex.def Info: ./Abrak/regi_bemenet.png  used on input line 102.
 (pdftex.def)             Requested size: 445.54799pt x 170.19714pt.
  [50 <./Abrak/regi_grafok.pdf>]
-<./Abrak/regi_kimenet.png, id=835, 722.7pt x 385.44pt>
+<./Abrak/regi_kimenet.png, id=807, 722.7pt x 385.44pt>
 File: ./Abrak/regi_kimenet.png Graphic file (type png)
 <use ./Abrak/regi_kimenet.png>
 Package pdftex.def Info: ./Abrak/regi_kimenet.png  used on input line 113.
@@ -1356,7 +1297,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 
  (Fuggelek.tex
 A. f\"uggel\'ek.
-<./Abrak/teszteset8.png, id=862, 541.42274pt x 298.716pt>
+<./Abrak/teszteset8.png, id=834, 541.42274pt x 298.716pt>
 File: ./Abrak/teszteset8.png Graphic file (type png)
 <use ./Abrak/teszteset8.png>
 Package pdftex.def Info: ./Abrak/teszteset8.png  used on input line 6.
@@ -1390,10 +1331,10 @@ Package rerunfilecheck Info: File `Szakdolgozat.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 14261 strings out of 492946
- 218987 string characters out of 3126711
+ 14252 strings out of 492946
+ 218773 string characters out of 3126711
  527106 words of memory out of 3000000
- 17689 multiletter control sequences out of 15000+200000
+ 17680 multiletter control sequences out of 15000+200000
  12509 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,22n,97p,2318b,1253s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1421,9 +1362,9 @@ rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Use
 rs/USER/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on Szakdolgozat.pdf (68 pages, 1088591 bytes).
+Output written on Szakdolgozat.pdf (65 pages, 1231401 bytes).
 PDF statistics:
- 972 PDF objects out of 1000 (max. 8388607)
+ 943 PDF objects out of 1000 (max. 8388607)
  150 named destinations out of 1000 (max. 500000)
- 430 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 415 words of extra memory for PDF output out of 10000 (max. 10000000)
 
