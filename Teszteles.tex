@@ -87,7 +87,17 @@ A \ref{kimenet} ábrán pedig a PNG kiterjesztésű fájl látható. Azonos szí
 \end{figure}
 
 \section{A régi és az új megoldó összehasonlítása}
-Ebben az alfejezetben az eddig meglévő throughput maximalizáló megoldót hasonlítom össze az általam létrehozottal. Ehhez \ref{tesztFeladat} ábrán látható feladatot veszem igénybe. Mivel ebben a feladatban a termékek változó batch mérettel rendelkeznek, ezért a régi megoldó módszerhez szükség van a 3. fejezetben bemutatott diszkretizálás végrehajtására. Ezt elvégezve eredményül azt kapjuk, hogy az A termék gyártása esetén mindenképpen 50 jövedelemre tudunk szert tenni. B termékhez viszont 4 különböző recept jött létre, amelyek mind eltérő jövedelmet biztosítanak. Ezek alapján felrajzolható a 4 gráf, amelyek a \ref{regi_grafok} ábrán láthatóak.
+Ebben az alfejezetben az eddig meglévő throughput maximalizáló megoldót hasonlítom össze az általam létrehozottal. Ehhez \ref{tesztFeladat} ábrán látható feladatot veszem igénybe. Mivel ebben a feladatban a termékek változó batch mérettel rendelkeznek, ezért a régi megoldó módszerhez szükség van a 3. fejezetben bemutatott diszkretizálás végrehajtására. Ez látható a \ref{diszkretizalas} ábrán.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{diszkretizalas.png}
+\caption{A \ref{tesztFeladat} ábrán látható feladat diszkretizálása}
+\label{diszkretizalas}
+\end{center}
+\end{figure}
+
+Ezt elvégezve eredményül azt kapjuk, hogy az A termék gyártása esetén mindenképpen 50 jövedelemre tudunk szert tenni. B termékhez viszont 4 különböző recept jött létre, amelyek mind eltérő jövedelmet biztosítanak. Ezek alapján felrajzolható a 4 gráf, amelyek a \ref{regi_grafok} ábrán láthatóak.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5]{regi_grafok}
@@ -156,3 +166,41 @@ A következő táblázatban a megoldó módszerek sebességének összehasonlít
 \end{table}
 
 Ugyanaz a feladat 3 módszerrel került megoldásra. A régivel, amelyben szerepelnek a gyorsítások, ismét a régi megoldóval (régi gy. n.), de itt a precycle és a presolver gyorsítások nélkül, illetve az elkészített új megoldó módszerrel. Látható, hogy a régi módszerek gyorsabban találjak meg a feladat legjobb megoldását, mint az új a jelenlegi állapotában. Jövőbeni tervek közé tartozik a meglévő gyorsítások átalakítása, hogy kompatibilisek legyenek az új módszerrel is. Ezek megvalósítása után nagy csökkenés várható az új megoldó módszer futási idejében. 
+
+A \ref{teszteredmenyek2} táblázatban olyan feladatok kerülnek összehasonlításra, amelyeknél egyfajta termék gyártható. Ugyanazon adatok alapján hasonlítottam össze a feladatokat, mint amelyek a \ref{teszteredmenyek} táblázatban láthatóak. Mivel ezeknél a feladatoknál csak 1 darab termék gyárható, ezért kevésbé összetettek. Az új megoldónak így mindössze 1 dimenziót kell bejárnia. Látható, hogy már vannak olyan feladatok, amelyeknél kisebb futási idő alatt megtalálta az optimális megoldást, mint a régi megoldó akár gyorsítással, akár anélkül. Ezen biztató jelek alapján várható, hogy gyorsítások implementálása után a nagyobb és összetettebb feladatok megoldásnál is jobb eredményeket érünk el az új megoldással.
+
+\begin{table}[H]
+\begin{center}
+	\caption{Különböző módszerekkel megoldott feladatok összehasonlítása egy termékes feladatoknál}
+	\captionsetup[table]{skip=10pt}
+	\label{teszteredmenyek2}
+\begin{tabular}{|l|l|c|c|c|c|}
+\hline
+                                                 & \multicolumn{1}{c|}{Megoldó módszer} & Futás ideje & Time Horizon & Legyártott termék & Profit \\ \hline
+\multicolumn{1}{|c|}{\multirow{6}{*}{\rotatebox{90}{Feladat 4}}} & Új                                   & 0,029 mp    & 10           & 1A                & 30     \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                           & Régi                                 & 0,055 mp    & 10           & 1A                & 30     \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                        & 0,057 mp    & 10           & 1A                & 30     \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                           & Új                                   & 0,047 mp    & 12           & 2A                & 50     \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                           & Régi                                 & 0,081 mp    & 12           & 2A                & 50     \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                        & 0,083 mp    & 12           & 2A                & 50     \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 5}}                       & Új                                   & 0,041 mp    & 10           & 2A                & 60     \\ \cline{2-6} 
+                                                 & Régi                                 & 0,076 mp    & 10           & 2A                & 60     \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 0,079 mp    & 10           & 2A                & 60     \\ \cline{2-6} 
+                                                 & Új                                   & 0,152 mp    & 12           & 3A                & 90     \\ \cline{2-6} 
+                                                 & Régi                                 & 0,236 mp    & 12           & 3A                & 90     \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 0,265 mp    & 12           & 3A                & 90     \\ \cline{2-6} 
+                                                 & Új                                   & 88,03 mp    & 15           & 5A                & 140    \\ \cline{2-6} 
+                                                 & Régi                                 & 7,108 mp    & 15           & 5A                & 140    \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 9,667 mp    & 15           & 5A                & 140    \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 6}}                       & Új                                   & 0,087 mp    & 10           & 2B                & 120    \\ \cline{2-6} 
+                                                 & Régi                                 & 0,12 mp     & 10           & 2B                & 120    \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 0,132 mp    & 10           & 2B                & 120    \\ \cline{2-6} 
+                                                 & Új                                   & 1,71 mp     & 12           & 3B                & 180    \\ \cline{2-6} 
+                                                 & Régi                                 & 0,872 mp    & 12           & 3B                & 180    \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 1,01 mp     & 12           & 3B                & 180    \\ \cline{2-6} 
+                                                 & Új                                   & 94,03 mp    & 15           & 4B                & 240    \\ \cline{2-6} 
+                                                 & Régi                                 & 39,85 mp    & 15           & 4B                & 240    \\ \cline{2-6} 
+                                                 & Régi (gy. n.)                        & 43,23 mp    & 15           & 4B                & 240    \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
