@@ -112,7 +112,7 @@ Az algoritmus minden taszk minden bemeneti élére elvégzi ezt a számítást. 
 		\State $hadchange:= false$
 		\ForAll {$i \in I$}
 			\ForAll {$i' \in I_{i}^{-}$}
-				\If {$CAP_{i}> CAP_{i}*SP_{i,i}*DP_{i',i}$}
+				\If {$CAP_{i}> CAP_{i}*SP_{i',i}/DP_{i',i}$}
 					\State $CAP_{i}:= CAP_{i}*SP_{i',i}/DP_{i',i}$
 					\State $hadchange:= true$
 				\EndIf
@@ -122,7 +122,7 @@ Az algoritmus minden taszk minden bemeneti élére elvégzi ezt a számítást. 
 	\ForAll {$i \in I$}
 		\ForAll {$p \in P$}			
 			\If {$(i,p) \in A_{1}$}
-				\State $profitbound \mathrel{+}= CAP^{i}*REV^{p}$
+				\State $profitbound \mathrel{+}= CAP_{i}*REV_{p}$
 			\EndIf
 		\EndFor
 	\EndFor
