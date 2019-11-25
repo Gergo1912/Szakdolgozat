@@ -87,7 +87,17 @@ A \ref{kimenet} ábrán pedig a PNG kiterjesztésű fájl látható. Azonos szí
 \end{figure}
 
 \section{A régi és az új megoldó összehasonlítása}
-Ebben az alfejezetben az eddig meglévő throughput maximalizáló megoldót hasonlítom össze az általam létrehozottal. Ehhez \ref{tesztFeladat} ábrán látható feladatot veszem igénybe. Mivel ebben a feladatban a termékek változó batch mérettel rendelkeznek, ezért a régi megoldó módszerhez szükség van a 3. fejezetben bemutatott diszkretizálás végrehajtására. Ezt elvégezve eredményül azt kapjuk, hogy az A termék gyártása esetén mindenképpen 50 jövedelemre tudunk szert tenni. B termékhez viszont 4 különböző recept jött létre, amelyek mind eltérő jövedelmet biztosítanak. Ezek alapján felrajzolható a 4 gráf, amelyek a \ref{regi_grafok} ábrán láthatóak.
+Ebben az alfejezetben az eddig meglévő throughput maximalizáló megoldót hasonlítom össze az általam létrehozottal. Ehhez \ref{tesztFeladat} ábrán látható feladatot veszem igénybe. Mivel ebben a feladatban a termékek változó batch mérettel rendelkeznek, ezért a régi megoldó módszerhez szükség van a 3. fejezetben bemutatott diszkretizálás végrehajtására. Ez látható a \ref{diszkretizalas} ábrán.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.5]{diszkretizalas.png}
+\caption{A \ref{tesztFeladat} ábrán látható feladat diszkretizálása}
+\label{diszkretizalas}
+\end{center}
+\end{figure}
+
+Ezt elvégezve eredményül azt kapjuk, hogy az A termék gyártása esetén mindenképpen 50 jövedelemre tudunk szert tenni. B termékhez viszont 4 különböző recept jött létre, amelyek mind eltérő jövedelmet biztosítanak. Ezek alapján felrajzolható a 4 gráf, amelyek a \ref{regi_grafok} ábrán láthatóak.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.5]{regi_grafok}
@@ -119,40 +129,83 @@ Az algoritmus lefutásának végeztével azt várjuk, hogy a régi és az új me
 \section{A megoldó módszerek sebessége}
 A következő táblázatban a megoldó módszerek sebességének összehasonlítása látható. A régi módszerbe már több, különböző gyorsítási megoldás be van építve. Ezek közé tartozik a korábban már említett precycle és presolver. Az új módszer esetén ezek a gyorsítások jelen állapotban nem működnek. Egy másik kiemelt fontosságú gyorsítás a régi megoldó módszer esetében a revenue line. Ez alsó korlátként szolgál az egyes konfigurációkból származó jövedelmek összehasonlításához. Ennek segítségével, feladattól függően, nagy számú konfiguráció eltávolítható a keresési térből, így jelentősen csökkenthető a számítások mennyisége az ütemezés során. Az új módszer használata során azonban ezt nem vehetjük igénybe, mert nem egy egyenesen szerepelnek azok a konfigurációk, amelyek azonos jövedelemmel rendelkeznek. 
 
+A táblázatban a következő információk szerepelnek. Első oszlopban látható, hogy melyik megoldó módszerrel lett a feladat megoldva. Ezután láthatjuk, hogy mennyi ideig tartott megoldani a feladatot. Harmadik oszlopban az időhorizont látható, ami megadja, hogy mennyi idő áll rendelkezésre a gyártás során. Ezt követően a feladat megoldása szerepel, azaz hány darab termék gyártásával érhető el az optimális megoldás. Emellett látható, hogy ennyi termék gyártásával mekkora jövedelemre lehet szert tenni. Végül pedig a megvizsgált rácspontok száma található. Ez azt mutatja meg, hogy az adott megoldó módszer hány darab konfigurációt vizsgált meg.
+
 \begin{table}[H]
 	\begin{center}
 	\caption{Különböző módszerekkel megoldott feladatok összehasonlítása}
 	\captionsetup[table]{skip=10pt}
 	\label{teszteredmenyek}
-\begin{tabular}{|l|l|c|c|c|c|}
+\begin{tabular}{|l|l|c|c|c|c|c|}
 \hline
-                                                 & \multicolumn{1}{c|}{Megoldó módszer} & Futás ideje          & Time Horizon & Legyártott termék & Profit \\ \hline
-\multicolumn{1}{|c|}{\multirow{9}{*}{\rotatebox{90}{Feladat 1}}} & Új                                   & 1,057 mp             & 15           & 1A+2B             & 482    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi                                 & 0,149 mp             & 15           & 1A+2B             & 482    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                        & 0,185 mp             & 15           & 1A+2B             & 482    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Új                                   & 94,964 mp            & 20           & 1A+3B             & 698    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi                                 & 8,17 mp              & 20           & 1A+3B             & 698    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                        & 13,553 mp            & 20           & 1A+3B             & 698    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Új                                   & \textgreater 8000 mp & 25           & 4B                & 864    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi                                 & 705,439 mp           & 25           & 4B                & 864    \\ \cline{2-6} 
-\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                        & 1175,11 mp           & 25           & 4B                & 864    \\ \hline
-\multirow{9}{*}{\rotatebox{90}{Feladat 2}}                      & Új                                   & 0,371 mp             & 15           & 2C+1D             & 188    \\ \cline{2-6} 
-                                                 & Régi                                 & 0,07 mp              & 15           & 2C+1D             & 188    \\ \cline{2-6} 
-                                                 & Régi (gy. n.)                        & 0,113 mp             & 15           & 2C+1D             & 188    \\ \cline{2-6} 
-                                                 & Új                                   & 15,486 mp            & 20           & 3C+1D             & 252    \\ \cline{2-6} 
-                                                 & Régi                                 & 1,306 mp             & 20           & 3C+1D             & 252    \\ \cline{2-6} 
-                                                 & Régi (gy. n.)                        & 3,201 mp             & 20           & 3C+1D             & 252    \\ \cline{2-6} 
-                                                 & Új                                   & 741,29 mp            & 25           & 3C+3D             & 360    \\ \cline{2-6} 
-                                                 & Régi                                 & 58,28 mp             & 25           & 3C+3D             & 360    \\ \cline{2-6} 
-                                                 & Régi (gy. n.)                        & 222,679 mp           & 25           & 3C+3D             & 360    \\ \hline
-\multirow{6}{*}{\rotatebox{90}{Feladat 3}}                       & Új                                   & 14,78 mp             & 10           & 2H+2I             & 86     \\ \cline{2-6} 
-                                                 & Régi                                 & 0,374 mp             & 10           & 2H+2I             & 86     \\ \cline{2-6} 
-                                                 & Régi (gy. n.)                        & 0,381 mp             & 10           & 2H+2I             & 86     \\ \cline{2-6} 
-                                                 & Új                                   & 44,693 mp            & 15           & 4I                & 94     \\ \cline{2-6} 
-                                                 & Régi                                 & 0,985 mp             & 15           & 4I                & 94     \\ \cline{2-6} 
-                                                 & Régi (gy. n.)                        & 0,806 mp             & 15           & 4I                & 94     \\ \hline
+                           & \multicolumn{1}{c|}{Megoldó m.} & Futás ideje          & Time Horizon & Legyártott t. & Profit & Rácspont \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 1}} & Új                              & 1,057 mp             & 15           & 1A+2B         & 482    & 15       \\ \cline{2-7} 
+                           & Régi                            & 0,149 mp             & 15           & 1A+2B         & 482    & 21       \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 0,185 mp             & 15           & 1A+2B         & 482    & 21       \\ \cline{2-7} 
+                           & Új                              & 94,964 mp            & 20           & 1A+3B         & 698    & 24       \\ \cline{2-7} 
+                           & Régi                            & 8,17 mp              & 20           & 1A+3B         & 698    & 184      \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 13,533 mp            & 20           & 1A+3B         & 698    & 184      \\ \cline{2-7} 
+                           & Új                              & \textgreater{}8000mp & 25           & 4B            & 864    & 43       \\ \cline{2-7} 
+                           & Régi                            & 705,439 mp           & 25           & 4B            & 864    & 367      \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 1175,11 mp           & 25           & 4B            & 864    & 367      \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 2}} & Új                              & 0,371 mp             & 15           & 2C+1D         & 188    & 10       \\ \cline{2-7} 
+                           & Régi                            & 0,07 mp              & 15           & 2C+1D         & 188    & 30       \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 0,113 mp             & 15           & 2C+1D         & 188    & 30       \\ \cline{2-7} 
+                           & Új                              & 15,486 mp            & 20           & 3C+1D         & 252    & 16       \\ \cline{2-7} 
+                           & Régi                            & 1,306 mp             & 20           & 3C+1D         & 252    & 75       \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 3,201 mp             & 20           & 3C+1D         & 252    & 75       \\ \cline{2-7} 
+                           & Új                              & 741,29 mp            & 25           & 3C+3D         & 360    & 23       \\ \cline{2-7} 
+                           & Régi                            & 58,28 mp             & 25           & 3C+3D         & 360    & 156      \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 222,679 mp           & 25           & 3C+3D         & 360    & 156      \\ \hline
+\multirow{6}{*}{\rotatebox{90}{Feladat 3}} & Új                              & 14,78 mp             & 10           & 2H+2I         & 86     & 17       \\ \cline{2-7} 
+                           & Régi                            & 0,374 mp             & 10           & 2H+2I         & 86     & 209      \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 0,381 mp             & 10           & 2H+2I         & 86     & 209      \\ \cline{2-7} 
+                           & Új                              & 44,693 mp            & 12           & 4I            & 94     & 20       \\ \cline{2-7} 
+                           & Régi                            & 0,985 mp             & 12           & 4I            & 94     & 994      \\ \cline{2-7} 
+                           & Régi (gy.n)                     & 0,806 mp             & 12           & 4I            & 94     & 994      \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
 
 Ugyanaz a feladat 3 módszerrel került megoldásra. A régivel, amelyben szerepelnek a gyorsítások, ismét a régi megoldóval (régi gy. n.), de itt a precycle és a presolver gyorsítások nélkül, illetve az elkészített új megoldó módszerrel. Látható, hogy a régi módszerek gyorsabban találjak meg a feladat legjobb megoldását, mint az új a jelenlegi állapotában. Jövőbeni tervek közé tartozik a meglévő gyorsítások átalakítása, hogy kompatibilisek legyenek az új módszerrel is. Ezek megvalósítása után nagy csökkenés várható az új megoldó módszer futási idejében. 
+
+A \ref{teszteredmenyek2} táblázatban olyan feladatok kerülnek összehasonlításra, amelyeknél egyfajta termék gyártható. Ugyanazon adatok alapján hasonlítottam össze a feladatokat, mint amelyek a \ref{teszteredmenyek} táblázatban láthatóak. Mivel ezeknél a feladatoknál csak 1 darab termék gyárható, ezért kevésbé összetettek. Az új megoldónak így mindössze 1 dimenziót kell bejárnia. Látható, hogy már vannak olyan feladatok, amelyeknél kisebb futási idő alatt megtalálta az optimális megoldást, mint a régi megoldó akár gyorsítással, akár anélkül. Ezen biztató jelek alapján várható, hogy gyorsítások implementálása után a nagyobb és összetettebb feladatok megoldásnál is jobb eredményeket érünk el az új megoldással.
+
+\begin{table}[H]
+\begin{center}
+	\caption{Különböző módszerekkel megoldott egy termékes feladatok összehasonlítása}
+	\captionsetup[table]{skip=10pt}
+	\label{teszteredmenyek2}
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+                                                 & \multicolumn{1}{c|}{Megoldó m.} & Futás ideje & Time Horizon & Legyártott t. & Profit & \multicolumn{1}{l|}{Rácspont} \\ \hline
+\multicolumn{1}{|c|}{\multirow{6}{*}{\rotatebox{90}{Feladat 4}}} & Új                              & 0,029 mp    & 10           & 1A                & 30     & 2                             \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                           & Régi                            & 0,055 mp    & 10           & 1A                & 30     & 8                             \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                   & 0,057 mp    & 10           & 1A                & 30     & 8                             \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                           & Új                              & 0,047 mp    & 12           & 2A                & 50     & 3                             \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                           & Régi                            & 0,081 mp    & 12           & 2A                & 50     & 13                            \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                           & Régi (gy. n.)                   & 0,083 mp    & 12           & 2A                & 50     & 13                            \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 5}}                       & Új                              & 0,041 mp    & 10           & 2A                & 60     & 3                             \\ \cline{2-7} 
+                                                 & Régi                            & 0,076 mp    & 10           & 2A                & 60     & 17                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 0,079 mp    & 10           & 2A                & 60     & 17                            \\ \cline{2-7} 
+                                                 & Új                              & 0,152 mp    & 12           & 3A                & 90     & 4                             \\ \cline{2-7} 
+                                                 & Régi                            & 0,236 mp    & 12           & 3A                & 90     & 39                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 0,265 mp    & 12           & 3A                & 90     & 39                            \\ \cline{2-7} 
+                                                 & Új                              & 88,03 mp    & 15           & 5A                & 140    & 6                             \\ \cline{2-7} 
+                                                 & Régi                            & 7,108 mp    & 15           & 5A                & 140    & 74                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 9,667 mp    & 15           & 5A                & 140    & 74                            \\ \hline
+\multirow{9}{*}{\rotatebox{90}{Feladat 6}}                       & Új                              & 0,087 mp    & 10           & 2B                & 120    & 3                             \\ \cline{2-7} 
+                                                 & Régi                            & 0,12 mp     & 10           & 2B                & 120    & 12                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 0,132 mp    & 10           & 2B                & 120    & 12                            \\ \cline{2-7} 
+                                                 & Új                              & 1,71 mp     & 12           & 3B                & 180    & 4                             \\ \cline{2-7} 
+                                                 & Régi                            & 0,872 mp    & 12           & 3B                & 180    & 15                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 1,01 mp     & 12           & 3B                & 180    & 15                            \\ \cline{2-7} 
+                                                 & Új                              & 94,03 mp    & 15           & 4B                & 240    & 5                             \\ \cline{2-7} 
+                                                 & Régi                            & 39,85 mp    & 15           & 4B                & 240    & 21                            \\ \cline{2-7} 
+                                                 & Régi (gy. n.)                   & 43,23 mp    & 15           & 4B                & 240    & 21                            \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+A futási időkön kívül érdemes a megoldó módszereket aszerint is összehasonlítani, hogy mennyi rácspontot vizsgálnak meg a futásuk során. Ez a szám minden esetben annál nagyobb lesz, minél több dimenziót kell a megoldó módszernek bejárnia. Ahogy korábban említve volt egy feladatnál a dimenzió szám megegyezik a termékek számával. Az új megoldónál a termékek száma mindig megegyezik a feladatban látható termékek számával. A régi megoldónál ezt nem lehet elmondani, ott a diszkretizáció elvégzése utána kapjuk meg a termékek tényleges számát, ami a legtöbb esetben nagyobb lesz, mint az új megoldó esetében. A feljebb szereplő táblázatok \textit{Rácspont} oszlopában látható adatok ezt bizonyítják is. Az első táblázatban olyan feladatok szerepelnek, ahol 2 terméket lehet gyártani. Az új megoldó módszernek mindhárom feladatnál 2 dimenziós teret kell megvizsgálnia. A régi megoldó módszerek a \textit{Feladat 1}-nél 5, \textit{Feladat 2}-nél 4, \textit{Feladat 3}-nál pedig 7 dimenziót vizsgálnak meg. Emiatt tapasztalhatjuk, hogy jóval több rácspontot kell a régi megoldó módszernek megvizsgálnia, azonban egy ilyen rácsponton belül kevesebb számítást kell elvégeznie, mint az új megoldónak. Ha az új módszerhez tervezett gyorsítások megvalósulnak, és ezáltal csökken egy rácsponton belüli számítások mennyisége, akkor jobb futási időt érhetünk el az új megoldó módszernél is.

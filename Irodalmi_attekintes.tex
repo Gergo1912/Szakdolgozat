@@ -1,7 +1,6 @@
 \chapter{Irodalmi áttekintés}
 \section{Ipari ütemezési feladatok}
-Az ipari folyamatok közé tartozó tevékenységeknek egy jelentős halmazát gyártásnak nevezzük, amely során az elkészítendő termék létrehozása, megvalósítása a feladat. Ehhez szükség van arra, hogy megfelelően vegyük igénybe a rendelkezésre álló erőforrásokat, amelyeket berendezéseknek, unitnak nevezünk a gyártási feladatok során. A folyamat során fellépő feladatokra a taszk elnevezés is használható. Az ütemezés az a folyamat, amely során különböző események sorrendjét határozzuk meg. Az ütemezési feladat során kell egy feladatot, munkát vagy tevékenységet egy tervbe beilleszteni, vagyis meghatározni annak végrehajtási időpontját. Minden ütemezési feladat rendelkezik végrehajtási idővel, ami megmutatja mekkora időtartam alatt valósítható meg. Ezenfelül lehet még a feladatoknak olyan időkorlátja, ami alatt kötelező elvégezni a feladatot, ezt időhorizontnak, time horizontnak hívjuk. A problémák kimenetelük szerint lehetnek megvalósíthatatlan (infeasible) és megvalósítható (feasible) feladatok.
-Egy feladat csak abban az esetben minősül megvalósíthatónak, ha minden korlátozásnak megfelel. Ha már akár csak egy korlátozással szemben nem bizonyul elfogadhatónak, akkor infeasible feladatról beszélhetünk.
+Az ipari folyamatok közé tartozó tevékenységeknek egy jelentős halmazát gyártásnak nevezzük, amely során az elkészítendő termék létrehozása, megvalósítása a feladat. Ehhez szükség van arra, hogy megfelelően vegyük igénybe a rendelkezésre álló erőforrásokat, amelyeket berendezéseknek, unitnak nevezünk a gyártási feladatok során. A folyamat során fellépő feladatokra a taszk elnevezés is használható.Az ütemezés az a folyamat, amely során különböző események sorrendjét határozzuk meg. Az ütemezési feladat során kell egy feladatot, munkát vagy tevékenységet egy tervbe beilleszteni, vagyis meghatározni annak végrehajtási időpontját. Minden ütemezési feladat rendelkezik végrehajtási idővel, ami megmutatja mekkora időtartam alatt valósítható meg. Ezenfelül lehet még a feladatoknak olyan időkorlátja, ami alatt kötelező elvégezni a feladatot, ezt időhorizontnak, time horizontnak hívjuk. A problémák kimenetelük szerint lehetnek megvalósíthatatlan (infeasible) és megvalósítható (feasible) feladatok. Egy feladat csak abban az esetben minősül megvalósíthatónak, ha minden korlátozásnak megfelel. Ha már akár csak egy korlátozással szemben nem bizonyul elfogadhatónak, akkor infeasible feladatról beszélhetünk.
 
 Az ipari folyamatokat többféleképpen lehet csoportosítani. Az egyik felosztási módszer szerint folyamatos és szakaszos üzemű rendszerek csoportjára bontjuk őket. Az első típusban az anyag folyamatosan kerül a rendszerbe, a másodikban pedig ez a folyamat lépésekben valósul meg. A munkám az utóbbi típusba tartozó feladatokra koncentrál. Másik lehetséges felosztás az, amikor online, offline, és semi-offline kategóriákba vannak a feladatok besorolva. Az offline esetben minden szükséges bemeneti adat rendelkezésre áll az optimalizálás idejében. Ezzel szemben az online esetben előbb kell a döntéseket meghozni, minthogy az adott paraméterekhez tartozó értékekre fény derülne. A semi-offline a kettő közé sorolható, azaz bizonyos információk, adatok már rendelkezésre állnak, mások viszont nem. 
 
@@ -22,7 +21,8 @@ A recepteket a feladatok precedenciája szerint az alábbi csoportokba lehet bes
 	\item \textbf{Precedential:} Egy termék gyártása nem szükségszerűen lineáris, lehetnek elágazások, kör azonban nem megengedett. Minden taszk előfeltételét be kell fejezni mielőtt az adott lépés megkezdődik. 
 	\item \textbf{General Network:} A legáltalánosabb recept, ahol a taszkok a bemenetük és a kimenetük által adottak. Ilyen esetben kör is lehetséges.
 \end{itemize}
-Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek_block} ábrán. A receptek jobb oldalán lévő, T-vel jelölt kör reprezentálja a terméket, a többi pedig a taszkokat.
+Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek_block} ábrán.
+
 \begin{figure}[H]	
 \begin{center}
 \includegraphics[scale=0.5]{receptek_block}
@@ -30,8 +30,9 @@ Néhány előbb említett feladattípus szemléltetése látható a~\ref{recepte
 \label{receptek_block}
 \end{center}
 \end{figure}
+
 \newpage
-A vegyipari, gyártási ütemezési feladatoknál nagy szerepet játszik a tárolási irányelv, amely azt mutatja meg, hogy két egymást követő feladatok között az elkészített köztes termékeket, hogyan kell raktározni, tárolni, illetve ez mennyi ideig lehetséges. A tárolási irányelvek csoportosítására többféle lehetőség van. Egyik ezek közül, amikor az adott létesítmény infrastrukturális képességei korlátozzák az anyag mennyiségét és tárolásának módját.
+A vegyipari, gyártási ütemezési feladatoknál nagy szerepet játszik a tárolási irányelv, amely azt mutatja meg, hogy két egymást követő feladatok között az elkészített köztes termékeket, hogyan kell raktározni, tárolni, illetve ez mennyi ideig lehetséges. A tárolási irányelvek csoportosítására többféle lehetőség van. Egyik dimenzió ezek közül, amikor az adott létesítmény infrastrukturális képességei korlátozzák az anyag mennyiségét és tárolásának módját.
 \begin{itemize}
 	\item \textbf{UIS - Unlimited Intermediate Storage}
 	\item \textbf{FIS - Finite Intermediate Storage}
@@ -39,27 +40,30 @@ A vegyipari, gyártási ütemezési feladatoknál nagy szerepet játszik a táro
 \end{itemize}
 Az UIS eset a legmegengedőbb. Ebben az esetben van lehetőség a köztes anyagok bármely mértékű tárolására. FIS esetben van lehetőség a tárolásra, de csak korlátozott mennyiségben. A NIS esetében nincs külön tárolásra alkalmas egység, de az megoldható, hogy amíg a következő feldolgozó egységhez kerül, addig az előző taszk feldolgozó egységében várakozzon.	
 
-A tárolás második fajta csoportosításának alapját az idő adja, amely a köztes termék kémiai és fizikai tulajdonságait befolyásolhatja. Például a termék szavatossága, hőmérséklete megfelelő maradjon a következő részfeladat elkezdéséig.	
+A tárolás másik dimenziójának alapját az idő adja, amely a köztes termék kémiai és fizikai tulajdonságait befolyásolhatja. Például a termék szavatossága, hőmérséklete megfelelő maradjon a következő részfeladat elkezdéséig.	
 \begin{itemize}
 	\item \textbf{UW - Unlimited Wait}
 	\item \textbf{LW - Limited Wait}
 	\item \textbf{ZW - Zero Wait}	
 \end{itemize}
 ZW esetben nincs lehetőség a köztes anyag tárolására, azaz ha a berendezés befejezte a munkát, akkor azonnal folytatni kell a gyártást. Az LW esetben van egy idő, amíg a köztes termék várakozhat. Azonban, ha ez a rendelkezésre álló idő elfogy, akkor muszáj folytatni a gyártás folyamatát. Az UW eset a legmegengedőbb mind közül, ugyanis ha a köztes anyag tulajdonságai lehetőséget biztosítanak, akkor a tárolási idő nincs korlátozva, bármennyi ideig lehetőség van a tárolásra, raktározásra.
+
 \newpage
 \section{Megoldó módszerek az irodalomban}
 Az ütemezési feladatok megoldására számos megoldó módszer létezik. Ezek közül a legismertebbek, és legszélesebb körben elterjedt módszerek kerülnek bemutatásra a dolgozatom következő pontjaiban.
+
 \subsection{MILP modellek}
-Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming, azaz a vegyes egészértékű lineáris programozás. Az ilyen modellekben vegyesen fordulnak elő folytonos és egész változók. Több altípus létezik:
+Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming, azaz a vegyes egészértékű lineáris programozás. Az ilyen modellekben vegyesen fordulnak elő folytonos és egész változók. Többféle csoportba sorolhatók a modellek:
 \begin{itemize}
-  \item[] \textbf{Időfelosztásos modellek - Time discretization based:} A módszer időpontokat és időréseket határoz meg. Ezek a modellek jelentek meg legkorábban kronológiailag \cite{kondili}. Az időrésen és az időponton alapuló megközelítések sok hasonlóságot mutatnak, mivel egy időintervallumtól egy másikig terjedő időintervallumot tekinthetünk időrésnek \cite{susarla}. Ellenkező irányból nézve pedig egy időrés kezdő időpontját tekinthetjük egy időpontnak.  
+  \item[] \textbf{Időfelosztásos modellek - Time discretization based models:} A módszer időpontokat és időréseket határoz meg. Ezek a modellek jelentek meg legkorábban kronológiailag \cite{kondili}. Az időrésen és az időponton alapuló megközelítések sok hasonlóságot mutatnak, mivel egy időintervallumtól egy másikig terjedő időintervallumot tekinthetünk időrésnek \cite{susarla}.  Ellenkező irányból nézve pedig egy időrés kezdő időpontját tekinthetjük egy időpontnak.  
   
 Minden időpontban bináris változók vannak hozzárendelve a feladatokhoz aszerint, hogy az adott időpillanatban elkezdődik a feladat végrehajtása vagy sem. A bináris változók száma arányos lesz a kiválasztott időpontok számával, ezért a megoldáshoz szükséges idő nagy mértékben függ az időpontok számától. Mindig megvolt a szándék olyan módszer kifejlesztésére, amelyben a szükséges időpontok száma minél kisebb legyen amellett, hogy megtalálja az optimális megoldást. Létrejöttek jobb modellek, azonban készültek olyanok is, amelyek kevésbé voltak átláthatóak, a korlátozások még bonyolultabbá váltak, és modellezési hibák is előfordultak.
   
-  \item[] \textbf{Precedencia alapú modellek - Precedence based:} Ezeknél a módszereknél, szemben az időfelosztásos módszerekkel, nincs szükség az időhorizont diszkretizáció- jára, azaz nem használnak ismeretlen paramétert a modellben. Általánosságban jobb számítási eredményeket nyújtanak az általuk kezelt problémákra, azonban ez a készlet sokkal kisebb, mint az időfelosztásos modellekhez tartozó kollekció. Alapvetően a multiproduct és multipurpose receptek esetében használható megfelelően, de kibővíthető, hogy a sokkal általánosabb precedential receptek is megoldhatók legyenek ezek segítségével. 
+  \item[] \textbf{Precedencia alapú modellek - Precedence based models:} Ezeknél a módszereknél, szemben az időfelosztásos módszerekkel, nincs szükség az időhorizont diszkretizáció- jára, azaz nem használnak ismeretlen paramétert a modellben. Általánosságban jobb számítási eredményeket nyújtanak az általuk kezelt problémákra, azonban ez a készlet sokkal kisebb, mint az időfelosztásos modellekhez tartozó kollekció. Alapvetően a multiproduct és multipurpose receptek esetében használható megfelelően, de kibővíthető, hogy a sokkal általánosabb precedential receptek is megoldhatók legyenek ezek segítségével. 
   
-Ez a módszer kétféle bináris változót használ. Az első $Y_{i,j}$, aminek az értéke abban az esetben lesz 1, ha $i$ feladatot $j$ berendezés végzi el. A második változó: $X_{i,j,i'}$. Értéke akkor lesz 1, ha ugyanaz a berendezés végzi el az $i$ és $i'$ taszkot, méghozzá úgy, hogy előbb az $i$-t teljesíti. 
+Ez a módszer kétféle bináris változót használ. Az első $Y_{i,j}$, aminek az értéke abban az esetben lesz 1, ha $i$ feladatot $j$ berendezés végzi el. A második változó: $X_{i,j,i'}$. Értéke akkor lesz 1, ha ugyanaz a $j$ berendezés végzi el az $i$ és $i'$ taszkot, méghozzá úgy, hogy előbb az $i$-t teljesíti. 
 \end{itemize}
+
 \subsection{Analízis alapú eszközök}
 Az automatákat és Petri hálókat széles körben alkalmazzák diszkrét eseményű rendszerek modellezésére \cite{cassandras}. Számos kísérletet tettek ezen eszközök modellezési teljesítményének kiterjesztésére annak érdekében, hogy batch folyamatok ütemezésére is alkalmassá tegyék az említett eszközöket. A meglévő modelleket időzítéssel egészítették ki, így jöttek létre a Timed Place Petri Nets (TPPN) and Timed Priced Automata (TPA) módszerek, amelyek Branch and Bound algoritmust használnak azért, hogy a legelőnyösebb megoldást megtalálják. Ezen módszereknek a hatékonysága elmarad a MILP és az S-gráf modell hatékonyságától is.
 \begin{itemize}
@@ -83,7 +87,7 @@ A jobb oldalon látható három, nagybetűvel jelölt csomópont felel meg a ter
 \end{itemize}
 Az éleken látható súlyok a részfeladat végrehajtásához szükséges időt mutatják meg. Ha egy részfeladatot több berendezés is képes elvégezni, akkor az előbb említett súly mindig a legkisebb előállítási idő lesz.
 
-Minden S-gráf-hoz kapcsolódó algoritmus kiegészíti ezeket a gráfokat az úgynevezett \textbf{ütemezési élekkel}, amelyek az ütemezési döntést testesítik meg. Ezekkel az élekkel kiegészített gráfoknak a neve \textbf{Ütemezési gráf}. Példa a~\ref{utemezesiGraf} ábrán nézhető meg. Az ábrán sötétkékkel jelölt élek az ütemezési élek. Az ütemezési élek súlya alapértelmezetten nulla, ha a probléma nem tartalmaz szállítási, vagy tisztítási időt. A részfeladatok csomópontjain már nem a lehetséges berendezések halmaza látható, hanem egy konkrét kiválasztott berendezés, az ütemezési döntésnek megfelelően. 
+Minden S-gráfhoz kapcsolódó algoritmus kiegészíti ezeket a gráfokat az úgynevezett \textbf{ütemezési élekkel}, amelyek az ütemezési döntést testesítik meg. Ezekkel az élekkel kiegészített gráfoknak a neve \textbf{Ütemezési gráf}. Példa a~\ref{utemezesiGraf} ábrán nézhető meg. Az ábrán sötétkékkel jelölt élek az ütemezési élek. Az ütemezési élek súlya alapértelmezetten nulla, ha a probléma nem tartalmaz szállítási, vagy tisztítási időt. A részfeladatok csomópontjain már nem a lehetséges berendezések halmaza látható, hanem egy konkrét kiválasztott berendezés, az ütemezési döntésnek megfelelően. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.7]{utemezesiGraf}
@@ -116,7 +120,7 @@ Az algoritmus első lépésben inicializálja a $makespan^{cb}$ értékét végt
 	\item $N:$ a csomópontok halmaza (termékek és taszkok együttese)
 	\item $A_{1}:$ a receptélek halmaza
 	\item $A_{2}:$ az ütemezési élek halmaza (itt még üres halmaz)
-	\item $w_{i,i^{'}}:$ a receptélekhez tartozó súlyok, amelyek az $i$ taszkok legkisebb feldolgozási idejét jelentik.
+	\item $w_{i,i^{'}}:$ a receptélekhez tartozó súlyok, amelyek az $i$ taszkok feldolgozási idejét jelentik. Kezdetben ez a legkisebb feldolgozási idő.
 \end{itemize}
 
 Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy tetszőleges részprobléma kerül kiválasztásra, majd az $S$-ből eltávolításra. Ennek a függvénynek a viselkedése a különböző megvalósításokban más és más lehet, ami más keresési stratégiát eredményez. A kiválasztott részprobléma a következőképpen néz ki $(G(N,A_1,A_2,w),I',J',{\cal A})$, ahol:
@@ -129,8 +133,7 @@ Az iteráció minden lépésében a \textbf{select\_remove} függvénnyel egy te
 
 Az iteráció elején kiértékelődik, hogy a részprobléma képes-e egy optimális megoldást nyújtani vagy sem. Ez a \textbf{bound} függvénnyel történik. Ezzel szemben több követelmény áll fenn. Alsó korlátot kell adnia azoknak a megoldásoknak, amelyek a részproblémából származnak. Biztosítania kell levél problémák pontos makespanjét. Végtelen értékkel térjen vissza, ha a gráf tartalmaz kört, és jelezze, hogy megoldhatatlan. A leggyakrabban a leghosszabb út keresésével vizsgálja meg a részproblémát a \textbf{bound} függvény, de lehetséges LP alapú modellek használata is.
 
-Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és amennyiben létezik egy következő részprobléma, akkor az kerül kiválasztásra.
-Ha viszont kisebb a korlát, abban az esetben ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, vagyis a még nem ütemezett taszkok halmaza üres már ($I^{'}=\emptyset$). Ha így van frissül a legjobb megoldás gráfja, a legjobb makespan és a hozzárendelések halmaza. Ellenben, ha még szükséges további ütemezés, akkor a  \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J^{'}$ halmazból. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot a még nem ütemezett taszkok és a kiválasztott berendezés által elvégezhető taszkok közös halmazából ($i \in I_{j} \cap I^{'}$). Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról. Mivel a csomópontok és a receptélek halmaza nem változik, ezért ezek változatlanok maradnak, csak az ütemezési élek halmaza és súlyok változnak. Ezt a másolatot kibővíti az algoritmus az új hozzárendelés alapján az ütemezési élekkel ($A^{i}_{2}:= A^{i}_{2} \cup \{(i^{'},i)\}$). Ezután minden $i$-ből induló receptél súlya frissül a $t^{pr}_{i,j}$ értékével. Végezetül pedig az új részproblémát hozzáadja az $S$ halmazhoz. Itt $I^{'}$ halmazból kikerül az előbb kiválasztott $i$ taszk, és a hozzárendelések halmazába bekerül az új taszk-berendezés pár (${\cal A}\cup\{(i,j)\}$).
+Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és amennyiben létezik egy következő részprobléma, akkor az kerül kiválasztásra. Ha viszont kisebb a korlát, abban az esetben ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, vagyis a még nem ütemezett taszkok halmaza üres már ($I^{'}=\emptyset$). Ha így van frissül a legjobb megoldás gráfja, a legjobb makespan és a hozzárendelések halmaza. Ellenben, ha még szükséges további ütemezés, akkor a  \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J^{'}$ halmazból. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot, mindegyiket külön-külön gyerekként, a még nem ütemezett taszkok és a kiválasztott berendezés által elvégezhető taszkok közös halmazából ($i \in I_{j} \cap I^{'}$). Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról. Mivel a csomópontok és a receptélek halmaza nem változik, ezért ezek változatlanok maradnak, csak az ütemezési élek halmaza és súlyok változnak. Ezt a másolatot kibővíti az algoritmus az új hozzárendelés alapján az ütemezési élekkel ($A^{i}_{2}:= A^{i}_{2} \cup \{(i^{'},i)\}$). Ezután minden $i$-ből induló receptél súlya frissül a $t^{pr}_{i,j}$ értékével. Végezetül pedig az új részproblémát hozzáadja az $S$ halmazhoz. Itt $I^{'}$ halmazból kikerül az előbb kiválasztott $i$ taszk, és a hozzárendelések halmazába bekerül az új taszk-berendezés pár (${\cal A}\cup\{(i,j)\}$).
 
 Abban az esetben, ha minden még nem ütemezett taszkot a kiválasztott $j$ berendezésen kívül más berendezés is el tud végezni, akkor egy új részproblémát hoz létre az algoritmus, amelyben a $j$ berendezés már nem végez több taszkot, azaz kikerül a még rendelkezésre álló berendezések halmazából ($J^{'}\setminus\{j\}$).
 
