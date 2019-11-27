@@ -1,14 +1,41 @@
 \chapter{Az új módszer}
-Az új módszer létrehozását a meglévő megoldónál fellépő, a változó batch mérettel rendelkező feladatokból származó hátrányok ihlették. Abban az esetben az összes lehetséges, különböző hozzárendelést rögzíteni kell a receptben, így különböző termékek lesznek. Ennek következményeképp 1 dimenzió helyett többet kell bejárnia az algoritmusnak, ebből kifolyólag a futás lassabb lesz, mert több megvalósíthatósági tesztet kell elvégezni. Ezenkívül a nagyobb csúcsszám miatt nő az infeasible csúcsok száma is. Az új megoldó módszer ezen hátrányok kiküszöbölésére törekszik. 
+Az új módszer létrehozását a meglévő megoldónál fellépő, a változó batch mérettel rendelkező feladatokból származó hátrányok ihlették.
+Abban az esetben az összes lehetséges, különböző hozzárendelést rögzíteni kell a receptben, így különböző termékek lesznek.
+Ennek következményeképp 1 dimenzió helyett többet kell bejárnia az algoritmusnak, ebből kifolyólag a futás lassabb lesz, mert több megvalósíthatósági tesztet kell elvégezni.
+Ezenkívül a nagyobb csúcsszám miatt nő az infeasible csúcsok száma is.
+Az új megoldó módszer ezen hátrányok kiküszöbölésére törekszik. 
 
-A két módszer nem teljes mértékben tér el, vannak olyan részek benn, amelyek megegyeznek. Először is mindkét esetben $n$ dimenziós térben ($n$ a termékek száma) keresi a legnagyobb profittal rendelkező konfigurációt. Mindegyik módszer esetén sor kerül kerül a megvalósíthatóság tesztelésére, illetve ha talál egy megvalósíthatatlan konfigurációt akkor elveti ezt és az ennél nagyobbakat. 
+A két módszer nem teljes mértékben tér el, vannak olyan részek benne, amelyek megegyeznek.
+Először is mindkét esetben $n$ dimenziós térben ($n$ a termékek száma) keresi a legnagyobb profittal rendelkező konfigurációt.
+Mindegyik módszer esetén sor kerül kerül a megvalósíthatóság tesztelésére, illetve ha talál egy megvalósíthatatlan konfigurációt akkor elveti ezt és az ennél nagyobbakat. 
 
-A módszerek között eltéréseket is lehet találni. Legfontosabb eltérés, hogy az új módszer esetében egy receptnél nincs batch méret, emiatt a jövedelmek sincsenek előre meghatározva. Ezt a feladatot az ütemezést elvégző szubrutinnak kell elvégezni. Lényeges eltérés még, hogy az új módszernél nem alkalmazható a revenue line arra, hogy csökkentsük a megvizsgálandó konfigurációk számát. Itt a elérhető jövedelmet nem skaláris szorzat adja meg, mint a régi megoldó esetében (termék száma szorozva a termék jövedelmével), hanem a mennyiség is közrejátszik, így előfordulhat, hogy kisebb konfigurációk esetén nagyobb profitra teszünk szert. Ennek tekintetében lényeges az is, hogy ha talál egy részütemezés esetén megvalósítható megoldást, akkor nem tér azonnal vissza ezzel, hanem megkeresi a legjobb elérhetőt. Az új algoritmus nem csökkenti a beütemezendő feladatokat, mert engedélyezett, hogy több berendezés egyszerre végezze ugyanazt a feladatot. Ennek következtében a levél nem lehet az a részfeladat, ahol már nincs ütemezendő feladat. Ehelyett az számít levélnek, ha már minden berendezés ütemezése lezárt. Továbbá eltérés a felső korlátban is megfigyelhető. Az új módszernél a felső korlátot az adja, hogy a még elérhető berendezéseket hozzárendeli minden olyan feladathoz, amelyet az adott berendezés el tud végezni. Ezen a módon minden csúcsra meghatározza az elérhető legnagyobb kapacitást.
+A módszerek között eltéréseket is lehet találni.
+Legfontosabb eltérés, hogy az új módszer esetében egy receptnél nincs batch méret, emiatt a jövedelmek sincsenek előre meghatározva.
+Ezt a feladatot az ütemezést elvégző szubrutinnak kell elvégezni.
+Lényeges eltérés még, hogy az új módszernél nem alkalmazható a revenue line arra, hogy csökkentsük a megvizsgálandó konfigurációk számát.
+Itt a elérhető jövedelmet nem skaláris szorzat adja meg, mint a régi megoldó esetében (termék száma szorozva a termék jövedelmével), hanem az előállított termék mennyisége is közrejátszik, így előfordulhat, hogy kisebb konfigurációk esetén nagyobb profitra teszünk szert.
+Ennek tekintetében lényeges az is, hogy ha talál egy részütemezés esetén megvalósítható megoldást, akkor nem tér azonnal vissza ezzel, hanem megkeresi a legjobb elérhetőt.
+Az új algoritmus nem csökkenti a beütemezendő feladatokat, mert engedélyezett, hogy több berendezés egyszerre végezze ugyanazt a feladatot.
+Ennek következtében a levél nem lehet az a részfeladat, ahol már nincs ütemezendő feladat.
+Ehelyett az számít levélnek, ha már minden berendezés ütemezése lezárt.
+Továbbá eltérés a felső korlátban is megfigyelhető.
+Az új módszernél a felső korlátot az adja, hogy a még elérhető berendezéseket hozzárendeli minden olyan feladathoz, amelyet az adott berendezés el tud végezni.
+Ezen a módon minden csúcsra meghatározza az elérhető legnagyobb kapacitást.
 
 Az új módszernek 3 nagyobb elkülöníthető része van, amelyek bemutatása a következő pontokban található meg.
 
 \section{Vezérlő}
-A vezérlő feladata a konfigurációk kezelése. Első lépésben az algoritmus inicializálja a $profit^{cb}$ változót mínusz végtelennel. Ennek oka az, hogy ha a feladatnak van megoldása, akkor ennél az értéknél biztosan nagyobb jövedelemre lehet szert tenni. Ezt követően az $S$ halmazt inicializálja a termékek összes lehetséges konfigurációval. Ezek természetesen csak nem negatív egész számok lehetnek. Ezután az iteráció minden lépésében a \textbf{select\_remove} függvény segítségével kiválaszt egy konfigurációt. Először minden feladat esetében végigmegy azokon a konfigurációkon, ahol csak egy termék kerül legyártásra, így meghatározható egy régió, amely tartalmazza az összes megvalósítható megoldást. Az algoritmus meghívja a $MAXPROFIT$ függvényt, amely által visszaadott értéket összehasonlítja a jelenlegi legjobb megoldással. Ha jobb, mint a meglévő profit, akkor ez az új érték lesz a legjobb megtalált megoldás, és a legjobb konfiguráció is frissítésre kerül. Azonban, ha a visszakapott érték mínusz végtelen, akkor az az jelenti, hogy az adott konfiguráció esetén nincs megvalósítható megoldás, így az ennél nagyobb konfigurációk eltávolíthatóak az $S$ halmazból, mert azok között se található feasible megoldás. Miután az iteráció véget ért, és volt megvalósítható megoldás, akkor az algoritmus visszatér a legjobb megoldást nyújtó konfigurációval, és az ehhez tartozó legjobb profittal.
+A vezérlő feladata a konfigurációk kezelése.
+Első lépésben az algoritmus inicializálja a $profit^{cb}$ változót mínusz végtelennel.
+Ennek oka az, hogy ha a feladatnak van megoldása, akkor ennél az értéknél biztosan nagyobb jövedelemre lehet szert tenni.
+Ezt követően az $S$ halmazt inicializálja a termékek összes lehetséges konfigurációjával.
+Ezek természetesen csak nem negatív egész számok lehetnek.
+Ezután az iteráció minden lépésében a \textbf{select\_remove} függvény segítségével kiválaszt egy konfigurációt.
+Először minden feladat esetében végigmegy azokon a konfigurációkon, ahol csak egy termék kerül legyártásra, így meghatározható egy régió, amely tartalmazza az összes megvalósítható megoldást.
+Az algoritmus meghívja a $MAXPROFIT$ függvényt, amely által visszaadott értéket összehasonlítja a jelenlegi legjobb megoldással.
+Ha jobb, mint a meglévő profit, akkor ez az új érték lesz a legjobb megtalált megoldás, és a legjobb konfiguráció is frissítésre kerül.
+Azonban, ha a visszakapott érték mínusz végtelen, akkor az az jelenti, hogy az adott konfiguráció esetén nincs megvalósítható megoldás, így az ennél nagyobb konfigurációk eltávolíthatóak az $S$ halmazból, mert azok között se található feasible megoldás.
+Miután az iteráció véget ért, és volt megvalósítható megoldás, akkor az algoritmus visszatér a legjobb megoldást nyújtó konfigurációval, és az ehhez tartozó legjobb profittal.
 
 \begin{algorithm}[H]
 \caption{A vezérlő pszeudó kódja}
@@ -34,11 +61,37 @@ A vezérlő feladata a konfigurációk kezelése. Első lépésben az algoritmus
 \end{algorithm}
 
 \section{Maxprofit eljárás}
-Ennek a függvénynek több feladata van. Itt hívódik meg a megvalósíthatósági teszt, valamit a $ProfitBound$ függvény is, illetve a részprobléma ütemezése is itt történik meg. A függvény alapját a Makespan minimalizáló algoritmus adja. A bemenetet az időhorizont ($TH$), valamint a batch szám adja. Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén. A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések kerülnek bele, amelyek már hozzá vannak rendelve egy adott taszkhoz. A \textbf{recipe} függvény ugyanúgy, ahogy a makespan minimalizáló algoritmus esetében van, visszaadja a probléma receptgráfjának modelljét, és hozzáadja az $S$ halmazhoz.
+Ennek a függvénynek több feladata van.
+Itt hívódik meg a megvalósíthatósági teszt, valamit a $ProfitBound$ függvény is, illetve a részprobléma ütemezése is itt történik meg.
+A függvény alapját a Makespan minimalizáló algoritmus adja.
+A bemenetet az időhorizont ($TH$), valamint a batch szám adja.
+Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén.
+A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések kerülnek bele, amelyek már hozzá vannak rendelve egy adott taszkhoz.
+A \textbf{recipe} függvény ugyanúgy, ahogy a makespan minimalizáló algoritmus esetében van, visszaadja a probléma receptgráfjának modelljét, és hozzáadja az $S$ halmazhoz.
 
-Ezeket követően a \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát az iteráció minden lépésében. Ez addig tart, amíg az $S$ halmaz ki nem ürül, azaz elfogynak a részproblémák. Az algoritmus egy részproblémát választ ki a következő formában $(G(N,A_1,A_2,w),I,J',{\cal A})$. Ezután sor kerül a megvalósíthatóság tesztelésére. Az algoritmus megvizsgálja a kiválasztott részproblémát a \textit{Feasible} függvény segítségével, ez megnézi, hogy a részprobléma a megadott időhorizonton belül megvalósítható-e. Megnézi, hogy a részproblémában lévő leghosszabb út nagyobb vagy kisebb a megadott korlátnál. Ha kisebb, azaz a feladat elvégezhető a megadott idő alatt, akkor feasible lesz a megoldás, máskülönben infeasible-nek minősül. Ha megvalósítható, akkor megvizsgálja az algoritmus, hogy a részprobléma által nyújtott legnagyobb elérhető jövedelem nagyobb-e, mint az eddig megtalált legjobb megoldás. Az részprobléma jövedelmét a $ProfitBound$ függvény adja meg, amely kifejtése a következő pontban történik meg. Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik részprobléma kerül kiválasztásra, amennyiben még van ilyen.
+Ezeket követően a \textbf{select\_remove} függvény kiválaszt egy tetszőleges részproblémát az iteráció minden lépésében.
+Ez addig tart, amíg az $S$ halmaz ki nem ürül, azaz elfogynak a részproblémák.
+Az algoritmus egy részproblémát választ ki a következő formában $(G(N,A_1,A_2,w),I,J',{\cal A})$.
+Ezután sor kerül a megvalósíthatóság tesztelésére.
+Az algoritmus megvizsgálja a kiválasztott részproblémát a \textit{Feasible} függvény segítségével, ez megnézi, hogy a részprobléma a megadott időhorizonton belül megvalósítható-e.
+Megnézi, hogy a részproblémában lévő leghosszabb út nagyobb vagy kisebb a megadott korlátnál.
+Ha kisebb, azaz a feladat elvégezhető a megadott idő alatt, akkor feasible lesz a megoldás, máskülönben infeasible-nek minősül.
+Ha megvalósítható, akkor megvizsgálja az algoritmus, hogy a részprobléma által nyújtott legnagyobb elérhető jövedelem nagyobb-e, mint az eddig megtalált legjobb megoldás.
+A részprobléma jövedelmét a $ProfitBound$ függvény adja meg, amely kifejtése a következő pontban történik meg.
+Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik részprobléma kerül kiválasztásra, amennyiben még van ilyen.
 
-Ha mindkét feltételnek megfelel a részprobléma, akkor megnézi az algoritmus, hogy levél-e. Ez azt jelenti, hogy található-e még olyan berendezés, amely nincsen teljesen beütemezve, vagyis tud még feladatokat végezni. Abban ez esetben ha nincs ilyen berendezés ($J'== \emptyset$), akkor a jelenlegi legjobb megoldás ($profit^{cb}$) értéke felülíródik a vizsgált részprobléma által nyújtott megoldással. Ha viszont nem levél, akkor egy berendezés kerül kiválasztásra a még elérhető berendezések halmazából. A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot, amelyet el tud a berendezés végezni, és még nincs hozzárendelve. Ezután az éppen soron lévő részfeladat hozzáadódik ahhoz a halmazhoz, amelyben azok a taszkok szerepelnek, amelyet a $j$ berendezés már végez. Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról. Mivel a csomópontok és a receptélek halmaza nem változik, ezért ezek változatlanok maradnak, csak az ütemezési élek halmaza és súlyok változnak. Ezek után az algoritmus bővíti az ütemezési élek halmazát az új hozzárendelések alapján. Ezt követően az $i$ taszkból induló receptél súlya megkapja $t^{pr}_{i,j}$ értékét amennyiben az él jelenlegi súlyánál nagyobb az újonnan hozzárendelt berendezés feldolgozási ideje. Mindezeket követően az $S$ halmazhoz hozzáadja az algoritmus az új hozzárendeléssel kiegészített részproblémát. Fontos, hogy az új részproblémában nem szűkül a $J'$, a kiválasztott $j$ berendezés a párhuzamos hozzárendelés megengedése miatt továbbra is elérhető, ha tud még feladatot megoldani. 
+Ha mindkét feltételnek megfelel a részprobléma, akkor megnézi az algoritmus, hogy levél-e.
+Ez azt jelenti, hogy található-e még olyan berendezés, amely nincsen teljesen beütemezve, vagyis tud még feladatokat végezni.
+Abban ez esetben ha nincs ilyen berendezés ($J'== \emptyset$), akkor a jelenlegi legjobb megoldás ($profit^{cb}$) értéke felülíródik a vizsgált részprobléma által nyújtott megoldással.
+Ha viszont nem levél, akkor egy berendezés kerül kiválasztásra a még elérhető berendezések halmazából.
+A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot, amelyet el tud a berendezés végezni, és még nincs hozzárendelve.
+Ezután az éppen soron lévő részfeladat hozzáadódik ahhoz a halmazhoz, amelyben azok a taszkok szerepelnek, amelyet a $j$ berendezés már végez.
+Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról.
+Mivel a csomópontok és a receptélek halmaza nem változik, ezért ezek változatlanok maradnak, csak az ütemezési élek halmaza és súlyok változnak.
+Ezek után az algoritmus bővíti az ütemezési élek halmazát az új hozzárendelések alapján.
+Ezt követően az $i$ taszkból induló receptél súlya megkapja $t^{pr}_{i,j}$ értékét amennyiben az él jelenlegi súlyánál nagyobb az újonnan hozzárendelt berendezés feldolgozási ideje.
+Mindezeket követően az $S$ halmazhoz hozzáadja az algoritmus az új hozzárendeléssel kiegészített részproblémát.
+Fontos, hogy az új részproblémában nem szűkül a $J'$, a kiválasztott $j$ berendezés a párhuzamos hozzárendelés megengedése miatt továbbra is elérhető, ha tud még feladatot megoldani. 
 
 \begin{algorithm}[H]
 \caption{A MAXPROFIT függvény pszeudó kódja}
@@ -82,26 +135,46 @@ Ha mindkét feltételnek megfelel a részprobléma, akkor megnézi az algoritmus
 \end{algorithm}
 
 \newpage
-Azon taszkok esetében, amelyeket a $j$ berendezés el tud végezni, és ezeket mindenképpen el is kell, de más berendezések is el tudják végezni, amelyek benne vannak még a $J'$-ben, olyan döntés is születhet, hogy a kiválasztott $j$ berendezés nem fogja ezeket a feladatokat végrehajtani. Ilyenkor az $S$ halmaz kibővül egy olyan részproblémával, ahol a $j$ berendezés már nem végez több feladatot. Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megoldással, vagyis az elérhető legnagyobb bevétel értékével.
+Azon taszkok esetében, amelyeket a $j$ berendezés el tud végezni, és ezeket mindenképpen el is kell, de más berendezések is el tudják végezni, amelyek benne vannak még a $J'$-ben, olyan döntés is születhet, hogy a kiválasztott $j$ berendezés nem fogja ezeket a feladatokat végrehajtani.
+Ilyenkor az $S$ halmaz kibővül egy olyan részproblémával, ahol a $j$ berendezés már nem végez több feladatot.
+Az ütemezés elvégeztével az algoritmus visszatér a megtalált legjobb megoldással, vagyis az elérhető legnagyobb bevétel értékével.
 
 \section{Profitbound eljárás}
-A Profitbound függvény számolja ki egy részprobléma jövedelmét. A függvény először beállítja a $profitbound$, és a $CAP_{j}$ változók értékét nullára. A $profitbound$ változó fogja megadni a termékek legyártásából elérhető jövedelmet. Ezután a függvény beállítja minden taszk kapacitását ($CAP_{i}$). Ezt úgy lehet megkapni, hogy össze kell adni azoknak a berendezéseknek a kapacitását ($C_{j}$), amely el tudja végezni az adott feladatot. Ezek az értékek a bemeneti adatok között vannak megadva. Ezután az algoritmus kiszámolja a ténylegesen hasznosított kapacitások mennyiségét. Ezt úgy teszi, hogy végigmegy a receptéleken, és a százalékokat beleveszi a számításba. Mivel nem biztos, hogy sorrendben megy végig a nyersanyagoktól kezdve, ezért szükséges a while ciklus, hogy ne maradjon ki semmilyen érték a számítás során, és ezáltal ne pontatlan eredményhez jusson. Egy receptélen kettő százalékot tudunk megkülönböztetni. Az első ($SP_{i',i}$) az, amelyik azt mutatja meg, hogy a befejezett taszk mekkora kapacitását hasznosítjuk. A második ($DP_{i',i}$) pedig, hogy a soron következő feladat kapacitás mekkora hányadát tudja felvenni. Az $i$ az éppen vizsgált taszk, az $i'$ pedig az őt megelőző taszk. A következő képlet segítségével lehet meghatározni a kapacitást:
+A Profitbound függvény számolja ki egy részprobléma jövedelmét.
+A függvény először beállítja a $profitbound$, és a $CAP_{j}$ változók értékét nullára.
+A $profitbound$ változó fogja megadni a termékek legyártásából elérhető jövedelmet.
+Ezután a függvény beállítja minden taszk kapacitását ($CAP_{i}$).
+Ezt úgy lehet megkapni, hogy össze kell adni azoknak a berendezéseknek a kapacitását ($C_{j}$), amely el tudja végezni az adott feladatot.
+Ezek az értékek a bemeneti adatok között vannak megadva.
+Ezután az algoritmus kiszámolja a ténylegesen hasznosított kapacitások mennyiségét.
+Ezt úgy teszi, hogy végigmegy a receptéleken, és a százalékokat beleveszi a számításba.
+Mivel nem biztos, hogy sorrendben megy végig a nyersanyagoktól kezdve, ezért szükséges a while ciklus, hogy ne maradjon ki semmilyen érték a számítás során, és ezáltal ne pontatlan eredményhez jusson.
+Egy receptélen kettő százalékot tudunk megkülönböztetni.
+Az első ($SP_{i',i}$) az, amelyik azt mutatja meg, hogy a befejezett taszk mekkora kapacitását hasznosítjuk.
+A második ($DP_{i',i}$) pedig, hogy a soron következő feladat kapacitás mekkora hányadát tudja felvenni.
+Az $i$ az éppen vizsgált taszk, az $i'$ pedig az őt megelőző taszk.
+A következő képlet segítségével lehet meghatározni a kapacitást:
 \begin{gather}
 \scalebox{0.75}{$
 \begin{align*}
-\text{kapacitás}&= \text{előző taszk kapacitása}&*\frac{\text{előző taszkból felvett kapacitás mennyiségnek százaléka}}{\text{a mennyiég százaléka, amit az éppen vizsgált taszk feltud venni}}
+\text{kapacitás}&= \text{előző taszk kapacitása}&*\frac{\text{előző taszkból felvett kapacitás mennyiségnek százaléka}}{\text{a mennyiég százaléka, amit az éppen vizsgált taszk fel tud venni}}
 \end{align*}$}	
 \end{gather}
-Az algoritmus minden taszk minden bemeneti élére elvégzi ezt a számítást. Így megkapja ezeknek a kapacitásoknak a maximumát. Ezen értékek közül a legkisebbet veszi figyelembe, mert ez az a mennyiség, ami mindenképpen elérhető. A következő lépésben a $profitbound$ kiszámolása történik. A profitboundot a végtermékek mennyisége és a legyártásból származó jövedelem szorzata adja meg. Végezetül ezzel az értékkel tér vissza a függvény.
+Az algoritmus minden taszk minden bemeneti élére elvégzi ezt a számítást.
+Így megkapja ezeknek a kapacitásoknak a maximumát.
+Ezen értékek közül a legkisebbet veszi figyelembe, mert ez az a mennyiség, ami mindenképpen elérhető.
+A következő lépésben a $profitbound$ kiszámolása történik.
+A profitboundot a végtermékek mennyisége és a legyártásból származó jövedelem szorzata adja meg.
+Végezetül ezzel az értékkel tér vissza a függvény.
 
 \begin{algorithm}[H]
 \caption{A profitbound függvény pszeudó kódja}
 \label{profitbound}
 \begin{algorithmic}[1]
-\Procedure{ProfitBound}{}
+\Procedure{ProfitBound}{$G(N,A_1,A_2,w),I,J',{\cal A}$}
 	\State $profitbound:= 0$
 	\State $CAP_{i}:= 0$
-	\State $hadchange:= false$
+	\State $hadchange:= true$
 	\ForAll {$j \in J$}
 		\ForAll {$i \in I_{j}$}			
 			\State $CAP_{i} \mathrel{+}= C_{j}$			
