@@ -15,3 +15,5 @@
 *.gz
 *.toc
 *.aux
+*.bbl
+*.blg
