@@ -1,0 +1,14 @@
+*****************************
+
+AA1 ---> AA2  2.5
+AA2 ---> AA3  2
+AA3 ---> AA4  2.5
+AA4 ---> AA  3
+bound: 10
+
+Gantt chart:
+AA - AA1: 0-2.5, 2.5	E1
+AA - AA2: 2.5-4.5, 2	E4
+AA - AA3: 4.5-7, 2.5	E1
+AA - AA4: 7-10, 3	E2
+The longest path: 10

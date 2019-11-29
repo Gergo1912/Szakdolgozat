@@ -1,0 +1,44 @@
+*****************************
+
+A1 ---> A2  2
+A1 ---> BBBB1  0
+A1 ---> BBBB1_2  0
+A2 ---> BBBB1_2  0
+A2 ---> BBBB32  0
+A2 ---> BBBB32_2  0
+A2 ---> A  4
+BBBB1 ---> BBBB31  4
+BBBB1 ---> BBBB32  4
+BBBB1_2 ---> BBBB31_2  4
+BBBB1_2 ---> BBBB32_2  4
+BBBB2 ---> BBBB31  3
+BBBB2 ---> BBBB32  3
+BBBB2_2 ---> BBBB2  0
+BBBB2_2 ---> BBBB31  0
+BBBB2_2 ---> BBBB31_2  3
+BBBB2_2 ---> BBBB32_2  3
+BBBB31 ---> BBBB  3
+BBBB31_2 ---> BBBB1  0
+BBBB31_2 ---> BBBB_2  3
+BBBB32 ---> BBBB31  0
+BBBB32 ---> BBBB  3
+BBBB32_2 ---> BBBB1  0
+BBBB32_2 ---> BBBB31_2  0
+BBBB32_2 ---> BBBB_2  3
+A ---> BBBB32_2  0
+BBBB_2 ---> BBBB2  0
+BBBB_2 ---> BBBB32  0
+bound: 15
+
+Gantt chart:
+A - A1: 0-2, 2	E1
+A - A2: 2-6, 4	E3
+BBBB - BBBB1: 6-12, 6	E1
+BBBB_2 - BBBB1_2: 2-6, 4	E1
+BBBB - BBBB2: 9-12, 3	E2
+BBBB_2 - BBBB2_2: 0-6, 6	E2
+BBBB - BBBB31: 12-15, 3	E2
+BBBB_2 - BBBB31_2: 6-9, 3	E2
+BBBB - BBBB32: 12-15, 3	E3
+BBBB_2 - BBBB32_2: 6-9, 3	E3
+The longest path: 15
