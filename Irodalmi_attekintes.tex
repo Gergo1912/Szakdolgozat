@@ -40,7 +40,8 @@ Minden osztály a következőnek egy speciális esete.
 	Előzővel szemben itt már nem csak egy lépésben lehetséges.
 	Különösen fontos, hogy nem lehet elágazás benne, azaz csak szekvenciális lehet.
 	\item \textbf{General Multiproduct:} Előzővel összehasonlítva az a különbség, hogy ennél lehetséges lépések kihagyása.
-	\item \textbf{Multipurpose:} Megegyezik a Multiproduct esettel, azzal a különbséggel, hogy a berendezések nem azonos sorrendben kerülnek igénybe vételre.
+	\item \textbf{Multipurpose:} Megegyezik a Multiproduct esettel, azzal a különbséggel, hogy a berendezések nem azonos sorrendben kerülnek igénybe vételre, nem minden esetben balról jobbra haladva történik a gyártás.
+	Továbbá számít a a berendezések igénybe vételének száma is.
 	\item \textbf{Precedential:} Egy termék gyártása nem szükségszerűen lineáris, lehetnek elágazások, kör azonban nem megengedett.
 	Minden taszk előfeltételét be kell fejezni mielőtt az adott lépés megkezdődik. 
 	\item \textbf{General Network:} A legáltalánosabb recept, ahol a taszkok a bemenetük és a kimenetük által adottak.
@@ -50,7 +51,7 @@ Minden osztály a következőnek egy speciális esete.
 Néhány előbb említett feladattípus szemléltetése látható a~\ref{receptek_block} ábrán.
 \begin{figure}[H]	
 \begin{center}
-\includegraphics[scale=0.6]{receptek_block}
+\includegraphics[scale=0.5]{receptek_block}
 \caption{Különböző receptek szemléltetése blokkdiagramon}
 \label{receptek_block}
 \end{center}
@@ -89,14 +90,14 @@ Az ütemezési feladatok megoldására számos megoldó módszer létezik.
 Ezek közül a legismertebbek, és legszélesebb körben elterjedt módszerek kerülnek bemutatásra a dolgozatom következő pontjaiban.
 
 \subsection{MILP modellek}
-Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming, azaz a vegyes egészértékű lineáris programozás.
+Az egyik legszélesebb körben elterjedt modell a \textbf{M}ixed \textbf{I}nteger \textbf{L}inear \textbf{P}rogramming \cite{Mendez2006} \cite{Floudas2004}, azaz a vegyes egészértékű lineáris programozás.
 Az ilyen modellekben vegyesen fordulnak elő folytonos és egész változók. Többféle csoportba sorolhatók a modellek:
 \begin{itemize}
   \item[] \textbf{Időfelosztásos modellek - Time discretization based models:}
   A módszer időpontokat és időréseket határoz meg.
-  Ezek a modellek jelentek meg legkorábban kronológiailag \cite{kondili}.
-  Az időrésen és az időponton alapuló megközelítések sok hasonlóságot mutatnak, mivel egy időintervallumtól egy másikig terjedő időintervallumot tekinthetünk időrésnek \cite{susarla}.
-  Ellenkező irányból nézve pedig egy időrés kezdő időpontját tekinthetjük egy időpontnak.  
+  Időrendben az ilyen típusú készítmények jelentek meg először az irodalomban \cite{kondili}.
+  Az időrésen és az időponton alapuló megközelítések sok hasonlóságot mutatnak, mivel egy időintervallumot, ami egy adott időponttól a következő időpontig tart, tekinthetünk egy időrésnek \cite{susarla}.
+  Ellenkező irányból nézve pedig egy időrés kezdő időpontját egy időpontnak tekinthetjük.  
   
 Minden időpontban bináris változók vannak hozzárendelve a feladatokhoz aszerint, hogy az adott időpillanatban elkezdődik a feladat végrehajtása vagy sem.
 A bináris változók száma arányos lesz a kiválasztott időpontok számával, ezért a megoldáshoz szükséges idő nagy mértékben függ az időpontok számától.
@@ -146,6 +147,7 @@ Erre példa a~\ref{receptGraf} ábrán látható \cite{Hegyhati}.
 \end{figure}
 
 A jobb oldalon látható három, nagybetűvel jelölt csomópont felel meg a termékeknek, a maradék kilenc pedig a részfeladatokat jelenti.
+A részfeladatokon fel van tüntetve azon berendezések halmaza, amelyek az adott feladatot el tudják végezni.
 Ezt a kilenc részfeladatot el kell végezni a termékek előállításának érdekében.
 Az élek a csomópontok közti függőséget mutatják meg.
 Ezeket \textbf{Receptéleknek} nevezzük.
@@ -324,10 +326,10 @@ Ha megvalósítható és nagyobb jövedelmet biztosít, mint az eddig megtalált
 Ha infeasible a kiválasztott konfiguráció, akkor ez, és minden ennél nagyobb konfiguráció eltávolításra kerül az S halmazból.
 Amint az S halmaz üressé válik, és volt feasible megoldás, akkor az algoritmus visszatér a legjobb konfigurációval, és az ehhez tartozó jövedelem mennyiségével.
 
-A~\ref{throughput1} ábrán látható egy Throughput módszerrel megvalósított feladat eredménye.
+A~\ref{throughput1} ábrán látható egy általam elkészített, Throughput módszerrel megvalósított feladat eredménye.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.7]{throughput1}
+\includegraphics[scale=0.8]{throughput}
 \caption{Throughput maximalizálás szemléltetés}
 \label{throughput1}
 \end{center}
@@ -341,9 +343,10 @@ Ezt a haladási irányt addig követte amíg megtalálta az első nem megvalós�
 Ezt követően elvégzi a keresést a másik tengelyen is.
 Így kapott egy jelenleg maximális jövedelmet.
 Az utolsó még feasible batch számoknál nagyobb batch számokat már nem kell vizsgálni, hiszen azokat a megadott időhorizonton belül nem lehet megvalósítani.
-A képen látható feladatban a legnagyobb elérhető profit 16 volt.
-A feketével jelzett egyenes tartalmazza az összes 16 profittal rendelkező pontot.
-Ezt nevezzük revenue line-nak, wn a B termékhez tartozó 16-os érték nem egész batch számhoz tartozik, a legközelebbi 15 profittal rendelkezik, ami infeasible már.
+A képen látható feladatban a legnagyobb elérhető profit 16 volt, amikor csak egy termék vizsgálata történt.
+A feketével jelzett egyenesen szerepel az összes 16 profittal rendelkező pont.
+Ezt az egyenest nevezzük revenue line-nak.
+A B termékhez tartozó 16-os profitérték nem egész batch számhoz tartozik, a legközelebbi 15 profittal rendelkezik, ami infeasible már.
 Az egyenes alatt azok a konfigurációk szerepelnek, amelyek jövedelme nem éri el a jelenlegi maximumot, így ezek nem a lehető legjobb megoldást adják meg.
 Az algoritmus addig nem állt le, amíg a halmaz, amely a konfigurációkat tartalmazza ki nem ürül.
 A példafeladatban a maximálisan elérhető jövedelem 25 egység.

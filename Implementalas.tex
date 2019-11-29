@@ -51,13 +51,14 @@ Az új módszer létrehozása során szükség volt ennek a metódusnak a módos
 Eredetileg ez használja a revenue line gyorsítási stratégiát.
 Ennek használatát feltételhez kellett kötni, mert az új módszer esetén ennek használata nem lehetséges.
 Továbbá a jövedelem módosítására is szükség volt, mert nem egyezik meg a vizsgált korlát a két módszer esetében.
-A keresés végeztél a \textbf{Solve} metódus visszaadja a legjobb megoldást a \textbf{MainSolver} számára.
+A keresés végeztével a \textbf{Solve} metódus visszaadja a legjobb megoldást a \textbf{MainSolver} számára.
 Abban az esetben, ha nincs megoldás, akkor egy exceptiont dob a \textbf{Solve} függvény, amely kezelése során a felhasználót értesíti a program arról, hogy az adott feladatnak nincs megoldása.
 
 \section{Adatok beolvasása}
 \subsection{Bemeneti fájl}
 A program működéséhez szükséges adatokat ods kiterjesztésű fájlban lehet megadni.
-Az új megoldó módszerhez készített fájl egy, a szoftver működtetéséhez alkalmas, korábban létrehozott fájl kibővített változata.
+A solver mappa input almappájában megtalálható az \textbf{extended\_precedential.ods} fájl, amely segítségül szolgál ahhoz, ha új fájlt kívánunk létrehozni a saját feladatunkhoz tartozó adatokkal.
+Ez a fájl egy, a szoftver a szoftver működtetéséhez alkalmas, korábban létrehozott fájl kibővített változata.
 Az abban megtalálható táblázatokhoz további oszlopok kerültek hozzáadásra, amelyben az új módszerhez szükséges adatok szerepelnek.
 Az új fájl a következő táblákat tartalmazza, jelezve az újonnan hozzáadott oszlopokat:
 \begin{itemize}
@@ -80,6 +81,7 @@ Az új fájl a következő táblákat tartalmazza, jelezve az újonnan hozzáado
 Az új módszer megoldásához szükséges adatok beolvasása, hasonlóan a fájl létrejöttéhez, már egy meglévő függvény kibővítésével valósul meg.
 Az értékek beolvasásáért a \textbf{RelationalProblemReader} osztály a felelős.
 Ennek feladata, hogy felépítse a receptgráfot, illetve ezt eljuttassa a \textbf{MainSolver} osztályhoz.
+A beolvasást végző függvények forráskódjai az \textbf{src\textbackslash lib} mappában megtalálható \textbf{realtionalproblemreader.cpp} és \textbf{realtionalproblemreader.h} fájlokban szerepelnek.
 Az adatok programba történő átemeléséhez a \textbf{ReadPrecedential()} függvényre van szükség, amely ki lett bővítve azzal, hogy az új adatokat is képes legyen feldolgozni. 
 
 Az említett függvényben meghívásra kerül a \textbf{ParseEquipments(SGraph* graph)} eljárás, ami a fejlesztés során ki lett egészítve azzal, hogy vizsgálja meg, hogy a fájlban lévő equipment tábla rendelkezik-e b\textunderscore capacity nevű oszloppal.
@@ -93,6 +95,10 @@ A tárolást úgy lehet elképzelni, mint egy mátrixot, ami azt mutatja meg, ho
 A mátrixok mérete $N\times N$-es, ahol az N a taszkok számát jelenti.
 A \textbf{sourcePercents} azt testesíti meg, hogy annak a taszknak, amelyből az él indul, a kapacitásának mekkora része hasznosul.
 A \textbf{demandPercents} pedig azt reprezentálja, hogy mekkora százalékot tud felvenni az a taszk, amelybe az él mutat.
+\begin{lstlisting}[caption={A sourcePercents és a demandPercents változók inicializálása},language=c++,numbers=none]
+vector<vector<double>> sourcePercents(taskT.GetRecordCount(), vector<double>(taskT.GetRecordCount(), -1));
+vector<vector<double>> demandPercents(taskT.GetRecordCount(), vector<double>(taskT.GetRecordCount(), -1));
+\end{lstlisting}
 
 \section{FlexBatchSchProblem osztály}
 Ez az újonnan létrehozott osztály a programban egy új solvert valósít meg.
@@ -100,18 +106,18 @@ Ennek létrehozását az indokolta, hogy még nem létezett olyan solver, amely 
 Ennek az osztálynak feladata a branching, vagyis a szétválasztás elvégzése az ütemezés során.
 Megállapítja, hogy melyik taszkokhoz melyik berendezés vagy berendezések hozzárendelése szükséges.
 Másképpen fogalmazva azt kell meghatároznia, hogy melyik berendezésnek, melyik taszkokat kell elvégezni a lehető legnagyobb profit elérésének érdekében.
+Az osztály forráskódja megtalálható az \textbf{src\textbackslash solver} mappában a \textbf{flexbatchschproblem.cpp} és a \textbf{flexbatchschproblem.h} fájlokban.
 Ez az osztály egy származtatott osztály.
 A szülőosztálya az \textbf{EqBasedSchProblem} osztály, aminek szintén van egy ősosztálya az \textbf{SchProblem} osztály.
 Az új módszer lényege abban áll, hogy egy adott taszkhoz több berendezést is hozzá lehet rendelni, ezért az EqBasedSchProblem osztályban megtalálható Branching függvény az ott szereplő formában ehhez a megoldó módszerhez nem megfelelő.
 Az eddigi adattagok mellett, az átdolgozott kiválasztás módszer miatt, szükséges új adattagok bevezetése.
 Az első új adattag egy vectoron belüli vector segítéségével megvalósított mátrix, amely azt reprezentálja, hogy melyik berendezéshez melyik taszk lett már hozzárendelve.
 A másik új adattag pedig egy \textbf{IndexSet} típusú változó, amelyben azok a berendezések szerepelnek, amelyek még nincsenek ütemezve, azaz még képes elvégezni taszkokat.
-\begin{lstlisting}[caption={FlexBatchSchProblem osztály adattagjai}]
+\begin{lstlisting}[caption={FlexBatchSchProblem osztály adattagjai},language=c++,numbers=none]
 class FlexBatchSchProblem: public EqBasedSchProblem{
 protected:
 	vector<vector<bool>> eqAssignedToTask;
-    IndexSet sounEqs;
-}
+    IndexSet sounEqs;}
 \end{lstlisting}
 
 \subsection{MakeDecisions függvény}
@@ -136,14 +142,46 @@ Ha mindezt követően a kiválasztott berendezést már csak egy taszkhoz lehet 
 Abban az esetben, ha a kiválasztott berendezést már nem kívánjuk hozzárendelni taszkhoz, de van olyan taszk amit még el tudna végezni és ezt a taszkot más berendezés is el tudná végezni, akkor a berendezést kivesszük az ezt követő részproblémákból.
 Mindezen lépések után a \textbf{MakeDecisions} függvény segítségével ennek a részproblémának a gyerek problémájához hozunk döntést, valamint a korlátja is beállításra kerül.
 
+\subsection{További metódusok}
+Az \textbf{IsFeasible} függvénynek az a feladata, hogy elvégezze annak ellenőrzését, hogy az adott probléma megvalósítható vagy sem.
+Ehhez igénybe veszi az ősosztályban megtalálható ugyanezzel a névvel rendelkező függvényt.
+Ebben  megvizsgálásra kerül, hogy a gráfban található-e kör.
+A kör olyan egymáshoz csatlakozó élek sorozata, amelyben az élek és pontok egynél többször nem szerepelhetnek, és a kiindulási pont megegyezik a végponttal.
+Az új osztályban szereplő függvény ezt kibővíti azzal, hogy megvizsgálja, hogy a megadott időhorizonton belül megoldható-e a feladat.
+Ha e kettő feltétel közül valamelyiknek nem felel az adott feladat, akkor az éppen vizsgált részprobléma nem lesz megvalósítható a megadott feltételek mellett.
+
+A \textbf{Bound} eljárás a korlátot állítja be.
+Mivel az elkészített módszer maximalizációra lett tervezve, a Solver keretrendszerben megtalálható további megoldó módszerekkel szemben, amelyek pedig minimalizálnak, ezért szükséges a negatív szorzó, hogy a korábban elkészített függvényekben megfelelő eredményeket lehessen elérni.
+
+Megtalálható még egy egyszerű \textbf{IsComplete} névvel fellelhető függvény, amelynek csupán annyi a szerepe, hogy egy bool értéket ad vissza, ami azt mutatja meg, hogy a berendezések halmaza üres vagy nem.
+Az üres állapot azt jelenti, hogy az összes berendezés már ütemezett, vagyis nem szándékozunk, vagy nem lehet hozzá taszkokat rendelni. Ellenkező esetben pedig, legalább egyhez még lehet taszkot hozzárendelni.
+
+Az osztályhoz tartozik három másoló függvény is a \textbf{FastClone}, a \textbf{Clone} és a \textbf{MakeCopy}.
+Az elsőnek említett függvény egyszerűen létrehoz egy új objektumot, aminek paraméterlistájában átadjuk a másolni szándékozott problémát.
+A Clone függvény az előbb említetthez képest abban tér el, hogy paraméterként true-t ad meg, ami azt mutatja meg, hogy a receptet is másolja vagy sem.
+A harmadik viszont meghív egy \textbf{CopyInto} névvel ellátott függvényt, ami adattagonként végzi a másolást.
+Ennél meg lehet adni, hogy teljes másolást végezzen, illetve megtartsa az eredeti problémában lévő döntéseket.
+További eltérés a három függvény között, hogy a \textbf{FastClone} elérhetősége proceted, ami azt jelenti, hogy csak a származtatott osztályai érik él, nem pedig bármely függvény.
+A másik két függvény viszont public, így azokat máshonnan, osztályon, származtatott osztályokon kívülről is el lehet érni.
+
 \section{SGraph osztály}
 Az \textbf{SGraph} osztály egy olyan osztály, amely támogatja különböző műveletek elvégzését az S-gráfon.
 Többek között az ilyen feladatok közé tartozik az ütemezési élek hozzáadása, korlátok lekérdezése, leghosszabb út lekérdezése, valamint taszkok és berendezések közötti hozzárendelések megszüntetése.
 Az osztályban metódusok módosítására, valamint új függvények hozzáadására van szükség ahhoz, hogy képes legyen párhuzamos hozzárendelést megengedő feladatok elvégzésére.
 Két teljesen új függvény került hozzáadásra az \textbf{UpdateProfitBound} és az \textbf{UpdateProfitBoundFromTask}.
 Ezenkívül egy függvény nagyobb megváltoztatására is sor került, ez a függvény pedig a \textbf{MakeMultipleBatches}.
+Az előbb említett 3 metódus mindegyike az \textbf{sgraph.cpp} és az \textbf{sgraph.h} fájlokban található meg, amelyeket a \textbf{src\textbackslash solver} mappában tekinthetjük meg.
 Az osztályt egy adattaggal kellett kibővíteni, amiben a taszkokhoz tartozó kapacitást lehet eltárolni, vagyis mekkora mennyiséget tud az adott taszk előállítani.
 Az adattag vector segítségével valósítja meg a tárolást, amelyben double típusú adatokat lehet elmenteni.
+\begin{lstlisting}[caption={SGraph osztály header fájljában lévő új függvények deklarációja},language=c++,numbers=none]
+class SGraph : public Clonable {
+public:
+	void UpdateProfitBound();
+	void UpdateProfitBoundFromTask(uint id);
+	bool IsProfitMaximization() const;
+	double GetTaskCapacity(uint id) const;	
+}
+\end{lstlisting}
 
 \subsection{MakeMultipleBatches függvény}
 Ez a függvény abban az esetben játszik fontos szerepet, amikor legalább egy termékből egynél több darabot szeretnénk gyártani, vagyis a batch szám nagyobb lesz mint egy.
@@ -216,7 +254,7 @@ Ismét két \textit{for} ciklus segítségével bejárjuk a taszkokat, amennyibe
 Mindezeket követően elérkezik az a rész, ahol a kapacitások felülvizsgálata következik.
 Egy \textit{while} ciklus segítségével minden \textbf{\textit{deque-ban}} szereplő elemet vizsgálunk addig, amíg az teljesen üressé nem válik.
 Először a \textbf{\textit{deque}} első elemét kivesszük belőle, majd egy \textit{for} ciklus segítségével ismét végighaladunk a taszkokon.
-Ha az éppen ciklusban lévő taszkból mutat él a \textbf{deque-ból} kivett taszkba, továbbá a taszknak, amiből az él indult, már korábban, a mostani függvény futása során felül lett vizsgálva a kapacitása, akkor lehet ellenőrizni a \textbf{\textit{deque-ból}} kivett taszk kapacitását.
+Ha az éppen ciklusban lévő taszkból mutat él a \textbf{\textit{deque-ból}} kivett taszkba, továbbá a taszknak, amiből az él indult, már korábban, a mostani függvény futása során felül lett vizsgálva a kapacitása, akkor lehet ellenőrizni a \textbf{\textit{deque-ból}} kivett taszk kapacitását.
 Ha az aktuálisan kiszámolt kapacitás nagyobb mint az eddigi, akkor a korábbi helyett az újat jelöljük ki a taszk kapacitásának.
 Ennek kiszámításhoz a 4. fejezetben bemutatott képletet kell használni.
 
@@ -272,6 +310,7 @@ A második új argumentum a \textbf{\textit{profit\textunderscore max}}, amely a
 Az új módszerrel kapcsolatos kapacitások kezelése eddig nem volt része a megoldó szoftvernek.
 Ez alól a fájlba történő kiírásuk sem kivétel, emiatt szükség volt a már meglévő kiírást elvégző függvény módosítására.
 A szóban lévő függvény a \textbf{WriteText}, amely \textbf{SGraph} típusú változót vár paraméterként.
+A függvény az \textbf{src\textbackslash lib} mappában lévő \textbf{solutionwriter.cpp} és \textbf{solutionwriter.h} fájlokban található.
 
 Az eredetileg meglévő függvény a fájlba két elkülöníthető rész kiírását végezte. Az első az volt, amely megmutatta az éleket.
 Ebbe beletartozik mind a recept, mind az ütemezési élek csoportja.
@@ -283,3 +322,20 @@ Az említett két rész közé került az általam elkészített kapacitások ki
 Pontosabban, mivel az új módszer kapacitás és jövedelem szorzataként adja meg a korlátot, ezért a rész a kapacitások után jelenik ezentúl meg.
 Először a taszkok kapacitása kerül kiírásra, ezeket követik a termékek, amelyekhez az utolsó taszk kapacitása és a termékből származó jövedelem adja meg az értéket.
 A korlát kiszámítása a termékekhez tartozó értékek összeadásával történik.
+
+\begin{lstlisting}[caption={Fájlba írást végző függvény új része},language=c++,numbers=none]
+if(graph.IsProfitMaximization()){
+	output << "\n";
+	for(uint i = 0; i<graph.GetRecipe()->GetTaskCount();i++){
+		output << graph.GetRecipe()->GetTask(i).GetName().c_str() << ": " << 		graph.GetTaskCapacity(i) << "\n";
+    }
+	for(uint i = 0; i<graph.GetRecipe()->GetProductCount();i++){
+		for(uint j = 0; j <graph.GetRecipe()->GetTaskCount();j++){
+			if(graph.GetWeight(graph.GetRecipe()->GetTask(j).GetNodeId(),
+			graph.GetRecipe()->GetProduct(i).GetNodeId())>=0)
+				output << graph.GetRecipe()->GetProduct(i).GetName().c_str() << ": " << (graph.GetTaskCapacity(j)*graph.GetRecipe()->GetProduct(i).GetPPercent()
+                    /100)*graph.GetRecipe()->GetProduct(i).GetRevenue()<< "\n";
+		}
+	}
+}
+\end{lstlisting}
