@@ -13,7 +13,7 @@ A módszerek között eltéréseket is lehet találni.
 Legfontosabb eltérés, hogy az új módszer esetében egy receptnél nincs batch méret, emiatt a jövedelmek sincsenek előre meghatározva.
 Ezt a feladatot az ütemezést elvégző szubrutinnak kell elvégezni.
 Lényeges eltérés még, hogy az új módszernél nem alkalmazható a revenue line arra, hogy csökkentsük a megvizsgálandó konfigurációk számát.
-Itt a elérhető jövedelmet nem skaláris szorzat adja meg, mint a régi megoldó esetében (termék száma szorozva a termék jövedelmével), hanem az előállított termék mennyisége is közrejátszik, így előfordulhat, hogy kisebb konfigurációk esetén nagyobb profitra teszünk szert.
+Itt az elérhető jövedelmet nem skaláris szorzat adja meg, mint a régi megoldó esetében (termék száma szorozva a termék jövedelmével), hanem az előállított termék mennyisége is közrejátszik, így előfordulhat, hogy kisebb konfigurációk esetén nagyobb profitra teszünk szert.
 Ennek tekintetében lényeges az is, hogy ha talál egy részütemezés esetén megvalósítható megoldást, akkor nem tér azonnal vissza ezzel, hanem megkeresi a legjobb elérhetőt.
 Az új algoritmus nem csökkenti a beütemezendő feladatokat, mert engedélyezett, hogy több berendezés egyszerre végezze ugyanazt a feladatot.
 Ennek következtében a levél nem lehet az a részfeladat, ahol már nincs ütemezendő feladat.
@@ -34,7 +34,7 @@ Ezután az iteráció minden lépésében a \textbf{select\_remove} függvény s
 Először minden feladat esetében végigmegy azokon a konfigurációkon, ahol csak egy termék kerül legyártásra, így meghatározható egy régió, amely tartalmazza az összes megvalósítható megoldást.
 Az algoritmus meghívja a $MAXPROFIT$ függvényt, amely által visszaadott értéket összehasonlítja a jelenlegi legjobb megoldással.
 Ha jobb, mint a meglévő profit, akkor ez az új érték lesz a legjobb megtalált megoldás, és a legjobb konfiguráció is frissítésre kerül.
-Azonban, ha a visszakapott érték mínusz végtelen, akkor az az jelenti, hogy az adott konfiguráció esetén nincs megvalósítható megoldás, így az ennél nagyobb konfigurációk eltávolíthatóak az $S$ halmazból, mert azok között se található feasible megoldás.
+Azonban, ha a visszakapott érték mínusz végtelen, akkor az azt jelenti, hogy az adott konfiguráció esetén nincs megvalósítható megoldás, így az ennél nagyobb konfigurációk eltávolíthatóak az $S$ halmazból, mert azok között sem található feasible megoldás.
 Miután az iteráció véget ért, és volt megvalósítható megoldás, akkor az algoritmus visszatér a legjobb megoldást nyújtó konfigurációval, és az ehhez tartozó legjobb profittal.
 
 \begin{algorithm}[H]
@@ -63,7 +63,7 @@ Miután az iteráció véget ért, és volt megvalósítható megoldás, akkor a
 \section{Maxprofit eljárás}
 Ennek a függvénynek több feladata van.
 Itt hívódik meg a megvalósíthatósági teszt, valamit a $ProfitBound$ függvény is, illetve a részprobléma ütemezése is itt történik meg.
-A függvény alapját a Makespan minimalizáló algoritmus adja.
+A függvény alapját a Makespan minimalizáló algoritmus szolgáltatja.
 A bemenetet az időhorizont ($TH$), valamint a batch szám adja.
 Első lépésként a $profit^{cb}$ értékét inicializálja mínusz végtelennel, mert ennél biztosan nagyobb lesz a profit megoldható probléma esetén.
 A $SOAA$ halmaz kezdetben nem tartalmaz értéket, később futás során azok a berendezések kerülnek bele, amelyek már hozzá vannak rendelve egy adott taszkhoz.
@@ -77,7 +77,7 @@ Az algoritmus megvizsgálja a kiválasztott részproblémát a \textit{Feasible}
 Megnézi, hogy a részproblémában lévő leghosszabb út nagyobb vagy kisebb a megadott korlátnál.
 Ha kisebb, azaz a feladat elvégezhető a megadott idő alatt, akkor feasible lesz a megoldás, máskülönben infeasible-nek minősül.
 Ha megvalósítható, akkor megvizsgálja az algoritmus, hogy a részprobléma által nyújtott legnagyobb elérhető jövedelem nagyobb-e, mint az eddig megtalált legjobb megoldás.
-A részprobléma jövedelmét a $ProfitBound$ függvény adja meg, amely kifejtése a következő pontban történik meg.
+A részprobléma jövedelmét a $ProfitBound$ függvény adja meg, amelynek részletes ismertetésére a következő pontban kerül sor.
 Ha valamelyik feltételnek nem felel meg a részprobléma, akkor az iteráció ezen lépése véget ér, és egy másik részprobléma kerül kiválasztásra, amennyiben még van ilyen.
 
 Ha mindkét feltételnek megfelel a részprobléma, akkor megnézi az algoritmus, hogy levél-e.
@@ -151,13 +151,13 @@ Ezt úgy teszi, hogy végigmegy a receptéleken, és a százalékokat beleveszi 
 Mivel nem biztos, hogy sorrendben megy végig a nyersanyagoktól kezdve, ezért szükséges a while ciklus, hogy ne maradjon ki semmilyen érték a számítás során, és ezáltal ne pontatlan eredményhez jusson.
 Egy receptélen kettő százalékot tudunk megkülönböztetni.
 Az első ($SP_{i',i}$) az, amelyik azt mutatja meg, hogy a befejezett taszk mekkora kapacitását hasznosítjuk.
-A második ($DP_{i',i}$) pedig, hogy a soron következő feladat kapacitás mekkora hányadát tudja felvenni.
+A második ($DP_{i',i}$) pedig, hogy a soron következő feladat a kapacitás mekkora hányadát tudja felvenni.
 Az $i$ az éppen vizsgált taszk, az $i'$ pedig az őt megelőző taszk.
 A következő képlet segítségével lehet meghatározni a kapacitást:
 \begin{gather}
 \scalebox{0.75}{$
 \begin{align*}
-\text{kapacitás}&= \text{előző taszk kapacitása}&*\frac{\text{előző taszkból felvett kapacitás mennyiségnek százaléka}}{\text{a mennyiég százaléka, amit az éppen vizsgált taszk fel tud venni}}
+\text{kapacitás}&= \text{előző taszk kapacitása}&*\frac{\text{előző taszkból felvett kapacitás mennyiségének százaléka}}{\text{a mennyiség százaléka, amit az éppen vizsgált taszk fel tud venni}}
 \end{align*}$}	
 \end{gather}
 Az algoritmus minden taszk minden bemeneti élére elvégzi ezt a számítást.

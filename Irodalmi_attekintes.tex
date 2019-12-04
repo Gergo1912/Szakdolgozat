@@ -22,7 +22,7 @@ A semi-offline a kettő közé sorolható, azaz bizonyos információk, adatok m
 
 Az ütemezési feladatok modelljét receptnek nevezzük.
 Egy termék receptje tartalmazza az adott recept által előállítható termék elkészítéséhez szükséges információkat\cite{Hegyhati}.
-Egy receptet a következő elemek közösen alkotják:
+A következő elemek közösen alkotnak egy receptet:
 \begin{itemize}
   \item termékek listája,
   \item taszkok listája, amelyek adott sorrendben történő elvégzése szükséges a termék előállításához,
@@ -228,13 +228,13 @@ Az iteráció elején kiértékelődik, hogy a részprobléma képes-e egy optim
 Ez a \textbf{bound} függvénnyel történik.
 Ezzel szemben több követelmény áll fenn.
 Alsó korlátot kell adnia azoknak a megoldásoknak, amelyek a részproblémából származnak.
-Biztosítania kell levél problémák pontos makespanjét.
+Biztosítania kell a levél problémák pontos makespanjét.
 Végtelen értékkel térjen vissza, ha a gráf tartalmaz kört, és jelezze, hogy megoldhatatlan.
 A leggyakrabban a leghosszabb út keresésével vizsgálja meg a részproblémát a \textbf{bound} függvény, de lehetséges LP alapú modellek használata is.
 
 Ha a korlát nem kisebb, mint az eddig megtalált legjobb eredmény, akkor az iteráció véget ér, és amennyiben létezik egy következő részprobléma, akkor az kerül kiválasztásra.
 Ha viszont kisebb a korlát, abban az esetben ellenőrzi az algoritmus azt, hogy az összes taszk már ütemezett-e, vagyis a még nem ütemezett taszkok halmaza üres már ($I^{'}=\emptyset$).
-Ha így van frissül a legjobb megoldás gráfja, a legjobb makespan és a hozzárendelések halmaza.
+Ha így van, frissül a legjobb megoldás gráfja, a legjobb makespan és a hozzárendelések halmaza.
 Ellenben, ha még szükséges további ütemezés, akkor a \textbf{select} függvény kiválaszt egy rendelkezésre álló berendezést a $J^{'}$ halmazból.
 A kiválasztott $j$ berendezéshez az algoritmus hozzárendeli az összes lehetséges taszkot, mindegyiket külön-külön gyerekként, a még nem ütemezett taszkok és a kiválasztott berendezés által elvégezhető taszkok közös halmazából ($i \in I_{j} \cap I^{'}$).
 Ezek a kiválasztott taszkok kapnak egy másolatot az aktuális S-gráfról.
@@ -329,7 +329,7 @@ Amint az S halmaz üressé válik, és volt feasible megoldás, akkor az algorit
 A~\ref{throughput1} ábrán látható egy általam elkészített, Throughput módszerrel megvalósított feladat eredménye.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.8]{throughput}
+\includegraphics[scale=0.8]{throughput_szeml}
 \caption{Throughput maximalizálás szemléltetés}
 \label{throughput1}
 \end{center}

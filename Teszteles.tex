@@ -17,7 +17,7 @@ A tesztelés a következő konfigurációval rendelkező számítógéppel tört
 Az S-gráf megoldó szoftvert parancssori paraméterek segítségével lehet működtetni.
 A különböző megoldó módszereket, amelyek megtalálhatóak a szoftverbe implementálva, más és más kapcsolók segítéségével lehet elérni, meghívni.
 Ezeknek listája megtalálható a \textbf{solver} mappában lévő \textbf{README.md} fájlban.
-Az általam megvalósított módszerhez a következő kapcsolókat mindenképpen használni kell, hogy a program hiba nélkül fusson és elvégezze az ütemezést:
+Az általam megvalósított módszerhez a következő kapcsolókat mindenképpen használni kell, hogy a program hibaa nélkül fusson és elvégezze az ütemezést:
 \begin{itemize}
 	\item \textbf{-i extended\textunderscore precedential.ods:} A bemeneti fájl elérési útvonalát kell megadni ezzel.
 	\item \textbf{-o output.txt:} A kimeneti fájl elérési útvonala.
@@ -31,7 +31,7 @@ Az általam megvalósított módszerhez a következő kapcsolókat mindenképpen
 	A \textit{flexbatch} határozza meg, hogy az általam megvalósított algoritmus kerüljön meghívásra.
 	\item \textbf{--timehor:} Időhorizont megadása történik ezzel a kapcsolóval.
 	\item \textbf{--obj profit\textunderscore max:} A célfüggvény kiválasztása, ebben az esetben az újonnan a megoldó szoftverhez hozzáadott profit maximalizálás kerül kiválasztásra.
-	\item \textbf{--precycle off:} A precycle az ütemezés gyorsításra szolgál, mégpedig úgy, hogy előre lefut, és kört keres a gráfban.
+	\item \textbf{--precycle off:} A precycle az ütemezés gyorsítására szolgál, mégpedig úgy, hogy előre lefut, és kört keres a gráfban.
 	Az új módszer esetén hibásan működik, nem összeegyeztethető azzal, ezért szükséges a kikapcsolása.
 	\item \textbf{--nopresolvers:} Hasonlóan az előzőhöz a presolver is az ütemezést gyorsítja, de nem egyeztethető össze az új megoldó módszerrel, emiatt kell mindenképpen inaktívvá tenni.
 \end{itemize}
@@ -56,8 +56,8 @@ Az, hogy kisebb mennyiség kerül felhasználásra nagy mértékben befolyásolj
 Emellett az ütemezés megoldását is befolyásolja, mert emiatt lehetséges, hogy bizonyos berendezések nem végezhetik el az adott taszkot.
 
 Az egyszerűség kedvéért a példában csak 2 darab termék receptje szerepel.
-Az A termék legyártásából származó jövedelem egy egység, a B termék esetén pedig 2 egység.
-A \textit{precedence} táblában látható, hogy a taszkok által elérhető mennyiségek nem 100 százalékban kerülnek további felhasználásra.
+Az A termék legyártásából származó jövedelem egy egység, a B termék esetén pedig két egység.
+A \textit{precedence} táblában látható, hogy a taszkok által elérhető mennyiségek nem teljeskörűen, nem 100 százalékban kerülnek további felhasználásra.
 Például az A1 és A2 taszkok esetében, az A1-es taszk mennyiségének 80 százaléka kerül továbbításra, illetve ennek a már kisebb mennyiségnek a 95 százalékát veszi fel az A2-es részfeladat.
 A \textit{proctime} táblán megtalálhatjuk, hogy melyik taszkot, melyik berendezés tudja elvégezni, valamint ezt mennyi idő alatt teszi. 
 
@@ -71,11 +71,11 @@ A \textit{proctime} táblán megtalálhatjuk, hogy melyik taszkot, melyik berend
 
 A feladat megoldását tartalmazó TXT kiterjesztésű fájlt három darab elkülöníthető részre tudjuk felosztani.
 Az első része látható a~\ref{eredmeny1} ábrán.
-Az ábra elején az éleket találhatjuk meg, mégpedig olyan formában, hogy melyik taszkból melyik taszkba mutat.
+Az ábra elején az éleket találhatjuk meg, mégpedig olyan formában, hogy melyik taszkból melyik taszkba mutatnak.
 Továbbá láthatóak időértékek, amelyek megadják, hogy az élt megelőző részfeladatot mennyi idő alatt lehet elvégezni.
 Ez a rész tartalmazza mind a receptéleket, mind az ütemezési éleket.
 Úgy tudjuk ezeket elkülöníteni, hogy amelyikhez 0 időérték van rendelve, azok tartoznak az ütemezési élek csoportjához.
-Mivel az egyik termékből, nevezetesen az B-ből, több mint egy darabot gyártunk ezért megkülönböztetjük az egyes receptekhez tartozó feladatokat.
+Mivel az egyik termékből, nevezetesen az B-ből, több mint egy darabot gyártunk, ezért megkülönböztetjük az egyes receptekhez tartozó feladatokat.
 Láthatunk B1-et és B1\textunderscore 2-t.
 Ugyanolyan típusú feladatról beszélünk, de különböző recepthez tartoznak, ezért kell megkülönböztetni egymástól ezeket.
  
@@ -103,8 +103,8 @@ Ezeket összeadva kijön a 482. Ezek az értékek a~\ref{eredmeny2} ábrán megt
 \end{figure}
 
 Az utolsó szakaszban a Gantt diagram karakteres formában található meg.
-Látható, hogy vannak olyan taszkok, amelyeket több berendezés is el tud végezni.
-A \ref{eredmeny3} ábrán látható ez.
+Látható, hogy vannak olyan taszkok, amelyeket több berendezés is el tud végezni,
+lásd a \ref{eredmeny3} ábrán.
 
 \begin{figure}[H]
 \begin{center}
@@ -158,7 +158,7 @@ Az ábra bal oldalán szereplő gráfok megegyeznek a példafeladaton szereplő 
 Eltérés csak a taszkokat elvégezni tudó berendezésekben van.
 Azokat a  taszkokat, amelyeket 2 darab berendezés is el tud végezni, úgy kell figyelembe venni, hogy vagy az egyik vagy a másik berendezés végezi majd el az ütemezés után.
 A jobb oldalon látható, hogy a B3-as taszkból kettő darab lesz.
-Ezek az estek az jelentik, hogy mindkét berendezés elvégzi ezt a részfeladatot.
+Ezek az esetek azt jelentik, hogy mindkét berendezés elvégzi ezt a részfeladatot.
 A régi módszer esetén úgy tekintünk a termékekre, mintha 5 különböző termék lenne.
 Ezt az 1 darab A termék receptje és a 4 darab különböző B termék receptje adja meg.
 Ezek alapján elkészíthető a régi megoldóhoz szükséges bemeneti fájl, amely a következő ábrán látható. 
@@ -180,7 +180,7 @@ Láthatjuk, hogy kevesebb dimenziót kell megvizsgálni, viszont egy dimenzión 
 Az algoritmus lefutásának végeztével azt várjuk, hogy a régi és az új megoldó ugyanazt az eredményt szolgáltassa.
 Pontosítva, a jövedelem mennyisége és a legyártott termékeknek meg kell egyezniük, a taszkok ütemezésétől azonban ezt nem várjuk el.
 A \ref{regi_kimenet} ábrán látható a régi megoldómódszer által elkészített Gantt diagram.
-Összehasonlítva a \ref{kimenet} ábrán látható diagrammal meg lehet állapítani azt, hogy mindkét esetben 2 B termék és 1 darab A terméket lehet legyártani a megadott időhorizonton belül.
+Összehasonlítva a \ref{kimenet} ábrán látható diagrammal meg lehet állapítani azt, hogy mindkét esetben 2 B terméket és 1 darab A terméket lehet legyártani a megadott időhorizonton belül.
 A másik fontos dolog, hogy a jövedelem is megegyezzen.
 Az új megoldónál ez 482 volt.
 A régi által nyújtott eredményben az A termék jövedelme 50, a két B termékből pedig olyanokat gyárt, amelyeknek 216 a jövedelme.
@@ -252,16 +252,16 @@ Végül pedig a megvizsgált rácspontok száma található. Ez azt mutatja meg,
 
 Ugyanaz a feladat 3 módszerrel került megoldásra.
 A régivel, amelyben szerepelnek a gyorsítások, ismét a régi megoldóval (régi gy. n.), de itt a precycle és a presolver gyorsítások nélkül, illetve az elkészített új megoldó módszerrel.
-Látható, hogy a régi módszerek gyorsabban találjak meg a feladat legjobb megoldását, mint az új a jelenlegi állapotában.
+Látható, hogy a régi módszerek gyorsabban találják meg a feladat legjobb megoldását, mint az új a jelenlegi állapotában.
 Jövőbeni tervek közé tartozik a meglévő gyorsítások átalakítása, hogy kompatibilisek legyenek az új módszerrel is.
 Ezek megvalósítása után nagy csökkenés várható az új megoldó módszer futási idejében. 
 
 A \ref{teszteredmenyek2} táblázatban olyan feladatok kerülnek összehasonlításra, amelyeknél egyfajta termék gyártható.
 Ugyanazon adatok alapján hasonlítottam össze a feladatokat, mint amelyek a \ref{teszteredmenyek} táblázatban láthatóak.
-Mivel ezeknél a feladatoknál csak 1 darab termék gyárható, ezért kevésbé összetettek.
+Mivel ezeknél a feladatoknál csak 1 darab termék gyártható, ezért kevésbé összetettek.
 Az új megoldónak így mindössze 1 dimenziót kell bejárnia.
 Látható, hogy már vannak olyan feladatok, amelyeknél kisebb futási idő alatt megtalálta az optimális megoldást, mint a régi megoldó akár gyorsítással, akár anélkül.
-Ezen biztató jelek alapján várható, hogy gyorsítások implementálása után a nagyobb és összetettebb feladatok megoldásánál is jobb eredményeket érünk el az új megoldással.
+Ezen biztató jelek alapján várható, hogy a gyorsítások implementálása után a nagyobb és összetettebb feladatok megoldásánál is jobb eredményeket érünk el az új megoldással.
 
 \begin{table}[H]
 \begin{center}

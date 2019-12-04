@@ -5,17 +5,17 @@ Ezek közül az S-gráf keretrendszer lett az, amely a dolgozatom alapját képe
 Ezt követően megismerkedtem a makespan minimalizálás és a throughput maximalizálás algoritmusával.
 Ezek megismerése adta meg az alapot, hogy elkészülhessen a flexibilis batch mérettel rendelkező feladatok megoldására alkalmas módszer.
 Ez egy már meglévő S-gráf keretrendszert megvalósító szoftverbe történő implementálással valósult meg.
-Az implementáció megvalósítását követően tesztelésnek vetettem alá a bővített rendszert.
+Az implementáció megvalósítását követően a bővített rendszert tesztelésnek vetettem alá.
 A tesztelés eredményei azt mutatták, hogy a vizsgált feladatokra helyesen működik a program, mivel a régi megoldó módszerrel megegyező eredményeket szolgáltatott.
 Ennek az új módszernek a segítségével idő spórolható meg az előfeldolgozó lépések során, mert már nem szükséges a diszkretizációs folyamat elvégzése.
 Azonban a futási sebessége nem hozott minden feladat esetén jobb eredményeket, mint a régi megoldó módszer.
 A jövőbeni tervek közé tartozik ennek az időnek a csökkentése.
 
-Több különböző gyorsítási ötlet már felmerült.
+Már felmerült több különböző gyorsítási ötlet.
 Jelenleg a megoldó több batch esetén megvizsgál minden részproblémát, azokat is,
 amelyekben a taszkok sorrendje megegyezik, csak egy másik, ugyanolyan termékhez tartoznak.
 Ha már az első ilyen megvizsgált részprobléma során kiderül, hogy nem megvalósítható, akkor nagy mennyiségű számítást lehetne megspórolni, ha a többi részproblémát már a megoldó nem vizsgálná meg.
 Ezen kívül érdemes lehet különböző stratégiákat megvizsgálni a berendezések kiválasztására.
 Elképzelhető, hogy a jelenlegi kiválasztási stratégiánál található egy jobb.
 Jelenleg a profitmaximalizáló algoritmus első futásakor a profit értéke 0.
-Ha a tengelyek mentén megtalált addigi legjobb profitról indulna a keresés, akkor elképzelhető, hogy bizonyos számú konfiguráció ütemezése feleslegessé válna, mert a legjobb megoldása is kisebb profitot szolgáltatna, mint a tengelyeken megtalált legjobb megoldás.
+Amennyiben a keresés a tengelyek mentén megtalált addigi legjobb profitról indulna, akkor elképzelhető, hogy bizonyos számú konfiguráció ütemezése feleslegessé válna, mert ebben az esetben az adott konfiguráció legjobb megoldása is kisebb profitot szolgáltatna, mint a tengelyeken megtalált legjobb megoldás.
