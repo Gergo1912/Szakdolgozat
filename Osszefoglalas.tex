@@ -11,11 +11,14 @@ Ennek az új módszernek a segítségével idő spórolható meg az előfeldolgo
 Azonban a futási sebessége nem hozott minden feladat esetén jobb eredményeket, mint a régi megoldó módszer.
 A jövőbeni tervek közé tartozik ennek az időnek a csökkentése.
 
-Már felmerült több különböző gyorsítási ötlet.
-Jelenleg a megoldó több batch esetén megvizsgál minden részproblémát, azokat is,
-amelyekben a taszkok sorrendje megegyezik, csak egy másik, ugyanolyan termékhez tartoznak.
-Ha már az első ilyen megvizsgált részprobléma során kiderül, hogy nem megvalósítható, akkor nagy mennyiségű számítást lehetne megspórolni, ha a többi részproblémát már a megoldó nem vizsgálná meg.
-Ezen kívül érdemes lehet különböző stratégiákat megvizsgálni a berendezések kiválasztására.
-Elképzelhető, hogy a jelenlegi kiválasztási stratégiánál található egy jobb.
-Jelenleg a profitmaximalizáló algoritmus első futásakor a profit értéke 0.
-Amennyiben a keresés a tengelyek mentén megtalált addigi legjobb profitról indulna, akkor elképzelhető, hogy bizonyos számú konfiguráció ütemezése feleslegessé válna, mert ebben az esetben az adott konfiguráció legjobb megoldása is kisebb profitot szolgáltatna, mint a tengelyeken megtalált legjobb megoldás.
+Már felmerült több különböző gyorsítási ötlet:
+\begin{itemize}
+	\item Jelenleg a megoldó több batch esetén megvizsgál minden részproblémát, azokat is, amelyekben a taszkok sorrendje megegyezik, csak egy másik, ugyanolyan termékhez tartoznak.
+	Ha már az első ilyen részprobléma vizsgálata során kiderül az, hogy megvalósítható vagy sem, akkor nagy mennyiségű számítást lehetne megspórolni, ha a többi részproblémát már a megoldó nem vizsgálná meg.
+	\item Ezen kívül érdemes lehet a berendezések kiválasztására különböző stratégiákat megvizsgálni \cite{nemes}.
+	Elképzelhető, hogy a jelenlegi kiválasztási stratégiánál található egy jobb.
+	\item Jelenleg a profitmaximalizáló algoritmus első futásakor a profit értéke 0.
+	Amennyiben a keresés az addig megtalált legjobb profitról indulna, akkor elképzelhető, hogy bizonyos számú konfiguráció ütemezése feleslegessé válna, mert ebben az esetben az adott konfiguráció legjobb megoldása is kisebb profitot szolgáltatna, mint az eddigi legjobb megoldás.
+	Azonban ennek megvan a hátránya is, mert ha nem talál jobb profittal rendelkező megoldást, akkor nem tudni, hogy az időhorizonton belül vajon van-e, és így nem lehet konfigurációkat kizárni. Csak akkor lehetne kizárni, ha végignézi a konfigurációkat az algoritmus, de ilyen esetben nem csökken a vizsgálatok száma.
+	\item További gyorsítást adna a Profitbound függvény élesítése.
+\end{itemize}

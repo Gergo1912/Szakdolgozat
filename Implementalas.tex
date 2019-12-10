@@ -58,7 +58,7 @@ Abban az esetben, ha nincs megoldás, akkor egy exceptiont dob a \textbf{Solve} 
 \subsection{Bemeneti fájl}
 A program működéséhez szükséges adatokat ods kiterjesztésű fájlban lehet megadni.
 A solver mappa input almappájában megtalálható az \textbf{extended\_precedential.ods} fájl, amely segítségül szolgál ahhoz, ha új fájlt kívánunk létrehozni a saját feladatunkhoz tartozó adatokkal.
-Ez a fájl egy, a szoftver a szoftver működtetéséhez alkalmas, korábban létrehozott fájl kibővített változata.
+Ez a fájl egy, a szoftver működtetéséhez alkalmas, korábban létrehozott fájl kibővített változata.
 Az abban megtalálható táblázatokhoz további oszlopok kerültek hozzáadásra, amelyben az új módszerhez szükséges adatok szerepelnek.
 Az új fájl a következő táblákat tartalmazza, jelezve az újonnan hozzáadott oszlopokat:
 \begin{itemize}
@@ -146,14 +146,14 @@ Mindezen lépések után a \textbf{MakeDecisions} függvény segítségével enn
 Az \textbf{IsFeasible} függvénynek az a feladata, hogy elvégezze annak ellenőrzését, hogy az adott probléma megvalósítható vagy sem.
 Ehhez igénybe veszi az ősosztályban megtalálható ugyanezzel a névvel rendelkező függvényt.
 Ebben  megvizsgálásra kerül, hogy a gráfban található-e kör.
-A kör olyan egymáshoz csatlakozó élek sorozata, amelyben az élek és pontok egynél többször nem szerepelhetnek, és a kiindulási pont megegyezik a végponttal.
+A kör olyan egymáshoz csatlakozó élek sorozata, amelyben az élek és a csúcsok egynél többször nem szerepelhetnek, és a kiindulási csúcs megegyezik a végcsúccsal.
 Az új osztályban szereplő függvény ezt kibővíti azzal, hogy megvizsgálja, hogy a megadott időhorizonton belül megoldható-e a feladat.
 Ha e kettő feltétel közül valamelyiknek nem felel meg az adott feladat, akkor az éppen vizsgált részprobléma nem lesz megvalósítható a megadott feltételek mellett.
 
 A \textbf{Bound} eljárás a korlátot állítja be.
 Mivel az elkészített módszer maximalizációra lett tervezve, a Solver keretrendszerben megtalálható további megoldó módszerekkel szemben, amelyek pedig minimalizálnak, ezért szükséges a negatív szorzó, hogy a korábban elkészített függvényekben megfelelő eredményeket lehessen elérni.
 
-Megtalálható még egy egyszerű \textbf{IsComplete} névvel fellelhető függvény, amelynek csupán annyi a szerepe, hogy egy bool értéket ad vissza, ami azt mutatja meg, hogy a berendezések halmaza üres vagy sem.
+Megtalálható még egy egyszerű \textbf{IsComplete} névvel fellelhető függvény, amelynek csupán annyi a szerepe, hogy egy bool értéket ad vissza, ami azt mutatja meg, hogy a még nyitott berendezések halmaza üres vagy sem.
 Az üres állapot azt jelenti, hogy az összes berendezés már ütemezett, vagyis nem szándékozunk, vagy nem lehet hozzá taszkokat rendelni. Ellenkező esetben pedig, legalább egyhez még lehet taszkot hozzárendelni.
 
 Az osztályhoz tartozik három másoló függvény is a \textbf{FastClone}, a \textbf{Clone} és a \textbf{MakeCopy}.
